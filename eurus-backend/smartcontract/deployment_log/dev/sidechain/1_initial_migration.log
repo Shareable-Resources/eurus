@@ -1,0 +1,32 @@
+Starting migrations...
+======================
+> Network name:    'besu_dev'
+> Network id:      2018
+> Block gas limit: 9007199254740991 (0x1fffffffffffff)
+> Gas Price: NaN (0xNaN)
+
+
+1_initial_migration.js
+======================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'EurusMigrations'
+   ---------------------------
+   > transaction hash:    0x5d6b3eeb32c47f859e70f28e4ee3d068300bf5d83d7100833291125a35ccd0de
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x1657fd983E6BD90A3Def1A4D3CC9e1D09A44907e
+   > block number:        10142
+   > block timestamp:     1612945426
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99979082821895797
+   > gas used:            173386 (0x2a54a)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000000235284802 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00000000235284802 ETH
+

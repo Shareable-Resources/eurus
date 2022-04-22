@@ -1,0 +1,42 @@
+4_smart_contract_config_migration.js
+====================================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'InternalSmartContractConfig'
+   ---------------------------------------
+   > transaction hash:    0x631054c0a48ffe4ae2fc5b0256d3d7b4d32dd2d5c27e45e8d15309d7cd4437e8
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x713d539b01E0ddC0057A8064Ec47248d8B109991
+   > block number:        10148
+   > block timestamp:     1612945438
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99979078054931207
+   > gas used:            1096218 (0x10ba1a)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000001487567826 ETH
+
+InternalSmartContractConfig 0x713d539b01E0ddC0057A8064Ec47248d8B109991
+
+   Replacing 'ExternalSmartContractConfig'
+   ---------------------------------------
+   > transaction hash:    0xc768c8c80ff895bb210d607159b91184fccf0f738100b4725914876f998d661d
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x823577e5c41A967EEbe15d6deD1aF5D606Ea790F
+   > block number:        10149
+   > block timestamp:     1612945440
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99979075854950594
+   > gas used:            1621209 (0x18bcd9)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000002199980613 ETH
+
+ExternalSmartContractConfig 0x823577e5c41A967EEbe15d6deD1aF5D606Ea790F
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00000003687548439 ETH
+
+

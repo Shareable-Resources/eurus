@@ -1,0 +1,15 @@
+{
+  "name": "chainwatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/watchBalance.js",
+    "pkg": "pkg ./src/watchBalance.js --out-path=./ --targets=node14-macos-x64"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "web3": "1.6.1"
+  }
+}

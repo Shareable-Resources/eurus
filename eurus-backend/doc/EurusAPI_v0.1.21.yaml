@@ -1,0 +1,4204 @@
+openapi: 3.0.1
+info:
+  title: Eurus API Version 0.1.21
+  description: Eurus API specification version 0.1.21
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: placeholder@18m.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.1.20
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: https://ToBeConfirmed/
+  - url: http://ToBeConfirmed/
+tags:
+  - name: user
+    description: User related service
+  - name: admin
+    description: Admin management service
+  - name: merchant
+    description: Merchant admin management service
+  - name: kyc
+    description: KYC related service
+#######################################   User   #############################################
+paths:
+  /user/registerByEmail:
+    post:
+      tags:
+        - user
+      summary:
+        Register a new user by email. System creates an user wallet and a corresponding
+        private, public key
+      operationId: registerByEmail
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    timestamp:
+                      type: integer
+                      format: int32
+                      description: Current unix timestamp
+                    deviceId:
+                      type: string
+                      description: Device ID
+                    email:
+                      type: string
+                      description: Unique login email for verification
+                      format: email
+                    loginAddress:
+                      type: string
+                      description: Login Address.
+                      minimum: 3
+                      maximum: 20
+                    isPersonalSign:
+                      type: boolean
+                      description: Using personal sign
+                    signature:
+                      type: string
+                      description: signature.
+                    publicKey:
+                      type: string
+                      description: publicKey.
+                      # description: Login password.
+                      # minimum: 5
+                      # maximum: 20
+              required:
+                - email
+                - loginAddress
+                - signature
+
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                $ref: "#/components/schemas/GeneralResponse"
+
+  /user/verification:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: verify user
+      operationId: verification
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    code:
+                      type: string
+                      description: verification code
+                    email:
+                      type: string
+                      description: user login email
+                    deviceId:
+                      type: string
+                      description: device id
+                    publicKey:
+                      type: string
+                      description: user-provided RSA public key, base64 encoded
+                  required:
+                    - code
+                    - email
+                    - deviceId
+                    - publicKey
+
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          userId:
+                            type: integer
+                            format: int32
+                            description: user id
+                          email:
+                            type: string
+                            format: string
+                            description: user email
+                          mnemonic:
+                            type: string
+                            description: encrypted mnemonic phrase
+                          token:
+                            type: string
+                            description: Login token
+
+  /user/setupPaymentWallet:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: after user successfully verified, generate a owner wallet address call this endpoint
+      operationId: verificationCallback
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    userId:
+                      type: integer
+                      format: int32
+                      description: user id
+                    address:
+                      type: string
+                      description: owner wallet address
+                    signature:
+                      type: string
+                      description: owner wallet signature (wallet_address, timestamp)
+                    os:
+                      type: string
+                      description: Device OS version
+                    appVersion:
+                      type: string
+                      description: App Version
+                    registrationSource:
+                      type: string
+                      description: Registration Source
+
+              required:
+                - userId
+                - address
+                - signature
+                - os
+                - appVersion
+                - registrationSource
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                $ref: "#/components/schemas/GeneralResponse"
+
+  /user/resendVerificationEmail:
+    post:
+      tags:
+        - user
+      summary: self explanatory
+      operationId: resend
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    userId:
+                      type: integer
+                      format: int32
+                      description: user id
+              required:
+                - userId
+
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                $ref: "#/components/schemas/GeneralResponse"
+
+  /user/importWallet:
+    post:
+      tags:
+        - user
+      summary: Import an existing MetaMask or similar wallet into Eurus
+      operationId: importWallet
+      requestBody:
+        description: List of user object
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    timestamp:
+                      type: integer
+                      format: int32
+                      description: Current unix timestamp
+                    walletAddress:
+                      type: string
+                      format: address
+                      description: Wallet address to be imported
+                    publicKey:
+                      type: string
+                      description: Wallet public key in hex string (little endian)
+                    deviceId:
+                      type: string
+                      description: Device ID
+                    isPersonalSign:
+                      type: boolean
+                      description: Use personal sign
+                    sign:
+                      type: string
+                      format: hex
+                      description: >
+                        Signature in hex format. The signature is sign by Keccak256 hash a base string of key and value pairs x=y concaten by '&'; which consists of the following components in sequence:
+                        * deviceId
+                        * timestamp
+                    os:
+                      type: string
+                      description: Device OS version
+                    appVersion:
+                      type: string
+                      description: App Version
+                    registrationSource:
+                      type: string
+                      description: Registration Source
+              required:
+                - deviceId
+                - timestamp
+                - walletAddress
+                - publicKey
+                - sign
+                - os
+                - appVersion
+                - registrationSource
+
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          token:
+                            type: string
+                            description: Login token
+                          expiryTime:
+                            type: string
+                            format: date-time
+                            description: Token expiry time
+                          lastLoginTime:
+                            type: string
+                            format: date-time
+                            description: Last login time
+                          status:
+                            type: integer
+                            description: Account status
+
+  /user/loginByPassword:
+    post:
+      tags:
+        - user
+      summary: User uses password to request login token
+      operationId: loginByPassword
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    username:
+                      type: string
+                      description: Login username
+                    password:
+                      type: string
+                      description: Login password
+                  required:
+                    - username
+                    - password
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          token:
+                            type: string
+                            description: Login token
+                          expiryTime:
+                            type: string
+                            format: date-time
+                            description: Token expiry time
+                          lastLoginTime:
+                            type: string
+                            format: date-time
+                            description: Last login time
+                          status:
+                            type: integer
+                            description: Account status
+
+  /user/loginBySignature:
+    post:
+      tags:
+        - user
+      summary: For MetaMask user to login system by sign a request by user owned private key
+      operationId: loginBySignature
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    timestamp:
+                      type: integer
+                      format: int32
+                      description: Current unix timestamp
+                    walletAddress:
+                      type: string
+                      format: address
+                      description: Wallet address
+                    publicKey:
+                      type: string
+                      format: string
+                      description: ECDSA public key in hex string (little endian)
+                    deviceId:
+                      type: string
+                      description: Device ID
+                    isPersonalSign:
+                      type: boolean
+                      description: Use personal sign 
+                    sign:
+                      type: string
+                      format: hex string
+                      description: >
+                        Signature in hex format. The signature is sign by Keccak256 hash a base string of key and value pairs x=y concaten by '&'; which consists of the following components in sequence:
+                          * deviceId
+                          * timestamp
+                          * walletAddress
+                    os:
+                      type: string
+                      description: Device OS version
+                    appVersion:
+                      type: string
+                      description: App Version
+                    registrationSource:
+                      type: string
+                      description: Registration Source
+
+                  required:
+                    - deviceId
+                    - timestamp
+                    - walletAddress
+                    - publicKey
+                    - sign
+                    - os
+                    - appVersion
+                    - recentTransaction
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          token:
+                            type: string
+                            description: Login token
+                          expiryTime:
+                            type: string
+                            format: date-time
+                            description: Token expiry time
+                          lastLoginTime:
+                            type: string
+                            format: date-time
+                            description: Last login time
+                          status:
+                            type: integer
+                            description: Account status
+                          lastModifiedDate:
+                            type: string
+                            format: date-time
+                            description: Last modified date
+                          mnemonic:
+                            type: string
+                            description: Mnemonic encrypted with user public key
+                          walletAddress:
+                            type: string
+                            description: Wallet address
+                          mainnetWalletAddress:
+                            type: string
+                            description: Mainnet wallet address
+                          ownerWalletAddress:
+                            type: string
+                            description: Owner wallet address
+                          isMetaMaskUser:
+                            type: boolean
+                            description: Whether this is decentralized user
+
+  /user/refreshToken:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: Extend Login token expiry time if the token is not expired
+      operationId: refershToken
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          token:
+                            type: string
+                            description: Login token
+                          expiryTime:
+                            type: string
+                            format: date-time
+                            description: Token expiry time
+  /user/signTransaction:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: Sign transaction that invoke UserWallet smart contract
+      operationId: signTransaction
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    value:
+                      type: string
+                      description: Send value in number string, can be empty string if no value send
+                    gasPrice:
+                      type: integer
+                      format: int64
+                      description: Gas price
+                    inputFunction:
+                      type: string
+                      format: hex string
+                      description: Function call with method ID and input argument , by ABI encode byte array
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          signedTx:
+                            type: string
+                            description: hex string
+  /user/clientVersion:
+    get:
+      tags:
+        - user
+      summary: Get the latest client version
+      operationId: clientVersion
+
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        items:
+                          properties:
+                            iPhoneMinimumVersion:
+                              type: string
+                              description: iPhone minimum supported version
+
+                            androidMinimumVersion:
+                              type: string
+                              description: Android minimum version number
+  /user/serverConfig:
+    get:
+      tags:
+        - user
+      summary: Get the system server config
+      operationId: serverConfig
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          properties:
+                            eurusRPCDomain:
+                              type: string
+                              format: Eurus RPC Domain
+                              description: Eurus RPC domain name
+                            eurusRPCPort:
+                              type: integer
+                              format: int32
+                              description: Eurus RPC port
+                            eurusRPCProtocol:
+                              type: string
+                              description: RPC protocol eg. http
+                            eurusChainId:
+                              type: integer
+                              format: int32
+                              description: Eurus chain ID
+                            mainnetRPCDomain:
+                              type: string
+                              format: Eurus RPC Domain
+                              description: mainnet/rinkeby RPC domain name
+                            mainnetRPCPort:
+                              type: integer
+                              format: int32
+                              description: mainnet/rinkeby RPC port
+                            mainnetRPCProtocol:
+                              type: string
+                              description: RPC protocal eg. http
+                            mainnetChainId:
+                              type: integer
+                              format: int32
+                              description: mainnet/rinkeby chain ID
+                            externalSmartContractAddress:
+                              type: string
+                              format: address
+                              description: Eurus external smart contract config address
+                            eurusInternalConfigAddress:
+                              type: string
+                              format: address
+                              description: mainnet/rinkeby smart contract config
+
+  /user/details:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - user
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          username:
+                            type: string
+                            description: User name
+                          email:
+                            type: string
+                            format: email
+                            description: Email
+                          isMetaMask:
+                            type: boolean
+                            description: Is MetaMask account
+                          kycStatus:
+                            type: integer
+                            description: KYC status
+                          wallet_address:
+                            type: string
+                            format: address
+                            description: Eurus wallet address
+                          mainnet_wallet_address:
+                            type: string
+                            format: address
+                            description: Mainnet wallet address
+                          status:
+                            type: integer
+                            description: Account status
+                        required:
+                          - username
+                          - email
+                          - isMetaMask
+
+  /user/storage:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    get:
+      summary: Get the storage data in DB
+      tags:
+        - user
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    platform:
+                      type: integer
+                      description: Mobile App or Mobile
+                  required:
+                    - platform
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          userId:
+                            type: integer
+                            description: user id
+                          platform:
+                            type: integer
+                            description: Mobile App or Mobile
+                          storage:
+                            type: string
+                            description: Store in Db records
+                          sequence:
+                            type: integer
+                            description: Change time
+
+                        required:
+                          - platform
+    post:
+      tags:
+        - user
+      summary: Set/Update the storage data in DB
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    userId:
+                      type: integer
+                      description: user id
+                    platform:
+                      type: integer
+                      description: Mobile App or Mobile
+                    storage:
+                      type: string
+                      description: Store in Db records
+                    sequence:
+                      type: integer
+                      description: Change time
+                  required:
+                    - userId
+                    - platform
+                    - storage
+                    - sequence
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          sequence:
+                            type: integer
+                            description: change times
+
+                        required:
+                          - sequence
+
+  /user/friend:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: Add friend
+      operationId: addFriend
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    email:
+                      type: string
+                      description: friend email
+                    username:
+                      type: string
+                      description: friend username
+                    walletAddress:
+                      type: string
+                      format: address
+                      description: friend wallet address
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+    get:
+      tags:
+        - user
+      summary: Get friend list
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            walletAddress:
+                              type: string
+                              description: Friend wallet address
+                            username:
+                              type: string
+                              description: Friend username (maybe empty)
+                            email:
+                              type: string
+                              format: email
+                              description: Friend email
+                            nickName:
+                              type: string
+                              description: Nick name
+  /user/friend/{walletAddress}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: walletAddress
+        description: Friend wallet address
+        schema:
+          type: string
+        required: true
+    put:
+      tags:
+        - user
+      summary: Update friend nick name
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    nickName:
+                      type: string
+                      description: Friend nick name
+                  required:
+                    - nickName
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+    delete:
+      tags:
+        - user
+      summary: Delete a friend
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /user/changeLoginPassword:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: Change login password
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    oldLoginAddress:
+                      type: string
+                    loginAddress:
+                      type: string
+                    timestamp:
+                      type: integer
+                      format: int32
+                      description: Current unix timestamp
+                    deviceId:
+                      type: string
+                      description: Device ID
+                    sign:
+                      type: string
+                      description: signature.
+                    oldSign:
+                      type: string
+                      description: old signature.
+                    publicKey:
+                      type: string
+                      description: public key, in uncompressed format (66 bytes)
+                    oldPublicKey:
+                      type: string
+                      description: old public key, in uncompressed format (66 bytes)
+                    isPersonalSign:
+                      type: boolean
+                      description: Use personal sign  
+                  required:
+                    #   - oldPassword
+                    #   - newPassword
+                    - oldLoginAddress
+                    - loginAddress
+                    - timestamp
+                    - deviceId
+                    - sign
+                    - oldSign
+                    - publicKey
+                    - oldPublicKey
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /user/changePaymentPassword:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: Change payment password
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    oldOwnerWalletAddress:
+                      type: string
+                    ownerWalletAddress:
+                      type: string
+                    timestamp:
+                      type: integer
+                      format: int32
+                      description: Current unix timestamp
+                    deviceId:
+                      type: string
+                      description: Device ID
+                    sign:
+                      type: string
+                      description: signature.
+                    oldSign:
+                      type: string
+                      description: old signature.
+                    publicKey:
+                      type: string
+                      description: public key, in uncompressed format (66 bytes)
+                    oldPublicKey:
+                      type: string
+                      description: old public key, in uncompressed format (66 bytes)
+                    isPersonalSign:
+                      type: boolean
+                      description: Use personal sign 
+                  required:
+                    #   - oldPassword
+                    #   - newPassword
+                    - oldOwnerWalletAddress
+                    - ownerWalletAddress
+                    - timestamp
+                    - deviceId
+                    - sign
+                    - oldSign
+                    - publicKey
+                    - oldPublicKey
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+  /user/registerDevice:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: Request to register a new device for user
+      operationId: registerDevice
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+  /user/verifyDevice:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: Provide the correct verification code to register new device
+      operationId: verifyDevice
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    code:
+                      type: string
+                      description: verification code
+                    deviceId:
+                      type: string
+                      description: device id
+                    publicKey:
+                      type: string
+                      description: user-provided RSA public key, base64 encoded
+                  required:
+                    - code
+                    - deviceId
+                    - publicKey
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          mnemonic:
+                            type: string
+                            description: encrypted mnemonic phrase
+  /user/recentTransaction:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: lastest user transaction records for last n days
+      operationId: recentTransaction
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    currencySymbol:
+                      type: string
+
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          decimal:
+                            type: integer
+                            format: int32
+                            description: Amount decimal point
+                          transList:
+                            type: array
+                            items:
+                              anyOf:
+                                - type: object
+                                  properties:
+                                    transType:
+                                      type: integer
+                                      format: int32
+                                      description: transaction type (1 => transfer, 2 => deposit, 3 => withdraw)
+                                    transDate:
+                                      type: integer
+                                      format: int64
+                                      description: transaction date time in UNIX timestamp
+                                    txHash:
+                                      type: string
+                                      description: transaction hash
+                                    status:
+                                      type: integer
+                                      format: int32
+                                      description: transaction status (10 => waiting from confirmation (for centralized user only); 50 => transferred; -10 => error submitting (for centralized user only); -50 => error confirming)
+                                    remarks:
+                                      type: string
+                                      description: error message if the transaction is failed
+                                    isSend:
+                                      type: boolean
+                                      description: true => transaction send to others
+                                    fromAddress:
+                                      type: string
+                                      format: address
+                                      description: Source wallet address
+                                    toAddress:
+                                      type: string
+                                      format: address
+                                      description: Destination address
+                                    amount:
+                                      type: integer
+                                      format: int64
+                                      description: Transfer amount
+                                    gasUsed:
+                                      type: integer
+                                      format: int64
+                                      description: Gas used by user
+                                    gasPrice:
+                                      type: integer
+                                      format: int64
+                                      description: Gas price
+                                - type: object
+                                  properties:
+                                    transType:
+                                      type: integer
+                                      format: int32
+                                      description: transaction type (2 => deposit)
+                                    amount:
+                                      type: integer
+                                      format: int64
+                                      description: Deposit amount
+                                    status:
+                                      type: integer
+                                      format: int32
+                                      description: Deposit status
+                                        DepositError = - (status),
+                                        DepositReceiptCollected = 10,
+                                        DepositAssetCollected = 20,
+                                        DepositMintConfirming = 30,
+                                        DepositCompleted = 40,
+                                    fromAddress:
+                                      type: string
+                                      format: address
+                                      description: Deposit source address
+                                    toAddress:
+                                      type: string
+                                      format: address
+                                      description: to address at mainnet
+                                    destAddress:
+                                      type: string
+                                      format: address
+                                      description: target address at sidechain
+                                    chainLocation:
+                                      type: integer
+                                      format: int32
+                                      description: chain location for the txHash ( 1 - sidechain , 2 - mainnet)
+                                    txHash:
+                                      type: string
+                                      description: Transaction hash
+                                    mintTransId:
+                                      type: integer
+                                      format: int64
+                                      description: Mint transId (Optional) only exist at state 2, 3
+                                    remarks:
+                                      type: string
+                                      description: Error description (Optional) only exists at state -1
+                                    transDate:
+                                      type: integer
+                                      format: int64
+                                      description: trans date
+                                    depositTxHash:
+                                      type: string
+                                      description: Identifier of deposit transaction
+                                - type: object
+                                  properties:
+                                    transType:
+                                      type: integer
+                                      format: int32
+                                      description: transaction type (3 => withdraw)
+                                    status:
+                                      type: integer
+                                      format: int32
+                                      description: Withdraw status
+                                        StatusError WithdrawStatus =  - (status)
+                                        StatusPendingApproval = 10
+                                        StatusApproved = 20
+                                        StatusRejected = 30
+                                        StatusBurnConfirming = 40
+                                        StatusBurned = 50
+                                        StatusCompleted = 60
+                                    fromAddress:
+                                      type: string
+                                      format: address
+                                      description: Side chain source address
+                                    toAddress:
+                                      type: string
+                                      format: address
+                                      description: Side chain destination address
+                                    targetAddress:
+                                      type: string
+                                      format: address
+                                      description: Mainnet destination address
+                                    chainLocation:
+                                      type: integer
+                                      format: int32
+                                      description: txHash chain location ( 1 - sidechain , 2 - mainnet)
+                                    txHash:
+                                      type: string
+                                      description: Transaction hash
+                                    requestTransId:
+                                      type: integer
+                                      format: int64
+                                      description: Withdraw request transId (Optional) exists at state 0, 1, 2
+                                    burnTransId:
+                                      type: integer
+                                      format: int64
+                                      description: Burn transid (Optional) exists at state 3, 4
+                                    remarks:
+                                      type: string
+                                      description: Error description (Optional) only exists at state -1
+                                    transDate:
+                                      type: integer
+                                      format: int64
+                                      description: trans date
+                                    withdrawTxHash:
+                                      type: string
+                                      description: Identifier of withdraw transaction
+  /user/withdrawAdminFee/{currencySymbol}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: currencySymbol
+        description: Currency name
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - user
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          currency:
+                            type: string
+                            description: Currency name
+                          fee:
+                            type: integer
+                            format: int64
+                            description: Withdraw fee
+                          decimal:
+                            type: integer
+                            format: int32
+                            description: Withdraw fee decimal
+                        required:
+                          - currency
+                          - fee
+                          - decimal
+
+  /user/forgetLoginPassword:
+    post:
+      tags:
+        - user
+      summary: forget login address
+      operationId: forgetLoginPassword
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    email:
+                      type: string
+                  required:
+                    - email
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                $ref: "#/components/schemas/GeneralResponse"
+
+  /user/verifyForgetLoginPassword:
+    post:
+      tags:
+        - user
+      summary: verify forget login password token
+      operationId: verifyForgetLoginPassword
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    userId:
+                      type: integer
+                      description: user id
+                    code:
+                      type: string
+                      description: verification code
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        properties:
+                          token:
+                            type: string
+                            description: reset login password Token
+
+  /user/resetLoginPassword:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: reset login password
+      operationId: resetLoginPassword
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    timestamp:
+                      type: integer
+                      format: int32
+                      description: Current unix timestamp
+                    deviceId:
+                      type: string
+                      description: Device ID
+                    loginAddress:
+                      type: string
+                      description: Login Address.
+                      minimum: 3
+                      maximum: 20
+                    isPersonalSign:
+                      type: boolean
+                      description: Use personal sign
+                    sign:
+                      type: string
+                      description: signature.
+                    publicKey:
+                      type: string
+                      description: publicKey.
+                  required:
+                    - timestamp
+                    - deviceId
+                    - loginAddress
+                    - sign
+                    - publicKey
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+
+  /user/forgetPaymentPassword:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: forget payment address
+      operationId: forgetPaymentAddress
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                $ref: "#/components/schemas/GeneralResponse"
+
+  /user/verifyForgetPaymentPassword:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: verify forget payment password token and generate new mnemonic
+      operationId: verifyForgetPaymentPassword
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    code:
+                      type: string
+                      description: verification code
+                    deviceId:
+                      type: string
+                      description: device id in table user_devices
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        properties:
+                          token:
+                            type: string
+                            description: reset payment password Token
+                          mnemonic:
+                            type: string
+                            description: encrypted plain text mnemonic by user' s public key in RA Format
+
+  /user/resetPaymentPassword:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+      summary: reset login password
+      operationId: resetPaymentPassword
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    timestamp:
+                      type: integer
+                      format: int32
+                      description: Current unix timestamp
+                    deviceId:
+                      type: string
+                      description: Device ID
+                    ownerWalletAddress:
+                      type: string
+                      description: ownerWalletAddress.
+                      minimum: 3
+                      maximum: 20
+                    isPersonalSign:
+                      type: boolean
+                      description: Use personal sign
+                    sign:
+                      type: string
+                      description: signature.
+                    publicKey:
+                      type: string
+                      description: publicKey.
+                  required:
+                    - timestamp
+                    - deviceId
+                    - ownerWalletAddress
+                    - sign
+                    - publicKey
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+
+
+  /user/kyc/getKycCountryList:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - user
+        - kyc
+      summary: Get country code list for kyc verification, This request will finally send request to KYC Server' s API [kyc/user/getKYCCountryList]
+      operationId: /user/kyc/getKycCountryList
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                              example: AF
+                              description: Primary Key - 'Two-letter country code (ISO 3166-1 alpha-2)'
+                            name:
+                              type: string
+                              example: Afghanistan
+                              description: English country name
+                            full_name:
+                              type: string
+                              example: Islamic Republic of Afghanistan
+                              description: Full English country name
+                            iso3:
+                              type: string
+                              example: AFG
+                              description: Three-letter country code (ISO 3166-1 alpha-3)
+                            number:
+                              type: string
+                              example: "004"
+                              description: Three-digit country number (ISO 3166-1 numeric)
+                            continent_code:
+                              type: string
+                              example: AS
+                              description: Which dontinent this country in
+
+  /user/kyc/getKYCStatusOfUser:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - user
+      summary: Request for the KYC approval status for a specific user (One User), called from userServer
+      operationId: getKYCStatusOfUser
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                            description: Primary Key - user_kyc_status.id'
+                          user_id:
+                            type: integer
+                            example: 1
+                            description: The user id of the one who is KYC(ing)
+                          kyc_level:
+                            type: integer
+                            example: 0
+                            description: The kyc level, 0 means normal user, 1 means kyc by identity card or password, 2 means kyc by selfie (must satisfy previous level first)
+                          approval_date:
+                            type: string
+                            format: date-time
+                            example: "2020-02-02"
+                            description: The approval date of this user kyc status
+                          operator_id:
+                            type: integer
+                            example: 1
+                            description: The user id of who approve this user kyc status
+                          kyc_retry_count:
+                            type: string
+                            example: 1
+                            description: How many time this kyc user submit the kyc approval request
+                          kyc_country_code:
+                            type: string
+                            example: AF
+                            description: The country code of this user
+                          created_date:
+                            type: string
+                            format: date-time
+                            example: "2020-04-02"
+                            description: The create date of this user_kyc_status record
+                          last_modified_date:
+                            type: string
+                            format: date-time
+                            example: "2020-04-02"
+                            description: The last modify date of this user_kyc_status record
+                          kyc_status:
+                            type: integer
+                            example: 0
+                            description: "(0)pending | (1)waiting for approval | (2)waiting for resubmit | (3)approved | (4)rejected"
+                          kyc_doc:
+                            type: integer
+                            example: 0
+                            description: "(0)ID Card | (1)Passport"
+                          images:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                user_kyc_id:
+                                  type: integer
+                                  example: 1
+                                  description: Primary Key - user_kyc_status.id, foreign key'
+                                doc_type:
+                                  type: integer
+                                  example: 0
+                                  description: "Indicates what image this record represents, (0)idFront | (1)idBack | (2)passport | (3)approved | (4)selfie"
+                                image_seq:
+                                  type: integer
+                                  example: 0
+                                  description: "Indicates how many time this image had been submited, for 1st submit, this image_seq would be 1"
+                                status:
+                                  type: integer
+                                  example: 0
+                                  description: "Indicates what image this record represents, (0)received | (1)uploaded | (2)approved | (3)rejected "
+                                image_path:
+                                  type: string
+                                  example: "abcdefg/asdjslj/sfakljflkasf.jpeg"
+                                  description: The actual image path of this record
+                                created_date:
+                                  type: string
+                                  format: date-time
+                                  example: "2020-04-02"
+                                  description: The create date of this user_kyc_status record
+                                last_modified_date:
+                                  type: string
+                                  format: date-time
+                                  example: "2020-04-02"
+                                  description: The last modify date of this user_kyc_status record
+                                reject_reason:
+                                  type: string
+                                  example: Unclear resolution
+                                  description: The reject reason entered by KYC admin when reject the image
+                                operator_id:
+                                  type: string
+                                  example: "dalek"
+                                  description: The user id of who approve/reject this user_kyc_images
+
+
+  #######################################   User   #############################################
+  #######################################   KYC   ############################################
+
+  /kyc/user/getKycCountryList:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - user
+        - kyc
+      summary: Get country code list for kyc verification
+      operationId: getKycCountryList
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                              example: AF
+                              description: Primary Key - 'Two-letter country code (ISO 3166-1 alpha-2)'
+                            name:
+                              type: string
+                              example: Afghanistan
+                              description: English country name
+                            full_name:
+                              type: string
+                              example: Islamic Republic of Afghanistan
+                              description: Full English country name
+                            iso3:
+                              type: string
+                              example: AFG
+                              description: Three-letter country code (ISO 3166-1 alpha-3)
+                            number:
+                              type: string
+                              example: "004"
+                              description: Three-digit country number (ISO 3166-1 numeric)
+                            continent_code:
+                              type: string
+                              example: AS
+                              description: Which dontinent this country in
+
+  /kyc/user/createKYCStatus:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+        - kyc
+      summary:
+        Request for an KYC verification, this api will send request from User server, when user server receive the request, it will send request
+        to KYC server to insert an record to table [user_kyc_status].
+        Record in [user_kyc_status] will represent the user kyc status (KYC= know your customer)
+        By default, kyc_level is 0.
+        kycDoc should be (0)Identity Card or (1)Passport for KYC
+      operationId: requestKYC
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    kycCountryCode:
+                      type: string
+                      example: AF
+                      description: country code in table[kyc_country_codes]
+                    kycDoc:
+                      type: integer
+                      example: 1ß
+                      description: (0)Identity Card  (1)Passport for KYC
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                            description: Primary Key - table [user_kyc_status] id
+
+  /kyc/user/submitKYCDocument:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - user
+        - kyc
+      summary:
+        Request to upload kyc document, this API should be called after requestKYC(success response). The API will use form data to
+        upload image of an KYC document one by one. When User server receive request of submitKYCDocument, User server will send
+        a request to KYC Server, KYC Server will then send request to Amazon S3 to save image, upon success upload to Amazon S3,
+        KYC server will insert record in table [user_kyc_images]. The communication between User Server to KYC Server is via RabbitMQ
+      operationId: submitKYCDocument
+      requestBody:
+        content:
+          "multipart/form-data":
+            schema:
+              type: object
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                      description: id in [user_kyc_status], should be returned by /user/kyc/requestKYC
+                    docType:
+                      type: integer
+                      description: (0)idFront, (1)idBack, (2)passport, (3)selfie
+                    imageData:
+                      type: string
+                      format: binary
+                      description: The image file
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                $ref: "#/components/schemas/GeneralResponse"
+
+  /kyc/user/getKYCStatusOfUser:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - kyc
+      summary: Request for the KYC approval status for a specific user (One User)
+      operationId: getKYCStatusOfUser
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    userId:
+                      type: integer
+                      example: 1
+                      description: id in [users], should be returned by /user/kyc/getKYCStatusOfUser
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                            description: Primary Key - user_kyc_status.id'
+                          user_id:
+                            type: integer
+                            example: 1
+                            description: The user id of the one who is KYC(ing)
+                          kyc_level:
+                            type: integer
+                            example: 0
+                            description: The kyc level, 0 means normal user, 1 means kyc by identity card or password, 2 means kyc by selfie (must satisfy previous level first)
+                          approval_date:
+                            type: string
+                            format: date-time
+                            example: "2020-02-02"
+                            description: The approval date of this user kyc status
+                          operator_id:
+                            type: integer
+                            example: 1
+                            description: The user id of who approve this user kyc status
+                          kyc_retry_count:
+                            type: string
+                            example: 1
+                            description: How many time this kyc user submit the kyc approval request
+                          kyc_country_code:
+                            type: string
+                            example: AF
+                            description: The country code of this user
+                          created_date:
+                            type: string
+                            format: date-time
+                            example: "2020-04-02"
+                            description: The create date of this user_kyc_status record
+                          last_modified_date:
+                            type: string
+                            format: date-time
+                            example: "2020-04-02"
+                            description: The last modify date of this user_kyc_status record
+                          kyc_status:
+                            type: integer
+                            example: 0
+                            description: "(0)pending | (1)waiting for approval | (2)waiting for resubmit | (3)approved | (4)rejected"
+                          kyc_doc:
+                            type: integer
+                            example: 0
+                            description: "(0)ID Card | (1)Passport"
+                          images:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                user_kyc_id:
+                                  type: integer
+                                  example: 1
+                                  description: Primary Key - user_kyc_status.id, foreign key'
+                                doc_type:
+                                  type: integer
+                                  example: 0
+                                  description: "Indicates what image this record represents, (0)idFront | (1)idBack | (2)passport | (3)approved | (4)selfie"
+                                image_seq:
+                                  type: integer
+                                  example: 0
+                                  description: "Indicates how many time this image had been submited, for 1st submit, this image_seq would be 1"
+                                status:
+                                  type: integer
+                                  example: 0
+                                  description: "Indicates what image this record represents, (0)received | (1)uploaded | (2)approved | (3)rejected "
+                                image_path:
+                                  type: string
+                                  example: "abcdefg/asdjslj/sfakljflkasf.jpeg"
+                                  description: The actual image path of this record
+                                created_date:
+                                  type: string
+                                  format: date-time
+                                  example: "2020-04-02"
+                                  description: The create date of this user_kyc_status record
+                                last_modified_date:
+                                  type: string
+                                  format: date-time
+                                  example: "2020-04-02"
+                                  description: The last modify date of this user_kyc_status record
+                                reject_reason:
+                                  type: string
+                                  example: Unclear resolution
+                                  description: The reject reason entered by KYC admin when reject the image
+                                operator_id:
+                                  type: string
+                                  example: "dalek"
+                                  description: The user id of who approve/reject this user_kyc_images
+
+  /kyc/admin/getKYCStatusList:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - kyc
+      summary: Request for the KYC approval status list of all users (KYC admin console)
+      operationId: getKYCStatusList
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                    kyc_status:
+                      type: integer
+                      example: 1
+                      description: "(0)pending | (1)waiting for approval | (2)waiting for resubmit | (3)approved | (4)rejected"
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                              description: Primary Key - user_kyc_status.id'
+                            user_id:
+                              type: integer
+                              example: 1
+                              description: The user id of the one who is KYC(ing)
+                            kyc_level:
+                              type: integer
+                              example: 0
+                              description: The kyc level, 0 means normal user, 1 means kyc by identity card or password, 2 means kyc by selfie (must satisfy previous level first)
+                            approval_date:
+                              type: string
+                              format: date-time
+                              example: "2020-02-02"
+                              description: The approval date of this user kyc status
+                            operator_id:
+                              type: integer
+                              example: 1
+                              description: The user id of who approve this user kyc status
+                            kyc_retry_count:
+                              type: string
+                              example: 1
+                              description: How many time this kyc user submit the kyc approval request
+                            kyc_country_code:
+                              type: string
+                              example: AF
+                              description: The country code of this user
+                            created_date:
+                              type: string
+                              format: date-time
+                              example: "2020-04-02"
+                              description: The create date of this user_kyc_status record
+                            last_modified_date:
+                              type: string
+                              format: date-time
+                              example: "2020-04-02"
+                              description: The last modify date of this user_kyc_status record
+                            kyc_status:
+                              type: integer
+                              example: 0
+                              description: "(0)pending | (1)waiting for approval | (2)waiting for resubmit | (3)approved | (4)rejected"
+                            kyc_doc:
+                              type: integer
+                              example: 0
+                              description: "(0)ID Card | (1)Passport"
+                            images:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  user_kyc_id:
+                                    type: integer
+                                    example: 1
+                                    description: Primary Key - user_kyc_status.id, foreign key'
+                                  doc_type:
+                                    type: integer
+                                    example: 0
+                                    description: "Indicates what image this record represents, (0)idFront | (1)idBack | (2)passport | (3)approved | (4)selfie"
+                                  image_seq:
+                                    type: integer
+                                    example: 0
+                                    description: "Indicates how many time this image had been submited, for 1st submit, this image_seq would be 1"
+                                  status:
+                                    type: integer
+                                    example: 0
+                                    description: "Indicates what image this record represents, (0)received | (1)uploaded | (2)approved | (3)rejected "
+                                  image_path:
+                                    type: string
+                                    example: "abcdefg/asdjslj/sfakljflkasf.jpeg"
+                                    description: The actual image path of this record
+                                  created_date:
+                                    type: string
+                                    format: date-time
+                                    example: "2020-04-02"
+                                    description: The create date of this user_kyc_status record
+                                  last_modified_date:
+                                    type: string
+                                    format: date-time
+                                    example: "2020-04-02"
+                                    description: The last modify date of this user_kyc_status record
+                                  reject_reason:
+                                    type: string
+                                    example: Unclear resolution
+                                    description: The reject reason entered by KYC admin when reject the image
+                                  operator_id:
+                                    type: string
+                                    example: "dalek"
+                                    description: The user id of who approve/reject this user_kyc_images
+
+  /kyc/admin/updateKYCStatus/{kycId}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kycId
+        description: user_kyc_status
+        example: 1
+        schema:
+          type: integer
+        required: true
+    put:
+      tags:
+        - admin
+        - kyc
+      summary: Request to update all user_kyc_images, if all user_kyc_images is approved, then user_kyc_status should be changed as well. (2)approved (3)rejected
+      operationId: updateKYCStatus
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+                  properties:
+                            images:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  user_kyc_id:
+                                    type: integer
+                                    example: 1
+                                    description: Primary Key - user_kyc_status.id, foreign key'
+                                  doc_type:
+                                    type: integer
+                                    example: 0
+                                    description: "Indicates what image this record represents, (0)idFront | (1)idBack | (2)passport | (3)approved | (4)selfie"
+                                  image_seq:
+                                    type: integer
+                                    example: 0
+                                    description: "Indicates how many time this image had been submited, for 1st submit, this image_seq would be 1"
+                                  status:
+                                    type: integer
+                                    example: 0
+                                    description: "Indicates what image this record represents, (0)received | (1)uploaded | (2)approved | (3)rejected "
+                                  image_path:
+                                    type: string
+                                    example: "abcdefg/asdjslj/sfakljflkasf.jpeg"
+                                    description: The actual image path of this record
+                                  created_date:
+                                    type: string
+                                    format: date-time
+                                    example: "2020-04-02"
+                                    description: The create date of this user_kyc_status record
+                                  last_modified_date:
+                                    type: string
+                                    format: date-time
+                                    example: "2020-04-02"
+                                    description: The last modify date of this user_kyc_status record
+                                  reject_reason:
+                                    type: string
+                                    example: Unclear resolution
+                                    description: The reject reason entered by KYC admin when reject the image
+                                  operator_id:
+                                    type: string
+                                    example: "dalek"
+                                    description: The user id of who approve/reject this user_kyc_images
+
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+  
+  /kyc/admin/resetKYCStatus/{kycId}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjY2OTI5NzUsImlzcyI6IkV1cnVzQXV0aCIsIm5iZiI6MTYyNjY4NTc3NSwiY2xpZW50SW5mbyI6IntcIkNsaWVudEluZm9cIjpcIntcXFwibG9naW5BZGRyZXNzXFxcIjpcXFwiMHg5OGFlMWMyOTY4ODJkNDc1ZmQ3YjUxNGZhNzIzNjk1YWUyZTU1MGY1XFxcIixcXFwidXNlcklkXFxcIjo0MzN9XCIsXCJTZXJ2aWNlSWRcIjowfSJ9.O9NM5sCF76eOsRxhIEzhx-5N9Z0IVYKfb4xAlsWspV4
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kycId
+        description: user_kyc_status
+        example: 1
+        schema:
+          type: integer
+        required: true
+    put:
+      tags:
+        - admin
+        - kyc
+      summary: Request to reset kyc status, upon successful request. user_kyc_status.kyc_status will be reset (kyc_status=0, kyc_retry_count=0), 
+      operationId: resetKYCStatus
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  description: Any one of
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+    #######################################   KYC   ############################################
+    #######################################   Admin   ############################################
+  /admin/login:
+    post:
+      tags:
+        - admin
+        - kyc
+      summary: Admin login
+      operationId: adminLogin
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    username:
+                      type: string
+                      description: Admin username
+                    password:
+                      type: string
+                      format: password
+                      description: Hashed Admin password
+                  required:
+                    - username
+                    - password
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          loginToken:
+                            type: string
+                            description: Login token
+                          expiryTime:
+                            type: string
+                            format: date-time
+                            description: Token expiry timestamp
+
+  /admin/merchant:
+    post:
+      tags:
+        - admin
+      summary: Create a merchant account. Merchant need to change his username and password when first login the system
+      operationId: createMerchant
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    username:
+                      type: string
+                      description: Merchant user name
+                    password:
+                      type: string
+                      description: First time password
+                    email:
+                      type: string
+                      description: Admin email
+                    merchantName:
+                      type: string
+                      description: Merchant name
+                    callbackUrl:
+                      type: string
+                      format: url
+                      description: Merchant callback URL
+                  required:
+                    - username
+                    - merchantName
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          merchantId:
+                            type: integer
+                            format: int64
+                            description: Merchant Id
+                        required:
+                          - merchantId
+    get:
+      tags:
+        - admin
+      summary: Query merchant list
+      operationId: merchantList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            merchantId:
+                              type: integer
+                              format: int64
+                              description: Merchant id
+                            merchantName:
+                              type: string
+                              description: Merchant name
+                          required:
+                            - merchantId
+                            - merchantName
+
+  /admin/merchant/{merchantId}:
+    get:
+      tags:
+        - admin
+      summary: Merchant details
+      operationId: merchantDetails
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - name: merchantId
+          description: Merchant Id
+          schema:
+            type: integer
+          in: path
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          merchantName:
+                            type: string
+                            description: Merchant name
+                          walletAddress:
+                            type: string
+                            format: address
+                            description: Merchant Eurus wallet address
+                          hotWalletAddress:
+                            type: string
+                            format: address
+                            description: Merchant mainnet wallet address
+                          callbackUrl:
+                            type: string
+                            format: url
+                            description: callback url
+                          updatedBy:
+                            type: string
+                            description: updated by
+                          merchantAdminList:
+                            type: array
+                            items:
+                              $ref: "#/components/schemas/MerchantAdmin"
+
+  /admin/subAdmin:
+    post:
+      tags:
+        - admin
+      summary: Create a subadmin account.
+      operationId: createSubAdmin
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    username:
+                      type: string
+                      description: Admin username
+                    password:
+                      type: string
+                      format: password
+                      description: Password
+                    roleList:
+                      type: array
+                      items:
+                        type: integer
+                        description: role ID
+                  required:
+                    - username
+                    - password
+                    - roleList
+
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+    get:
+      tags:
+        - admin
+      summary: Get sub admin account list.
+      operationId: subAdminList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            adminId:
+                              type: integer
+                              format: int64
+                              description: Admin ID
+                            username:
+                              type: string
+                              description: Admin username
+                            roleList:
+                              type: array
+                              description: Role list
+                              items:
+                                type: integer
+                                description: Role ID
+
+  /admin/subAdmin/{adminId}:
+    delete:
+      summary: Delete sub admin account (Cannot delete self sub admin account nor master admin account)
+      tags:
+        - admin
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - name: adminId
+          schema:
+            type: integer
+          in: path
+          description: Admin ID
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /admin/subAdmin/role/{adminId}:
+    put:
+      tags:
+        - admin
+      summary: Update sub admin account roles (Cannot update self sub admin account).
+      operationId: subAdminList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - name: adminId
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: Admin ID
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    password:
+                      type: string
+                      format: password
+                      description: Password
+                    roleList:
+                      type: array
+                      items:
+                        type: integer
+                        description: role ID
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /admin/subAdmin/password/{adminId}:
+    put:
+      tags:
+        - admin
+      summary: Update sub admin account password.
+      operationId: subAdminList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - name: adminId
+          in: path
+          schema:
+            type: integer
+          description: If adminId = 0, update self password
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    oldPassword:
+                      type: string
+                      format: password
+                      description: If adminId = 0, this is the old password; otherwise, no need to send this field
+                    password:
+                      type: string
+                      format: password
+                      description: New password
+                  required:
+                    - password
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /admin/subAdmin/status/{adminId}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+      - name: adminId
+        in: path
+        schema:
+          type: integer
+        required: true
+    put:
+      tags:
+        - admin
+      summary: Update sub admin account status (Cannot update self account nor master admin account)
+      operationId: subAdminList
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    status:
+                      type: integer
+                      format: int32
+                      description: 0 - disabled; 1 -  enabled
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /admin/permission:
+    get:
+      tags:
+        - admin
+      summary: Get permission list
+      operationId: permission
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Permission"
+  /admin/role:
+    get:
+      tags:
+        - admin
+      summary: Get role list
+      operationId: roleList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            roleId:
+                              type: integer
+                              format: int64
+                              description: Role ID
+                            roleName:
+                              type: string
+                              description: Role name
+  /admin/role/{roleId}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+      - name: roleId
+        in: path
+        schema:
+          type: integer
+          format: int64
+        description: Role ID
+        required: true
+    get:
+      tags:
+        - admin
+      summary: Get role details
+      operationId: role
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          roleId:
+                            type: integer
+                            format: int64
+                            description: Role ID
+                          roleName:
+                            type: string
+                            description: Role name
+                          description:
+                            type: string
+                            description: Role description
+                          createdBy:
+                            type: string
+                            description: Create by
+                          permissionList:
+                            type: array
+                            items:
+                              type: integer
+                              format: int64
+                              description: Permission ID for this role
+
+    put:
+      tags:
+        - admin
+      summary: Update a role permission
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    roleId:
+                      type: integer
+                      format: int64
+                      description: Role ID
+                    roleName:
+                      type: string
+                      description: Role name
+                    permissionList:
+                      type: array
+                      items:
+                        type: integer
+                        format: int64
+                        description: Permission ID to updated. Empty list means no permission for this role
+                  required:
+                    - roleId
+                    - permissionList
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+    delete:
+      tags:
+        - admin
+      summary: Delete a role
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /admin/pendingWithdraw:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - admin
+      summary: Query pending withdraw list
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: array
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            pendingId:
+                              type: integer
+                              format: int64
+                              description: Pending queue Id
+                            merchantId:
+                              type: integer
+                              description: Merchant Id
+                            merchantName:
+                              type: string
+                              description: merchant name
+                            fromWalletAddress:
+                              type: string
+                              description: Merchant Eurus wallet address
+                            targetWalletAddress:
+                              type: string
+                              description: Merchant Mainnet wallet address
+                            createDate:
+                              type: string
+                              format: date-time
+                              description: Create date in UTC 0
+                            status:
+                              type: integer
+                              description: Current status
+  /admin/pendingWithdraw/{pendingWithdrawId}:
+    put:
+      tags:
+        - admin
+      summary: Approve or reject a withdraw request
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: pendingWithdrawId
+          description: Pending withdraw ID
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    answer:
+                      type: integer
+                      description: 1 - approve, 2 - reject
+                  required:
+                    - answer
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /admin/pendingWithdrawHistory:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - admin
+      summary: Query pending approval history
+      parameters:
+        - in: query
+          name: startDate
+          description: Start date in UTC 0 inclusively
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: endDate
+          description: End date in UTC 0 inclusively
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: merchantId
+          description: Merchant Id
+          schema:
+            type: integer
+          required: false
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /admin/pendingConfirmAPISetting:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    get:
+      tags:
+        - admin
+      summary: Query pending confirm API setting list
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          properties:
+                            pendingConfigId:
+                              type: integer
+                              format: int64
+                            withdrawConfirmUrl:
+                              type: string
+                              format: url
+                            transferConfirmUrl:
+                              type: string
+                              format: url
+                            ipList:
+                              type: array
+                              items:
+                                type: string
+                                description: IP":"port
+                            merchantId:
+                              type: integer
+                              format: int64
+                            submittedUser:
+                              type: string
+                              description: Merchant admin username
+                            status:
+                              type: integer
+                              description: Pending status
+                            createDate:
+                              type: string
+                              format: date-time
+                              description: Create date time in UTC 0
+                            lastModifiedDate:
+                              type: string
+                              format: date-time
+                              description: Last update time
+                            adminUser:
+                              type: string
+                              description: Approve or rejected by
+
+  /admin/pendingConfirmAPISetting/{pendingId}:
+    put:
+      tags:
+        - admin
+      summary: Query pending confirm API setting list
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: pendingId
+          description: Pending ID for update
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+  /admin/server/list:
+    get:
+      tags:
+        - admin
+      summary: Query server list
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            serverId:
+                              type: integer
+                              description: Server Id
+                            serverName:
+                              type: string
+                              description: Server name
+                            address:
+                              type: string
+                              format: hex
+                              description: Server address
+                            eunBalance:
+                              type: integer
+                              description: EUN balance
+                            eunDecimal:
+                              type: integer
+                              description: EUN decimal
+                            ethBalance:
+                              type: integer
+                              description: ETH balance
+                            ethDecimal:
+                              type: integer
+                              description: ETH decimal
+  /admin/fee/withdrawalFee:
+    get:
+      tags:
+        - admin
+      summary: Query withraw admin fee
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            currencyName:
+                              type: string
+                              description: Currency name
+                            amount:
+                              type: integer
+                              format: int64
+                            decimal:
+                              type: integer
+                              format: int32
+    post:
+      summary: Update withdraw fee in ETH
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  #######################################   Admin   ############################################
+  #######################################   Merchant   ############################################
+  /merchant/login:
+    post:
+      tags:
+        - merchant
+      summary: Merchant admin login
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    merchantId:
+                      type: integer
+                      description: Merchant ID
+                    username:
+                      type: string
+                      description: Merchant username
+                    password:
+                      type: string
+                      format: password
+                      description: Password hash
+                  required:
+                    - merchantId
+                    - username
+                    - password
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          loginToken:
+                            type: string
+                            description: Login token
+                          expiryTime:
+                            type: string
+                            format: date-time
+                            description: Token expiry timestamp
+  /merchant/initalizeWallet:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+    post:
+      tags:
+        - merchant
+      summary: Initialize merchant wallet
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    walletWorkflowType:
+                      type: integer
+                      description: TBC
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          walletAddress:
+                            type: string
+                            description: Eurus wallet address
+                          hotWalletAddress:
+                            type: string
+                            description: Mainnet hot wallet address
+  /merchant/subAdmin:
+    post:
+      tags:
+        - merchant
+      summary: Create a merchant subadmin account.
+      operationId: createMerchantSubAdmin
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    username:
+                      type: string
+                      description: Merchant admin username
+                    loginPassword:
+                      type: string
+                      format: password
+                      description: Login password
+                    walletPassword:
+                      type: string
+                      format: password
+                      description: Wallet password
+                    email:
+                      type: string
+                      format: email
+                      description: Email
+                    roleList:
+                      type: array
+                      items:
+                        type: integer
+                        description: role ID
+                  required:
+                    - username
+                    - loginPassword
+                    - walletPassword
+                    - roleList
+
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+    get:
+      tags:
+        - merchant
+      summary: Get merchant sub admin account list.
+      operationId: merchantSubAdminList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            adminId:
+                              type: integer
+                              format: int64
+                              description: Admin ID
+                            username:
+                              type: string
+                              description: Admin username
+                            roleList:
+                              type: array
+                              description: Role list
+                              items:
+                                type: integer
+                                description: Role ID
+
+  /merchant/subAdmin/{merchantAdminId}:
+    delete:
+      summary: Delete merchant sub admin account (Cannot delete self sub admin account nor master admin account)
+      tags:
+        - merchant
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - name: merchantAdminId
+          schema:
+            type: integer
+          in: path
+          description: Merchant admin ID
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+  /merchant/subAdmin/password/{merchantAdminId}:
+    put:
+      tags:
+        - merchant
+      summary: Update merchant sub admin account password.
+      operationId: subAdminList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+        - name: merchantAdminId
+          in: path
+          schema:
+            type: integer
+          description: If merchantAdminId = 0, update self password
+          required: true
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    oldPassword:
+                      type: string
+                      format: password
+                      description: If adminId = 0, this is the old password; otherwise, no need to send this field
+                    password:
+                      type: string
+                      format: password
+                      description: New password
+                  required:
+                    - password
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /merchant/subAdmin/status/{merchantAdminId}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+      - name: merchantAdminId
+        in: path
+        schema:
+          type: integer
+        required: true
+    put:
+      tags:
+        - merchant
+      summary: Update merchant sub admin account status (Cannot update self account nor master admin account)
+      operationId: subAdminList
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    status:
+                      type: integer
+                      format: int32
+                      description: 0 - disabled; 1 -  enabled
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+  /merchant/permission:
+    get:
+      tags:
+        - merchant
+      summary: Get permission list
+      operationId: permission
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/Permission"
+  /merchant/role:
+    get:
+      tags:
+        - merchant
+      summary: Get role list
+      operationId: roleList
+      parameters:
+        - in: header
+          name: Authorization
+          description: Login token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            roleId:
+                              type: integer
+                              format: int64
+                              description: Role ID
+                            roleName:
+                              type: string
+                              description: Role name
+  /merchant/role/{roleId}:
+    parameters:
+      - in: header
+        name: Authorization
+        description: Login token
+        schema:
+          type: string
+        required: true
+      - name: roleId
+        in: path
+        schema:
+          type: integer
+          format: int64
+        description: Role ID
+        required: true
+    get:
+      tags:
+        - merchant
+      summary: Get role details
+      operationId: role
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          roleId:
+                            type: integer
+                            format: int64
+                            description: Role ID
+                          roleName:
+                            type: string
+                            description: Role name
+                          description:
+                            type: string
+                            description: Role description
+                          createdBy:
+                            type: string
+                            description: Create by
+                          permissionList:
+                            type: array
+                            items:
+                              type: integer
+                              format: int64
+                              description: Permission ID for this role
+
+    put:
+      tags:
+        - merchant
+      summary: Update a role permission
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    roleId:
+                      type: integer
+                      format: int64
+                      description: Role ID
+                    roleName:
+                      type: string
+                      description: Role name
+                    permissionList:
+                      type: array
+                      items:
+                        type: integer
+                        format: int64
+                        description: Permission ID to updated. Empty list means no permission for this role
+                  required:
+                    - roleId
+                    - permissionList
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+    delete:
+      tags:
+        - merchant
+      summary: Delete a role
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+
+  /merchant/transfer:
+    post:
+      tags:
+        - merchant
+      summary: Transfer to another Eurus address (this API does not support transfer to mainnet address)
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: object
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    walletPassword:
+                      type: string
+                      format: password
+                      description: Wallet password
+                    toAddress:
+                      type: string
+                      description: Eurus target address
+                    amount:
+                      type: string
+                      description: Amount to transfer * 1000000000
+                    assetName:
+                      type: string
+                      description: Asset to transfer
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          needApproval:
+                            type: boolean
+                            description: Transfer is waiting for approval
+  /merchant/withdraw:
+    post:
+      tags:
+        - merchant
+      summary: Withdraw money from Eurus wallet to mainnet wallet
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: object
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    walletPassword:
+                      type: string
+                      format: password
+                      description: Wallet password
+                    amount:
+                      type: string
+                      description: Amount to transfer * 1000000000
+                    assetName:
+                      type: string
+                      description: Asset to transfer
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          needApproval:
+                            type: boolean
+                            description: Transfer is waiting for approval
+  #######################################   Merchant   ############################################
+  #######################################   Testnet   #############################################
+  /testnet/asset/faucet:
+    get:
+      tags:
+        - testnet
+      summary: Get faucet currency config
+      responses:
+        200:
+          description: Successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          properties:
+                            assetName:
+                              type: string
+                              description: Asset name
+                            decimal:
+                              type: number
+                              format: int32
+                              description: Number of decimal
+                            amount:
+                              type: number
+                              format: int64
+                              description: Amount faucet every time
+                            dateInterval:
+                              type: number
+                              format: int32
+                              description: Number of faucet day interval
+
+    post:
+      tags:
+        - testnet
+      summary: Faucet certain currency to target wallet address at Rinkeby
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: object
+              allOf:
+                - $ref: "#/components/schemas/GeneralRequest"
+                - type: object
+                  properties:
+                    assetName:
+                      type: string
+                      description: Asset to transfer
+                    destAddress:
+                      type: string
+                      format: hex
+                      description: Faucet destination address (with 0x prefix)
+      responses:
+        200:
+          description: successful operation
+          content:
+            "application/json":
+              schema:
+                type: object
+                allOf:
+                  - $ref: "#/components/schemas/GeneralResponse"
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          txHash:
+                            type: string
+                            format: hex
+                            description: Transaction hash waiting for confirmation
+                          status:
+                            type: number
+                            format: int32
+                            description: Processing status - 1 = transaction created, 2 = waiting for confirmation, 3 = facet already today, try again later
+
+components:
+  schemas:
+    KYC:
+      type: object
+      properties:
+        user_kyc_status:
+          type: integer
+          enum: [0,1,2,3,4]
+          description: |
+            (0) Pending              - Just create the user_kyc_status
+            (1) Waiting for approval - When all images are uploaded and submit for approval
+            (2) Waiting for resubmit - When admin cs reject any of the images
+            (3) Approved             - Admin CS approve 
+            (4) Rejected             - Admin CS reject
+        user_kyc_images.status:
+          type: integer
+          enum: [0,1,2,3]
+          description: |
+            (0) Received        - KYC Server had received the images
+            (1) Uploaded to S3  - KYC Server had uploaded to Amazon S3 server
+            (2) Approved        - Admin CS approve 
+            (3) Rejected        - Admin CS reject
+        docType:
+          type: integer
+          enum: [0,1,2,3]
+          description: |
+            (0) IdFront         - ID card Front
+            (1) IdBack          - ID card Back
+            (2) Passport        - Passport
+            (3) Selfie          - Selfie
+        kyc_doc:
+          type: integer
+          enum: [0,1]
+          description: |
+            (0) ID Card
+            (1) Passport
+    GeneralRequest:
+      type: object
+      properties:
+        nonce:
+          type: string
+          format: uuid
+          description: Request nonce
+      required:
+        - nonce
+
+    GeneralResponse:
+      type: object
+      properties:
+        nonce:
+          type: string
+          format: uuid
+          description: Request nonce
+        returnCode:
+          type: integer
+          description: Server return code - Reference to ServerReturnCode
+        message:
+          type: string
+          description: Server returns message
+        data:
+          type: object
+          description: Resquest specific response
+    Permission:
+      type: object
+      properties:
+        permissionId:
+          type: integer
+          format: int64
+          description: Permission ID
+        permissionName:
+          type: string
+          description: Permission name
+        childList:
+          type: array
+          description: Child permission list
+          items:
+            type: object
+            $ref: "#/components/schemas/Permission"
+            description: child permission
+      required:
+        - permissionId
+        - permissionName
+    MerchantDetails:
+      type: object
+      properties:
+        merchantName:
+          type: string
+          description: Merchant name
+        walletAddress:
+          type: string
+          format: address
+          description: Merchant Eurus wallet address
+        hotWalletAddress:
+          type: string
+          format: address
+          description: Merchant mainnet wallet address
+        callbackUrl:
+          type: string
+          format: url
+          description: callback url
+        updatedBy:
+          type: string
+          description: updated by
+
+    MerchantAdmin:
+      type: object
+      properties:
+        username:
+          type: string
+          description: Merchant user name
+        email:
+          type: string
+          format: email
+          description: Merchant admin email
+        status:
+          type: integer
+          format: int32
+          description: Admin account state
+        createDate:
+          type: string
+          format: date-time
+          description: Create date
+        lastModifiedDate:
+          type: string
+          format: date-time
+          description: Last modified date
+    ServerReturnCode:
+      type: integer
+      enum:
+        - 0: Success
+          1: Not Found
+          2: Already exists
+          3: Validation failed
+          4: Invalid signature
+          5: Login expired
+          6: Invalid login token
+          7: Permission denied
+          100000: Database error begins
+
+    CurrencySymbol:
+      type: array
+      description: Currency Symbol
+      items:
+        type: string
+        description: Currency symbol of ERC20 assets
+
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://petstore.swagger.io/oauth/dialog
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

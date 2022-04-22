@@ -1,0 +1,1028 @@
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'staging'
+> Network id:      2018
+> Block gas limit: 9007199254740991 (0x1fffffffffffff)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'EurusMigrations'
+   ---------------------------
+   > transaction hash:    0xfaac271085a1d2c8bb877f09cdd03a44fc562eeec2a3f1b2437a6901522e42e8
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xbc16e1Bc785bf1f5E6CE74dE18147b360110018E
+   > block number:        2629228
+   > block timestamp:     1618978389
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.808363562640353598
+   > gas used:            173386 (0x2a54a)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0000235284802 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0000235284802 ETH
+
+
+2_erc20_usdt_migration.js
+=========================
+   -------------------------------------
+   > Total cost:                   0 ETH
+
+
+3_eurus_internal_config_migration.js
+====================================
+
+   Replacing 'EurusInternalConfig'
+   -------------------------------
+   > transaction hash:    0xcd6039966fd0696964ccaf735c1b1716623134a79cc4898632dbef6d7062b8fc
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xd9e25989Ea10778A36abb4041Bb5fa194d724403
+   > block number:        2629230
+   > block timestamp:     1618978393
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.808156636831453598
+   > gas used:            1524877 (0x17448d)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0002069258089 ETH
+
+EurusInternalConfig 0xd9e25989Ea10778A36abb4041Bb5fa194d724403
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0002069258089 ETH
+
+
+4_smart_contract_config_migration.js
+====================================
+
+   Replacing 'InternalSmartContractConfig'
+   ---------------------------------------
+   > transaction hash:    0xde5bda2b4ccac8fdf27d5ec2125975b4246ed4352a4caba7b43943b55b58e24b
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x3993ed9B107fC3Cb06c375759A780139EEd567C5
+   > block number:        2629232
+   > block timestamp:     1618978397
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.807915888883153598
+   > gas used:            1774119 (0x1b1227)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0002407479483 ETH
+
+InternalSmartContractConfig 0x3993ed9B107fC3Cb06c375759A780139EEd567C5
+
+   Replacing 'ExternalSmartContractConfig'
+   ---------------------------------------
+   > transaction hash:    0xb4e943a56fbe2c74413cde493d98bbb239aa01a63165ff718e0ffd37b97d2913
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x207825368730646f2F2F754a2712A0eB6fa96e0f
+   > block number:        2629234
+   > block timestamp:     1618978401
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.807592420250353598
+   > gas used:            2383704 (0x245f58)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0003234686328 ETH
+
+ExternalSmartContractConfig 0x207825368730646f2F2F754a2712A0eB6fa96e0f
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0005642165811 ETH
+
+
+5_wallet_address_migration.js
+=============================
+
+   Replacing 'WalletAddressMap'
+   ----------------------------
+   > transaction hash:    0x093d6f89b2564eb37e594ebc8b9059de9b6eb02f6f0374b4cc1123175e8373da
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x39d0be37c74462d70fD1ffAAd9ca20045cdf7B39
+   > block number:        2629236
+   > block timestamp:     1618978405
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.807272812282553598
+   > gas used:            2311681 (0x234601)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0003136951117 ETH
+
+WalletAddressMap 0x39d0be37c74462d70fD1ffAAd9ca20045cdf7B39
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0003136951117 ETH
+
+
+6_eurus_erc20_usdt_migration.js
+===============================
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xa05007e92b3509f2ec561fc2b56fb334f2599f0af9defa85500461ba4a2658c6
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xc50344F197abB4B204d8454d2dC2e99a4F4b79AB
+   > block number:        2629238
+   > block timestamp:     1618978409
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.806825072710853598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xc50344F197abB4B204d8454d2dC2e99a4F4b79AB
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+7_approval_wallet_migration.js
+==============================
+
+   Replacing 'ApprovalWallet'
+   --------------------------
+   > transaction hash:    0x829799f70b4ab851a78da17fb7bb411f851d065eccb8905acfb235932a188581
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x00C33043E0565e91756Bdb34B5D326801B9Ae6A2
+   > block number:        2629241
+   > block timestamp:     1618978415
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.806197342151853598
+   > gas used:            4595861 (0x462095)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0006236583377 ETH
+
+ApprovalWallet 0x00C33043E0565e91756Bdb34B5D326801B9Ae6A2
+Construct init param. SC address: 0x3993ed9B107fC3Cb06c375759A780139EEd567C5
+calling init
+Construct addWriter param. USDT proxy address: 0x624451E9c6939b281a8ce710CB4faA251E8Bd419
+Calling addWriter
+Calling addWriter result: {"tx":"0xfaef9325b7730162f5c59a51bb3479d20c0ad6bec7fbb3441de2d042c08d4f1f","receipt":{"blockHash":"0xe92148036ba1047880a82b59f272f80f4a1a8d23af013c1c987ade7dd1bd6255","blockNumber":2629243,"contractAddress":null,"cumulativeGasUsed":85550,"from":"0x01a6d1dd2171a45e6a3d3dc52952b40be413fa93","gasUsed":85550,"logs":[{"address":"0x00C33043E0565e91756Bdb34B5D326801B9Ae6A2","blockNumber":2629243,"transactionHash":"0xfaef9325b7730162f5c59a51bb3479d20c0ad6bec7fbb3441de2d042c08d4f1f","transactionIndex":0,"blockHash":"0xe92148036ba1047880a82b59f272f80f4a1a8d23af013c1c987ade7dd1bd6255","logIndex":0,"removed":false,"id":"log_b685440e","event":"WriterAdded","args":{"0":"0x624451E9c6939b281a8ce710CB4faA251E8Bd419","__length__":1,"writer":"0x624451E9c6939b281a8ce710CB4faA251E8Bd419"}}],"logsBloom":"0x00000000000000000000000000000000000000000000000000800000000000000000000000000100080000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000200000000000000000000000000000000000000000000000000000000000800000000000000000000004000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":true,"to":"0x00c33043e0565e91756bdb34b5d326801b9ae6a2","transactionHash":"0xfaef9325b7730162f5c59a51bb3479d20c0ad6bec7fbb3441de2d042c08d4f1f","transactionIndex":0,"rawLogs":[{"address":"0x00C33043E0565e91756Bdb34B5D326801B9Ae6A2","topics":["0x6ff3aa2ea7b53070f6d9d07a445d338d89e8edef44250ffa8be19f53910d4a2e","0x000000000000000000000000624451e9c6939b281a8ce710cb4faa251e8bd419"],"data":"0x","blockNumber":2629243,"transactionHash":"0xfaef9325b7730162f5c59a51bb3479d20c0ad6bec7fbb3441de2d042c08d4f1f","transactionIndex":0,"blockHash":"0xe92148036ba1047880a82b59f272f80f4a1a8d23af013c1c987ade7dd1bd6255","logIndex":0,"removed":false,"id":"log_b685440e"}]},"logs":[{"address":"0x00C33043E0565e91756Bdb34B5D326801B9Ae6A2","blockNumber":2629243,"transactionHash":"0xfaef9325b7730162f5c59a51bb3479d20c0ad6bec7fbb3441de2d042c08d4f1f","transactionIndex":0,"blockHash":"0xe92148036ba1047880a82b59f272f80f4a1a8d23af013c1c987ade7dd1bd6255","logIndex":0,"removed":false,"id":"log_b685440e","event":"WriterAdded","args":{"0":"0x624451E9c6939b281a8ce710CB4faA251E8Bd419","__length__":1,"writer":"0x624451E9c6939b281a8ce710CB4faA251E8Bd419"}}]}
+
+   Replacing 'ApprovalWalletReader'
+   --------------------------------
+   > transaction hash:    0xc863dd2838a8e9121b7d970cc5dce9c9884a75594968961525af606e8b83b936
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x8BA955d9d3618B12E369172E876f7aec91f612Be
+   > block number:        2629244
+   > block timestamp:     1618978421
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.805662710884753598
+   > gas used:            3819682 (0x3a48a2)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0005183308474 ETH
+
+ApprovalWalletReader 0x8BA955d9d3618B12E369172E876f7aec91f612Be
+setting requirement to 1
+init function tx receipt: {"blockHash":"0x4123d5cca5242c8587754cbdf96bac17243a41431a85e746633c4c56eb4788b7","blockNumber":2629245,"contractAddress":null,"cumulativeGasUsed":28186,"from":"0x01a6d1dd2171a45e6a3d3dc52952b40be413fa93","gasUsed":28186,"logsBloom":"0x00000000000000000000000000000000000100000000000000800000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000","status":true,"to":"0x00c33043e0565e91756bdb34b5d326801b9ae6a2","transactionHash":"0x7bf4dc9c4c5058239b4a10e6d50c2fe1f44c88c0ef3ca34f408f5388e689a3a6","transactionIndex":0,"events":{"RequirementChange":{"address":"0x00C33043E0565e91756Bdb34B5D326801B9Ae6A2","blockNumber":2629245,"transactionHash":"0x7bf4dc9c4c5058239b4a10e6d50c2fe1f44c88c0ef3ca34f408f5388e689a3a6","transactionIndex":0,"blockHash":"0x4123d5cca5242c8587754cbdf96bac17243a41431a85e746633c4c56eb4788b7","logIndex":0,"removed":false,"id":"log_bd8e98e7","returnValues":{"0":"1","required":"1"},"event":"RequirementChange","signature":"0xa3f1ee9126a074d9326c682f561767f710e927faa811f7a99829d49dc421797a","raw":{"data":"0x0000000000000000000000000000000000000000000000000000000000000001","topics":["0xa3f1ee9126a074d9326c682f561767f710e927faa811f7a99829d49dc421797a"]}}}}
+Approval Wallet Requirement: 1
+init function tx receipt: {"blockHash":"0x561866a245618add0db2159ca794bee5f740a180f65ff3c54bc1b98ca3b09544","blockNumber":2629246,"contractAddress":null,"cumulativeGasUsed":105181,"from":"0x01a6d1dd2171a45e6a3d3dc52952b40be413fa93","gasUsed":105181,"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":true,"to":"0x00c33043e0565e91756bdb34b5d326801b9ae6a2","transactionHash":"0xeb66e635dd7028af6c96fac6d987cca068890527d005c48936ab9cab7d709360","transactionIndex":0,"events":{}}
+MultiSig Wallet Owner: "0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93"
+Fallback Address: "0x8BA955d9d3618B12E369172E876f7aec91f612Be"
+Setting approval wallet to internal smart contract config
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0011419891851 ETH
+
+
+8_withdraw_smart_contract_migration.js
+======================================
+
+   Replacing 'WithdrawSmartContract'
+   ---------------------------------
+   > transaction hash:    0xa16f21d1b51c5282f32292a9381c32b85673d1f31fed875d684f1b36d895c35c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xd6516b47aa537eB50e3C40A9A6e263f0579bd4a6
+   > block number:        2629250
+   > block timestamp:     1618978433
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.805065303304953598
+   > gas used:            4181851 (0x3fcf5b)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0005674771807 ETH
+
+WithdrawSmartContract 0xd6516b47aa537eB50e3C40A9A6e263f0579bd4a6
+Update InternalSmartContractConfig set WithdrawSmartContract address
+Set ApprovalWallet address as the writer to WithdrawSmartContract
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0005674771807 ETH
+
+
+9_platform_wallet_migration.js
+==============================
+
+   Replacing 'PlatformWallet'
+   --------------------------
+   > transaction hash:    0x470691dd2b36d20c88308e8bcc616e032e974d9472bddcbab03dff04dfc1ff55
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x79f1e64906C198C3cE4E4BBC983d1d9fDB5e3299
+   > block number:        2629253
+   > block timestamp:     1618978439
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.804443215830453598
+   > gas used:            4383189 (0x42e1d5)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0005947987473 ETH
+
+PlatformWallet 0x79f1e64906C198C3cE4E4BBC983d1d9fDB5e3299
+Setting OwnedUpgradeabilityProxy<PlatformWallet> address to InternalSmartContractConfig
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0005947987473 ETH
+
+
+10_unit_test_migration.js
+=========================
+
+   Replacing 'UnitTest'
+   --------------------
+   > transaction hash:    0x62540ad245c88ae00fa4304ce77d7f18ee142e39c15ab63a11a2dc38dd2e5942
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x6b7c8dE1d92F4108dAaAd6D9b487220B660aabeA
+   > block number:        2629256
+   > block timestamp:     1618978445
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.804417286817253598
+   > gas used:            117559 (0x1cb37)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0000159527563 ETH
+
+UnitTest 0x6b7c8dE1d92F4108dAaAd6D9b487220B660aabeA
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0000159527563 ETH
+
+
+11_usdc.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x135f15147828fb89251a2d9c7086e5ab761e1e1e4c394d173620988af87f1e03
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xb624b8BBF7286e0Caf2252c9a66DFFFFF57CD0a3
+   > block number:        2629258
+   > block timestamp:     1618978449
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.803975466343853598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xb624b8BBF7286e0Caf2252c9a66DFFFFF57CD0a3
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+12_link.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x084970b25b769a8532bb5857dbba86f7bdbec67e57f6c1581ed78b9dcef5493c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xad5C107391c5A1f2A100712BB744765B2a810C2E
+   > block number:        2629260
+   > block timestamp:     1618978453
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.803529573649153598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xad5C107391c5A1f2A100712BB744765B2a810C2E
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+13_uni.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x7b814ee9a6479d84c43d350a0402821e45074b794271c005a8ea16aa421fd65c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x5C4eDD390f8F9eF58C357a90729e27Fc434D4F3c
+   > block number:        2629263
+   > block timestamp:     1618978459
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.803083689639253598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x5C4eDD390f8F9eF58C357a90729e27Fc434D4F3c
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+14_bnb.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xf3439af8364fa4d5d7e5d0f706c0ced89033e9f8650f23b838e05ccedd05c100
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xa50dD8A2Cf66E7e0bB5ec50D9B468d07D85AfD91
+   > block number:        2629265
+   > block timestamp:     1618978463
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.802637796944553598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xa50dD8A2Cf66E7e0bB5ec50D9B468d07D85AfD91
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+15_eth_migration.js
+===================
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xfd8319e203a74c7945bcd2e167534db01e7058f6ea18b1a63fb0b71dc30fe737
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xc1072252AB909aFF60E3c167402c91B9f15D1a2A
+   > block number:        2629267
+   > block timestamp:     1618978467
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.802191904249853598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xc1072252AB909aFF60E3c167402c91B9f15D1a2A
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+16_BUSD.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x6458eaaafb49e9201f25801432b467e2077165846d3d6100ea1c797aff995cea
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xd1ce50790F6532F1cB0909297fd36DeADa57C571
+   > block number:        2629270
+   > block timestamp:     1618978473
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.801746011555153598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xd1ce50790F6532F1cB0909297fd36DeADa57C571
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+17_YFI.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xb937382eee762f0a98c98270730fe0a53548757b94d9a57d2bb202a77273b535
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x357962Ada50bCA23b8CefF23e8eC7BDeaBCF6239
+   > block number:        2629272
+   > block timestamp:     1618978477
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.801300118860453598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x357962Ada50bCA23b8CefF23e8eC7BDeaBCF6239
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+18_DAI.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x3409a14970ab5ae2af0bab35860618f53839802043a0da8a7a5b8506ffa1e4a7
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x67Bf20667abe809c955A9732E7dB1C5B9203A830
+   > block number:        2629275
+   > block timestamp:     1618978483
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.800854226165753598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x67Bf20667abe809c955A9732E7dB1C5B9203A830
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+19_OMG.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xb517d3cf28b7dc3ce82e8a1bffc8eb76a008d3047003cf8ad32b6ec021e00e44
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x98E5e1D6D16bd878002A2Ca1551961992f423df8
+   > block number:        2629277
+   > block timestamp:     1618978487
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.800408333471053598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x98E5e1D6D16bd878002A2Ca1551961992f423df8
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+20_VEN.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x3b9de7e0da9fc31cba341b5f76f90db5633905497568f875bb6669740e1c8cc2
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xAC88D99263768F8aD61aa1F1e324eDbc5aEFEaB7
+   > block number:        2629279
+   > block timestamp:     1618978491
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.799962449461153598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xAC88D99263768F8aD61aa1F1e324eDbc5aEFEaB7
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+21_AAVE.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x6b3524e635e7ecf9155db0884308a55c2e2b77aad274079a3438067c243cf6af
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xf5081815b919D8beFfFF4A1c1A481f01948FAf9f
+   > block number:        2629282
+   > block timestamp:     1618978497
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.799516556766453598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xf5081815b919D8beFfFF4A1c1A481f01948FAf9f
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+22_HT.js
+========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x5a41384ec7399758833440dc4ba33a0feaa31e7f0753b7a6946d47fbecdf2155
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x4d022D895A53f55874978d5d24162fD941DF1625
+   > block number:        2629284
+   > block timestamp:     1618978501
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.799070664071753598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x4d022D895A53f55874978d5d24162fD941DF1625
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+23_SUSHI.js
+===========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xffd3dadbb37c5c28c59867ee342fac5cdf9513d218a0ab2a08fc218dd2bfb436
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x93F72BFA186C2DB1Db56aC39a490b9C119B69b11
+   > block number:        2629287
+   > block timestamp:     1618978507
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.798624771377053598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x93F72BFA186C2DB1Db56aC39a490b9C119B69b11
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+24_TUSD.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x98a2bfdac5d1436e0178aceb208e4dfc64c16f02665a6c3cc20c56fd7af2e867
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x9Dc334310eF841050A68Ad63312476D85538d2db
+   > block number:        2629289
+   > block timestamp:     1618978511
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.798178878682353598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x9Dc334310eF841050A68Ad63312476D85538d2db
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+25_cDAI.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xeda53f385ebd9aac938e1b2c38d6f8b311fcd41f13e03957af445f151329c652
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x7096f0fea1d25225CF65fF36d817429aB0deE7A1
+   > block number:        2629291
+   > block timestamp:     1618978515
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.797732985987653598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x7096f0fea1d25225CF65fF36d817429aB0deE7A1
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+26_SXP.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x694db4f0c0b0a69253bc83f85fb12bda26f79cb9a30b9f150a7dab8a42d57ea5
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x5cD6369F89b901b0C4dae2114B9c18746F4c2ABD
+   > block number:        2629294
+   > block timestamp:     1618978521
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.797287093292953598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x5cD6369F89b901b0C4dae2114B9c18746F4c2ABD
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+27_BAT.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xce0a1647e8f1eecb3346a2142c4070f8f4deed95d518449f7c1e8e4bb10427af
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x60398Cb3238221A959117DcF18369Be98f1475C0
+   > block number:        2629296
+   > block timestamp:     1618978525
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.796841200598253598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x60398Cb3238221A959117DcF18369Be98f1475C0
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+28_USDK.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x5641cbb7353f0f20c558cd9e02086a29535e751bb43d96b6eafa2b8035544b8a
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x0DE0674344d8bB9aEa0bB53d61ADAe372050da74
+   > block number:        2629298
+   > block timestamp:     1618978529
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.796395307903553598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x0DE0674344d8bB9aEa0bB53d61ADAe372050da74
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+29_WBTC.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xa6da026a82ecd87f26bb6560a6466f5807c37a10b4c8817ab02caf535990bd1f
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xeC3b34A1b9F5dB3a9450de8c0b2d4F647738BCB2
+   > block number:        2629301
+   > block timestamp:     1618978535
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.795949415208853598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xeC3b34A1b9F5dB3a9450de8c0b2d4F647738BCB2
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+30_ZIL.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xff8750b83ed671c40fe92c7dc8ee571c09060ae9d3f490824b052ed3b1865e38
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x6a4cC2092b25d43777DFCFaa154eb1153A2a475A
+   > block number:        2629303
+   > block timestamp:     1618978539
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.795503522514153598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x6a4cC2092b25d43777DFCFaa154eb1153A2a475A
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+31_SNX.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xd81012f9a76ef00848d6607b546404875679bf525411c9521f495609e1a63d24
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xa39Ac5F7E76356a791942e0a04dcd287F2393B41
+   > block number:        2629306
+   > block timestamp:     1618978545
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.795057629819453598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xa39Ac5F7E76356a791942e0a04dcd287F2393B41
+`   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+32_OKB.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x23c403b6c7a1d813aed76971ecbb8150b7c08d4c649465ca2f649ed528795d08
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xdc0E1D6E94585C25EC1adc781fC6bAF931726c10
+   > block number:        2629308
+   > block timestamp:     1618978549
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.794611737124753598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xdc0E1D6E94585C25EC1adc781fC6bAF931726c10
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+33_BAND.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xfa54c72d9736998e8b057e0bb670e05222a6fffe961d3ba42fbc84f3561342e1
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x3cb525A53b64997E7e6CDe74Ca7FBaeed56AEc2F
+   > block number:        2629310
+   > block timestamp:     1618978553
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.794165844430053598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x3cb525A53b64997E7e6CDe74Ca7FBaeed56AEc2F
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+34_MKR.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x4e6067150651582e7d7e9c0ba8b27df501f7fc0567583fcca70764e0a448eda7
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xC271590af0578E02a71aC0969ebCb8f7a0cBC312
+   > block number:        2629313
+   > block timestamp:     1618978559
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.793719951735353598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xC271590af0578E02a71aC0969ebCb8f7a0cBC312
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+35_HUSD.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x0f70b8cdd87a21b54d2094ad756b9a0ec2b86fe2957901f68a235e821ac5d5f8
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xA4c43a013eaF35493266CB1B6e2fc51e8e36b801
+   > block number:        2629315
+   > block timestamp:     1618978563
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.793274059040653598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xA4c43a013eaF35493266CB1B6e2fc51e8e36b801
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+36_ZRX.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x236d8959b1d26de73e49437da312ad9bacc8bb8967f5207d1ff19ab558227e96
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xfebEb248bc6625aFCBD050C414A055292d4Aa020
+   > block number:        2629317
+   > block timestamp:     1618978567
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.792828166345953598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xfebEb248bc6625aFCBD050C414A055292d4Aa020
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+37_PAX.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xa9b65ee919ea379babcd2fb911a80f3957381c8ae367e9eaffec4cd5bea85110
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x19ff7aB04598f546529CA01E477E53f8d7A0bbd8
+   > block number:        2629320
+   > block timestamp:     1618978573
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.792382273651253598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x19ff7aB04598f546529CA01E477E53f8d7A0bbd8
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+38_COMP.js
+==========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x545d0e955b9b740bd08f1b774ba299eb45f4fd755ec0f790e1df542e87532f83
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x7013f1f436e3384Ba6A2aCF918d0c83f608054Ac
+   > block number:        2629322
+   > block timestamp:     1618978577
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.791936380956553598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x7013f1f436e3384Ba6A2aCF918d0c83f608054Ac
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+39_RSR.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x8683301f3e53acc7a64283bceeebd326960ea0e9d6aded11c5b62c7571b45337
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x811E84781A950F6da752542Aa09820050fc4F8c3
+   > block number:        2629324
+   > block timestamp:     1618978581
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.791490488261853598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0x811E84781A950F6da752542Aa09820050fc4F8c3
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+40_BAL.js
+=========
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0x3fa75ef5298b7946a533e29ef7944ffe6a1bfc3df133613bda7a463e4d247404
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xc339f7c4f114dD7077Ff29603861D861c61A4ca3
+   > block number:        2629327
+   > block timestamp:     1618978587
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.791044595567153598
+   > gas used:            3255862 (0x31ae36)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004418204734 ETH
+
+EurusERC20 0xc339f7c4f114dD7077Ff29603861D861c61A4ca3
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0004418204734 ETH
+
+
+41_eurus_platform_wallet.js
+===========================
+
+   Deploying 'EurusPlatformWallet'
+   -------------------------------
+   > transaction hash:    0x9e66902753e6f046a0383ed0978e9eb3d592c8717aa3d7bb9076b9673ba0c64f
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x5599422a4a91F25d4bA011AB9F0c9700472F6535
+   > block number:        2629329
+   > block timestamp:     1618978591
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.790757956185753598
+   > gas used:            2082293 (0x1fc5f5)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0002825671601 ETH
+
+EurusPlatformWallet 0x5599422a4a91F25d4bA011AB9F0c9700472F6535
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0002825671601 ETH
+
+42_adminFeeWallet.js
+====================
+
+   Replacing 'AdminFeeWallet'
+   --------------------------
+   > transaction hash:    0xacb7eda9de22def32b1c97c43fdc0056421453f2c62daed3916e254ea6418428
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x96402e78f66E634e6d9d79fEE6E0942B1FbFE1Da
+   > block number:        2632132
+   > block timestamp:     1618984197
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.788458106072153598
+   > gas used:            3379059 (0x338f73)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0004585383063 ETH
+
+
+   Deploying 'OwnedUpgradeabilityProxy'
+   ------------------------------------
+   > transaction hash:    0x2d44be49da7903c869dc6ed491c3c08c54d30154b9605a1162ab83c1494b547f
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xfde7C8C3A12E3Ff9aabef9EFFA9f155eaf646411
+   > block number:        2632134
+   > block timestamp:     1618984201
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             234.788387408543353598
+   > gas used:            520984 (0x7f318)
+   > gas price:           0.1357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0000706975288 ETH
+
+AdminFeeWallet 0x96402e78f66E634e6d9d79fEE6E0942B1FbFE1Da
+OwnedUpgradeabilityProxy<AdminFeeWallet> 0xfde7C8C3A12E3Ff9aabef9EFFA9f155eaf646411
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0005292358351 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.0005292358351 ETH
+

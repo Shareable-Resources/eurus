@@ -1,0 +1,25 @@
+5_wallet_address_migration.js
+=============================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'WalletAddressMap'
+   ----------------------------
+   > transaction hash:    0x4f48d63df2b1ff670d433b7885b8f433d0ddb05a7896092f3f2ca3ede2295d16
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xB7dcA8c9C45BD37f25F02E655e0A92CC7d0F809F
+   > block number:        10152
+   > block timestamp:     1612945446
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99979072362038022
+   > gas used:            2508915 (0x264873)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000003404597655 ETH
+
+WalletAddressMap 0xB7dcA8c9C45BD37f25F02E655e0A92CC7d0F809F
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00000003404597655 ETH
+

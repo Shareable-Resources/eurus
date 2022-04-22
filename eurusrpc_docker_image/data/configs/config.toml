@@ -1,0 +1,46 @@
+logging="INFO"
+data-path="/opt/besu/data"
+host-whitelist=["*"]
+
+min-gas-price=2400000000
+revert-reason-enabled=true
+identity="EURUS-MAINNET"
+
+# rpc
+rpc-http-enabled=true
+rpc-http-host="0.0.0.0"
+rpc-http-port=8545
+rpc-http-cors-origins=["*"]
+rpc-http-max-active-connections=9999
+
+# ws
+rpc-ws-enabled=true
+rpc-ws-host="0.0.0.0"
+rpc-ws-port=8546
+rpc-ws-max-active-connections=9999
+
+# graphql
+graphql-http-enabled=true
+graphql-http-host="0.0.0.0"
+graphql-http-port=8547
+graphql-http-cors-origins=["*"]
+
+# metrics
+metrics-enabled=true
+metrics-host="0.0.0.0"
+metrics-port=9545
+
+#p2p
+p2p-host="YOUR EXTERNAL IP Address"
+p2p-port="30303"
+nat-method="NONE"
+
+#peer limit
+max-peers=9999
+
+#tx
+tx-pool-retention-hours=1
+
+# bootnodes
+bootnodes=["enode://f9a715d0a23f039e9e7a9fe26103cb8311ef17231119b49ff47b8dd68f5b0318d1fefb321e62cbde81157af84c714a380a28f33ddd492aac66f0ec7ff3ce25f1@13.213.109.88:30303",
+]

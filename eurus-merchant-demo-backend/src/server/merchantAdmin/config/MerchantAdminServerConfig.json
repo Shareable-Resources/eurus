@@ -1,0 +1,42 @@
+{
+  "dev": {
+    "sequelize": {
+      "comment": "Specifying sequlize config",
+      "username": "postgres",
+      "host": "xxx.xxx.xxx.xxx",
+      "password": "xxxxxxxxxxxxxx",
+      "database": "postgres",
+      "schema": "merchant_demo",
+      "timezone": "+08:00"
+    },
+    "express": {
+      "comment": "Specifying express config",
+      "port": 8091,
+      "name": "merchant-demo"
+    },
+    "winston": {
+      "comment": "Specifying winston config, when set console : true, logger will log in console in addition to standard log file",
+      "console": false
+    }
+  },
+  "local": {
+    "sequelize": {
+      "comment": "Specifying sequlize config",
+      "username": "postgres",
+      "host": "127.0.0.1",
+      "password": "xxxxxxxxxxxxxxxxxx",
+      "database": "postgres",
+      "schema": "merchant_demo",
+      "timezone": "+08:00"
+    },
+    "express": {
+      "comment": "Specifying express config",
+      "port": 8091,
+      "name": "merchant-demo"
+    },
+    "winston": {
+      "comment": "Specifying winston config, when set console : true, logger will log in console in addition to standard log file",
+      "console": true
+    }
+  }
+}

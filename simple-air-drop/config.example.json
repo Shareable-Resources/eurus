@@ -1,0 +1,6 @@
+{
+  "rpcUrl": "https://rpc.eurus.dev",
+  "srcAccount": "",
+  "srcPrivateKey": "",
+  "gasLimit": "21000"
+}

@@ -1,0 +1,23 @@
+4_internal_smart_contract_config.js
+===================================
+
+   Replacing 'InternalSmartContractConfig'
+   ---------------------------------------
+   > transaction hash:    0xc021a1257efa51703b33c8235b6a1a6434bb273c76456a7eeaf66312aa415ba7
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x66dCd46E8e736A265E14878ECaAaAfA2f2C66786
+   > block number:        941787
+   > block timestamp:     1609382187
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             92.70708766
+   > gas used:            1559519 (0x17cbdf)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03119038 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.03119038 ETH
+

@@ -1,0 +1,8 @@
+{
+    "jsonrpc" : "2.0",
+    "id" : 64,
+    "error" : {
+      "code" : -503,
+      "message" : "Server under maintenance"
+    }
+  }

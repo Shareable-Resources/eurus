@@ -1,0 +1,61 @@
+Starting migrations...
+======================
+> Network name:    'besuWalletDevelopment_Private'
+> Network id:      2018
+> Block gas limit: 16234336 (0xf7b760)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0x0b7cb0def7bd8440f444624b99e3b3450ecc93ef87e7be64e148033570a498dd
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x7517A1cfCA3a8C36dd53392e146D19375b20e6F6
+   > block number:        908766
+   > block timestamp:     1609316145
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             93.456833
+   > gas used:            221823 (0x3627f)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00443646 ETH
+
+
+   Replacing 'InternalSmartContractConfig'
+   ---------------------------------------
+   > transaction hash:    0xff7f10d5451042d655ad063f3d993fc00ab3d175c837d414535a8bdf185a8ddb
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x15793b3C9580bB60286419eC7cF46419CbDCbd97
+   > block number:        908767
+   > block timestamp:     1609316147
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             93.4265588
+   > gas used:            1513710 (0x1718ee)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0302742 ETH
+
+
+   Replacing 'PublicSmartContractConfig'
+   -------------------------------------
+   > transaction hash:    0x2d847e8b9d3f0a1d037e906eb671ae49db099ca16440369a384d8a64ea38acc4
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x0Ad218Ef82927104574bA479bC6b613c02C38966
+   > block number:        908769
+   > block timestamp:     1609316151
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             93.39946264
+   > gas used:            1354808 (0x14ac38)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.02709616 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.06180682 ETH
+
+

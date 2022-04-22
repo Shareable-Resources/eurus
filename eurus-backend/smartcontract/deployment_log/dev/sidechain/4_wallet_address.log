@@ -1,0 +1,22 @@
+5_wallet_address.js
+===================
+
+   Deploying 'WalletAddress'
+   -------------------------
+   > transaction hash:    0xdeae3c7d37d84f9448dd66a178371ebce1c2250500f4d56e74635b0f39a3f61c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x3b850480FE43e6F64fd979a5FAFEA3A836fb5F81
+   > block number:        134681
+   > block timestamp:     1610014527
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             179.2826266395553
+   > gas used:            2211942 (0x21c066)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.04423884 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.04423884 ETH

@@ -1,0 +1,336 @@
+{
+    "ethereum": [
+        {
+            "name": "Sweep invoker",
+            "address": "0xba172987243066b92e6fd35576a48db1574f7104",
+            "token": "ETH"
+        },
+        {
+            "name": "Withdraw observer 1",
+            "address": "0x99e092850d6b1e180a842aaf8bfbdd792c470cd5",
+            "token": "ETH"
+        },
+        {
+            "name": "Withdraw observer 2",
+            "address": "0x53e33bf059577af8107f27feaf06ad02663b63f2",
+            "token": "ETH"
+        },
+        {
+            "name": "Withdraw observer 3",
+            "address": "0xf83c5b46a24b7999e615ba43bd1d9eb76ba7295d",
+            "token": "ETH"
+        },
+        {
+            "name": "Withdraw observer 4",
+            "address": "0xe74247861cac02d0bdc7c24ec4f5402181cc0310",
+            "token": "ETH"
+        },
+        {
+            "name": "Withdraw observer 5",
+            "address": "0x142c77b1e50ec7c4871b40edc727f92b96853b59",
+            "token": "ETH"
+        },
+        {
+            "name": "Withdraw observer 6",
+            "address": "0xacd9ea2de3c1b5241a24222f9d9d8de810a683b3",
+            "token": "ETH"
+        },
+        {
+            "name": "Withdraw observer 7",
+            "address": "0xaa8de1c33b6d4e9353565a5db944a46d8d5fd271",
+            "token": "ETH"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "USDM"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "BTCM"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "ETHM"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "MST"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "ETH"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "USDT"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "USDC"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "LINK"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "UNI"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "BNB"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "BUSD"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "YFI"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "DAI"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "OMG"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "VEN"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "AAVE"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "HT"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "SUSHI"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "TUSD"
+        },
+        {
+            "name": "Eurus Platform wallet",
+            "address": "0xE41530b5f0a30B13cb027B94812f91742f3557d2",
+            "token": "cDAI"
+        }
+    ],
+    "eurus": [
+        {
+            "name": "Approval observer 1",
+            "address": "0x96e032c4d267dfa59b8450e2002c580ff730b7dc",
+            "token": "EUN"
+        },
+        {
+            "name": "Approval observer 2",
+            "address": "0xfd2d595ea1a295bf16332cb062ee03ea8f1ea9e9",
+            "token": "EUN"
+        },
+        {
+            "name": "Approval observer 3",
+            "address": "0x5c0ae1628733d12ad73f5963e785757a55fb04a6",
+            "token": "EUN"
+        },
+        {
+            "name": "Approval observer 4",
+            "address": "0x33a44b126e7cd756e1aea31243b7e0810e17baf1",
+            "token": "EUN"
+        },
+        {
+            "name": "Config server 1",
+            "address": "0xc784fb236a6f352fa1f5cd949386367f257f1998",
+            "token": "EUN"
+        },
+        {
+            "name": "Config server 2",
+            "address": "0x3a3b9af6a7999fac56c15799b61bf39ea882755d",
+            "token": "EUN"
+        },
+        {
+            "name": "Config server 3",
+            "address": "0xe8e7057741a41fb24f8790288ac2f8ac18091632",
+            "token": "EUN"
+        },
+        {
+            "name": "Config server 4",
+            "address": "0xf816b43111347dd3da36aa771b9da73022928a78",
+            "token": "EUN"
+        },
+        {
+            "name": "Config server 5",
+            "address": "0xadb44cd49e7f7758e3209b1a6861e14651682cc3",
+            "token": "EUN"
+        },
+        {
+            "name": "Deposit observer 1",
+            "address": "0x77a1ed8292a350f2c53dec98f2d5de100ef12b77",
+            "token": "EUN"
+        },
+        {
+            "name": "Deposit observer 2",
+            "address": "0xdc881c290a7c7499c96eb8e77698963a669f142f",
+            "token": "EUN"
+        },
+        {
+            "name": "Deposit observer 3",
+            "address": "0xbb41152facfe46fb7e7394beb12e1b5ca15ce803",
+            "token": "EUN"
+        },
+        {
+            "name": "Deposit observer 4",
+            "address": "0xb7701fcd5063fc2dc201785aeaa05e4ce8814f61",
+            "token": "EUN"
+        },
+        {
+            "name": "Deposit observer 5",
+            "address": "0xbf61e5ea449ef6fb8b0b0ef9966871399b2c180e",
+            "token": "EUN"
+        },
+        {
+            "name": "Deposit observer 6",
+            "address": "0xa6c6fe14093ea0307f0536dc409b9d2cc7355755",
+            "token": "EUN"
+        },
+        {
+            "name": "Deposit observer 7",
+            "address": "0x49be60794407014820902819db97f473077b770f",
+            "token": "EUN"
+        },
+        {
+            "name": "User Observer 1",
+            "address": "0xbdc424a088524e02afd5f45e2483010d6c7992da",
+            "token": "EUN"
+        },
+        {
+            "name": "User Observer 2",
+            "address": "0x8691f09e8fbb7fae442326c30ab0675172a4da88",
+            "token": "EUN"
+        },
+        {
+            "name": "User server 1",
+            "address": "0x45dc4b5a6481cbec734ad817ea906fa4b93c4ba9",
+            "token": "EUN"
+        },
+        {
+            "name": "User server 2",
+            "address": "0x1f5d81073ebb61ba545f9896013ea1f3b428315f",
+            "token": "EUN"
+        },
+        {
+            "name": "User server 3",
+            "address": "0x1abe6f643a07981dd6852c4bd1ece599ac6aff9a",
+            "token": "EUN"
+        },
+        {
+            "name": "User server 4",
+            "address": "0xe41202ed21e16cf07c1f3ae8ae7ed5fb5a63fa95",
+            "token": "EUN"
+        },
+        {
+            "name": "User server 5",
+            "address": "0xa2c9c429d054d302f86ddddf98ddedf2f1d1243a",
+            "token": "EUN"
+        },
+        {
+            "name": "Withdraw observer 1",
+            "address": "0x99e092850d6b1e180a842aaf8bfbdd792c470cd5",
+            "token": "EUN"
+        },
+        {
+            "name": "Withdraw observer 2",
+            "address": "0x53e33bf059577af8107f27feaf06ad02663b63f2",
+            "token": "EUN"
+        },
+        {
+            "name": "Withdraw observer 3",
+            "address": "0xf83c5b46a24b7999e615ba43bd1d9eb76ba7295d",
+            "token": "EUN"
+        },
+        {
+            "name": "Withdraw observer 4",
+            "address": "0xe74247861cac02d0bdc7c24ec4f5402181cc0310",
+            "token": "EUN"
+        },
+        {
+            "name": "Withdraw observer 5",
+            "address": "0x142c77b1e50ec7c4871b40edc727f92b96853b59",
+            "token": "EUN"
+        },
+        {
+            "name": "Withdraw observer 6",
+            "address": "0xacd9ea2de3c1b5241a24222f9d9d8de810a683b3",
+            "token": "EUN"
+        },
+        {
+            "name": "Withdraw observer 7",
+            "address": "0xaa8de1c33b6d4e9353565a5db944a46d8d5fd271",
+            "token": "EUN"
+        },
+        {
+            "name": "Sign server centralized user wallet owner",
+            "address": "0x374839556766d8D582689C1A651511d16B60b7A8",
+            "token": "EUN"
+        },
+        {
+            "name": "Centralized user wallet topup invoker 1",
+            "address": "0xA6e7EBD9772135255f03CE8158129B48553B1EAe",
+            "token": "EUN"
+        },
+        {
+            "name": "Centralized user wallet topup invoker 2",
+            "address": "0x6d5C1a3Eec67669861d1dfC1Aa1cA5Ce5CA680a0",
+            "token": "EUN"
+        },
+        {
+            "name": "Centralized user wallet topup invoker 3",
+            "address": "0x7998331b7FFeb1d9AB131A541e140569b57844aD",
+            "token": "EUN"
+        },
+        {
+            "name": "Centralized user wallet topup invoker 4",
+            "address": "0x97Abc16f9cbE2F6FDB8f945291DFE2EBDEa5F954",
+            "token": "EUN"
+        },
+        {
+            "name": "Centralized user wallet topup invoker 5",
+            "address": "0xE31F19C1fcDb7D346f69D834E6a83a1742f148a7",
+            "token": "EUN"
+        },
+        {
+            "name": "Marketing wallet",
+            "address": "0x13Be03958107364E68792A7b47bFdB8556f9aDe0",
+            "token": "EUN"
+        },
+        {
+            "name": "Gas fee collector",
+            "address": "0xe19458B01AD05b81Ad27f1241494c70B9EFDaac6",
+            "token": "EUN"
+        }
+    ]
+}

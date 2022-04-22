@@ -1,0 +1,325 @@
+{
+  "contractName": "ITokenMintable",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/token/ITokenMintable.sol\":\"ITokenMintable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/token/ITokenMintable.sol\":{\"keccak256\":\"0x486b028a456adc75c3704a0529888f792a1198d2513597b9e9e6e2e8c798f198\",\"urls\":[\"bzz-raw://39004c8f4145e398b839f714b1e738dbafed464efd37c0dc7010b444ee8b4157\",\"dweb:/ipfs/QmVtAo8pQmFKPEAdfYfbzk2LAWuHeBPq1MMWSudBRHoJN5\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.6.0 <0.8.0;\n\ninterface ITokenMintable{\n    function mint(address account, uint256 amount) external;\n}\n",
+  "sourcePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/token/ITokenMintable.sol",
+  "ast": {
+    "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/token/ITokenMintable.sol",
+    "exportedSymbols": {
+      "ITokenMintable": [
+        5016
+      ]
+    },
+    "id": 5017,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5008,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".0",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:25"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5016,
+        "linearizedBaseContracts": [
+          5016
+        ],
+        "name": "ITokenMintable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "40c10f19",
+            "id": 5015,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5013,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5010,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5015,
+                  "src": "77:15:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5009,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "77:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5012,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5015,
+                  "src": "94:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5011,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "94:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "76:33:25"
+            },
+            "returnParameters": {
+              "id": 5014,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "118:0:25"
+            },
+            "scope": 5016,
+            "src": "63:56:25",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5017,
+        "src": "33:88:25"
+      }
+    ],
+    "src": "0:122:25"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/token/ITokenMintable.sol",
+      "exportedSymbols": {
+        "ITokenMintable": [
+          5016
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.6",
+            ".0",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 5008,
+        "name": "PragmaDirective",
+        "src": "0:31:25"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            5016
+          ],
+          "name": "ITokenMintable",
+          "scope": 5017
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "40c10f19",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "mint",
+              "overrides": null,
+              "scope": 5016,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "overrides": null,
+                      "scope": 5015,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5009,
+                        "name": "ElementaryTypeName",
+                        "src": "77:7:25"
+                      }
+                    ],
+                    "id": 5010,
+                    "name": "VariableDeclaration",
+                    "src": "77:15:25"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 5015,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 5011,
+                        "name": "ElementaryTypeName",
+                        "src": "94:7:25"
+                      }
+                    ],
+                    "id": 5012,
+                    "name": "VariableDeclaration",
+                    "src": "94:14:25"
+                  }
+                ],
+                "id": 5013,
+                "name": "ParameterList",
+                "src": "76:33:25"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5014,
+                "name": "ParameterList",
+                "src": "118:0:25"
+              }
+            ],
+            "id": 5015,
+            "name": "FunctionDefinition",
+            "src": "63:56:25"
+          }
+        ],
+        "id": 5016,
+        "name": "ContractDefinition",
+        "src": "33:88:25"
+      }
+    ],
+    "id": 5017,
+    "name": "SourceUnit",
+    "src": "0:122:25"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-08-04T10:30:06.232Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

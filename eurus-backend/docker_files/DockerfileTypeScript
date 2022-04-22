@@ -1,0 +1,41 @@
+# syntax=docker/dockerfile:1
+FROM node:14.17-stretch
+
+# Copy smartcontract type defintition
+ADD ./smartcontract/build/typescript /app/smartcontract/build/typescript
+# Add typescript project folder (nodeJS)
+ADD ./typescript /app/typescript
+# Set the working directory
+WORKDIR /app/typescript
+# Run npm install on the docker
+RUN npm install
+RUN npm install pm2 -g
+EXPOSE 3000
+CMD npm run build & npm run all
+
+# (0)
+# stop all containers:
+# #docker kill $(docker ps -q)
+# remove all containers
+# #docker rm $(docker ps -a -q)
+# remove all docker images
+# #docker rmi $(docker images -q)
+
+# Go to eurus-backend folder, type in terminal
+# (1) Build image
+# #docker build -f docker_files/DockerfileTypeScript . -t typescript
+# (2) Run image
+# #docker run -t -d typescript
+# (3) Run image on terminal
+# #docker container ls -a
+# #docker start [containerId]
+# #docker exec -it [containerId] /bin/bash 
+# (4) List container
+# #docker container ls -a
+# (5) List images
+# #docker image ls
+
+
+
+
+

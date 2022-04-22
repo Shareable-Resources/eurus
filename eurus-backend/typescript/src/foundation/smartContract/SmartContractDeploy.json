@@ -1,0 +1,20 @@
+{
+  "1984": {
+    "smartContract": {
+      "USDT": {
+        "address": "0xB33979791Aeb092EB08d74182cB033dDB6166bCD"
+      },
+      "OwnedUpgradeabilityProxy<USDT>": {
+        "address": "0x10478bB1E3A9011bFdC2645Bf85110f9D17fa8DC"
+      },
+      "DAppSampleToken": {
+        "address": "0xee7F8f1D5ddfE312dAe335C785c3c9dEFA821499"
+      },
+      "OwnedUpgradeabilityProxy<DAppSampleToken>": {
+        "address": "0xE2bF4d5FDf5B04F97cc808B552d5338166e8A3C3"
+      }
+    }
+  },
+  "lastUpdateTime": "2021-08-26T09:20:31.697Z",
+  "tag": "testnet"
+}

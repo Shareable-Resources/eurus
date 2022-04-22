@@ -1,0 +1,609 @@
+openapi: 3.0.0
+info:
+  title: DApp Payment Gateway API
+  version: '1.0'
+  description: DApp Payment Gateway API Description
+  contact:
+    name: DApp Payment Gateway
+servers:
+  - url: 'http://localhost:3000'
+    description: Local
+  - url: 'http://172.31.40.43:3000'
+    description: EC2 Internal
+  - url: 'http://devpaymentgatewayapi.mobicdn.cn'
+    description: Dev External
+paths:
+  /networks:
+    get:
+      summary: Get All Networks
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  networks:
+                    type: array
+                    uniqueItems: true
+                    items:
+                      $ref: '#/components/schemas/Network'
+                required:
+                  - networks
+              examples:
+                Example:
+                  value:
+                    networks:
+                      - networkID: 1
+                        networkCode: EUN_dev
+                        networkName: Eurus dev env
+                        chainID: 2021
+      operationId: get-all-networks
+      description: Get all supported networks
+    parameters: []
+  '/networks/{networkCode}/tokens':
+    parameters:
+      - schema:
+          type: string
+          example: EUN_dev
+        name: networkCode
+        in: path
+        required: true
+    get:
+      summary: Get All Tokens
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  tokens:
+                    type: array
+                    uniqueItems: true
+                    items:
+                      $ref: '#/components/schemas/Token'
+                required:
+                  - tokens
+              examples:
+                Example:
+                  value:
+                    tokens:
+                      - tokenID: 1
+                        networkCode: EUN_dev
+                        address: '0xa54dee79c3bb34251debf86c1ba7d21898ffb7ac'
+                        symbol: USDT
+                        name: Tether USD
+                        decimals: 6
+        '404':
+          description: Not Found
+      operationId: get-all-tokens
+      description: Get all supported tokens of a network
+  '/networks/{networkCode}/transactions/{txHash}':
+    parameters:
+      - schema:
+          type: string
+          example: '0x0a56b07a1ac80eab4458f147a4c127652ee4598d45222ca124e0ebe4924567eb'
+        name: txHash
+        in: path
+        required: true
+      - schema:
+          type: string
+          example: EUN_dev
+        name: networkCode
+        in: path
+        required: true
+    get:
+      summary: Get Submission Status of a Payment Transaction
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubmissionReply'
+              examples:
+                Example:
+                  value:
+                    txHash: '0x9b8af111285e5d942c774f1931676cea93c64b56e7f03a3588d29af932b27853'
+                    submitTime: '2021-12-23T00:00:00Z'
+                    networkCode: EUN_dev
+                    symbol: USDT
+                    fromAddress: '0x39eb6463871040f75c89c67ec1dfcb141c3da1cf'
+                    amount: '1000000'
+                    txStatus: -1
+                    paymentStatus: 0
+        '400':
+          description: Invalid network code
+        '404':
+          description: No submission is found for this transaction hash
+      operationId: get-submission
+      description: 'Get the status of a transaction, about its payment information and if it is verified'
+    post:
+      summary: Submit Payment Information of Transaction
+      tags: []
+      operationId: submit-payment-transaction
+      description: 'Submit the payment information of a transaction, with signature'
+      responses:
+        '201':
+          description: 'Signature verified, submission is successful'
+        '400':
+          description: Invalid signature
+        '403':
+          description: Submission of this transaction from same address is still pending
+        '409':
+          description: The transaction is already claimed by other submission
+        '410':
+          description: The transaction is failed
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Submission'
+            examples:
+              Example:
+                value:
+                  from: '0x39EB6463871040f75C89C67ec1dFCB141C3da1cf'
+                  coin: USDT
+                  amount: '1000000'
+                  merchant: BTCC
+                  tag: '1000123'
+                  signature: '0xa3b4e8fa645babad233fa992fc7485784ae90973ae7152a284cf2700c80387050c6938d54cd7a77741c6e4d1cb28c08907f74e38ff9d611664e8503c640e3ba41b'
+  /merchants:
+    parameters: []
+    get:
+      summary: Get List of Merchants
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  merchants:
+                    type: array
+                    uniqueItems: true
+                    items:
+                      $ref: '#/components/schemas/Merchant'
+                required:
+                  - merchants
+              examples:
+                Example:
+                  value:
+                    merchants:
+                      - merchantID: 1
+                        merchantCode: BTCC
+                        merchantName: Bitcoin China
+      operationId: get-all-merchants
+      description: Get ID and name of all merchants
+  '/merchants/{merchantCode}':
+    parameters:
+      - schema:
+          type: string
+          example: BTCC
+        name: merchantCode
+        in: path
+        required: true
+    get:
+      summary: Get Detailed Merchant Information
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Merchant'
+              examples:
+                Example:
+                  value:
+                    merchantID: 1
+                    merchantCode: BTCC
+                    merchantName: Bitcoin China
+                    tagDisplayName:
+                      en: Account
+                      zh_tw: 帳號
+                    tagDescription: Account No. / Address
+                    wallets:
+                      - networkCode: EUN_dev
+                        symbol: USDT
+                        address: '0x39eb6463871040f75c89c67ec1dfcb141c3da1cf'
+        '404':
+          description: Not Found
+      operationId: get-merchant
+      description: Get information of a merchant by merchant name
+  '/merchants/{merchantCode}/transactions':
+    get:
+      summary: Get transactions by merchant
+      tags: []
+      description: Returns `401` if there is a wrong combination of `merchantCode` and `X-API-KEY` header
+      security:
+        - merchantAPIKey: []
+      parameters:
+        - in: query
+          name: startingSeqNo
+          required: true
+          schema:
+            type: integer
+            x-go-type: int64
+            example: 1001
+        - in: query
+          name: limit
+          required: false
+          schema:
+            type: integer
+            example: 10
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantQueryReply'
+              examples:
+                Example:
+                  value:
+                    data:
+                      - seqNo: 1001
+                        networkCode: Rinkeby_dev
+                        symbol: USDT
+                        amount: '1000000000'
+                        tag: '0x39EB6463871040f75C89C67ec1dFCB141C3da1cf'
+                        txHash: '0xc379c6210333245736b531337c0c978a45b6a70fc62fa9809ad8b169dcbc3736'
+                        blockHash: '0x89aa3e3e02e864f6337fd52b2e0debcb8792a903b26da613f2a4ad79dff902fd'
+                        blockNo: 9977921
+                        onchainStatus: 2
+                        confirmStatus: 1
+                      - seqNo: 1002
+                        networkCode: Rinkeby_dev
+                        symbol: USDT
+                        amount: '5000000000'
+                        tag: '0xC0C0A43D2819eFca5a2774F9Efcb1F60Ff9873D9'
+                        txHash: '0x8a6a517e0a2e6ea393f9879e6cde9753a7c8a78f4a8998305d252a55b2c28df0'
+                        blockHash: '0x93d2c3aba2bb6b9f128f06a724f96e1077b227403710c3a05462a37ec704aa2c'
+                        blockNo: 9977933
+                        onchainStatus: 2
+                        confirmStatus: 1
+                    meta:
+                      nextSeqNo: 1003
+                      hasNext: true
+        '401':
+          description: Unauthorized
+      operationId: get-transactions-by-merchant
+    parameters:
+      - schema:
+          type: string
+          example: BTCC
+        name: merchantCode
+        in: path
+        required: true
+components:
+  schemas:
+    Network:
+      description: ''
+      type: object
+      x-examples:
+        Example:
+          networkID: 1
+          networkCode: EUN_dev
+          networkName: Eurus dev env
+          chainID: 2021
+      properties:
+        networkID:
+          type: integer
+          x-go-type: int64
+        networkCode:
+          type: string
+        networkName:
+          type: string
+        chainID:
+          type: integer
+          nullable: true
+      required:
+        - networkID
+        - networkCode
+        - networkName
+    Token:
+      description: ''
+      type: object
+      x-examples:
+        Example:
+          tokenID: 1
+          networkCode: EUN_dev
+          address: '0xa54dee79c3bb34251debf86c1ba7d21898ffb7ac'
+          symbol: USDT
+          name: Tether USD
+          decimals: 6
+      properties:
+        tokenID:
+          type: integer
+          x-go-type: int64
+        networkCode:
+          type: string
+          minLength: 1
+        address:
+          type: string
+          minLength: 1
+        symbol:
+          type: string
+          minLength: 1
+        name:
+          type: string
+          minLength: 1
+        decimals:
+          type: integer
+      required:
+        - tokenID
+        - networkCode
+        - address
+        - symbol
+        - name
+        - decimals
+    Merchant:
+      description: ''
+      type: object
+      x-examples:
+        Example:
+          merchantID: 1
+          merchantCode: BTCC
+          merchantName: Bitcoin China
+          tagDisplayName:
+            en: Account
+            zh_tw: 帳號
+          tagDescription: Account No. / Address
+          wallets:
+            - networkCode: EUN_dev
+              symbol: USDT
+              address: '0x39eb6463871040f75c89c67ec1dfcb141c3da1cf'
+      properties:
+        merchantID:
+          type: integer
+          x-go-type: int64
+        merchantCode:
+          type: string
+        merchantName:
+          type: string
+        tagDisplayName:
+          type: object
+        tagDescription:
+          type: string
+        wallets:
+          type: array
+          uniqueItems: true
+          items:
+            $ref: '#/components/schemas/MerchantWallet'
+      required:
+        - merchantID
+        - merchantCode
+        - merchantName
+    MerchantWallet:
+      description: ''
+      type: object
+      properties:
+        networkCode:
+          type: string
+          minLength: 1
+        symbol:
+          type: string
+          minLength: 1
+        address:
+          type: string
+          minLength: 1
+      required:
+        - networkCode
+        - symbol
+        - address
+      x-examples:
+        Example:
+          networkCode: EUN_dev
+          symbol: USDT
+          address: '0x39eb6463871040f75c89c67ec1dfcb141c3da1cf'
+    Submission:
+      description: ''
+      type: object
+      x-examples:
+        Example:
+          from: '0x39EB6463871040f75C89C67ec1dFCB141C3da1cf'
+          coin: USDT
+          amount: '1000000'
+          merchant: BTCC
+          tag: '1000123'
+          signature: '0x95ecffda68f0fec315079c07b91ea30562b6cd58183979d55a620733707c12b4179fe4898c5eddbf34f6ce5b3cefad821db2345d3ee4b4a6f523b6f59a0f8d1c1b'
+      properties:
+        from:
+          type: string
+        coin:
+          type: string
+        amount:
+          type: string
+        merchant:
+          type: string
+        tag:
+          type: string
+        signature:
+          type: string
+      required:
+        - from
+        - coin
+        - amount
+        - merchant
+        - tag
+        - signature
+    SubmissionReply:
+      description: ''
+      type: object
+      x-examples:
+        Example:
+          txHash: '0x9b8af111285e5d942c774f1931676cea93c64b56e7f03a3588d29af932b27853'
+          submitTime: '2021-12-23T00:00:00Z'
+          networkCode: EUN_dev
+          symbol: USDT
+          fromAddress: '0x39eb6463871040f75c89c67ec1dfcb141c3da1cf'
+          amount: '1000000'
+          txStatus: -1
+          paymentStatus: 0
+      properties:
+        txHash:
+          type: string
+        submitTime:
+          type: string
+          format: date-time
+        networkCode:
+          type: string
+        symbol:
+          type: string
+        fromAddress:
+          type: string
+        amount:
+          type: string
+        txStatus:
+          type: integer
+          x-go-type: int
+          enum:
+            - -1
+            - 0
+            - 1
+        paymentStatus:
+          type: integer
+          x-go-type: int
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+      required:
+        - txHash
+        - submitTime
+        - networkCode
+        - symbol
+        - fromAddress
+        - amount
+        - txStatus
+        - paymentStatus
+    MerchantTransaction:
+      type: object
+      x-examples:
+        Example:
+          seqNo: 1001
+          networkCode: Rinkeby_dev
+          symbol: USDT
+          amount: '1000000000'
+          tag: '0x39EB6463871040f75C89C67ec1dFCB141C3da1cf'
+          txHash: '0xc379c6210333245736b531337c0c978a45b6a70fc62fa9809ad8b169dcbc3736'
+          blockHash: '0x89aa3e3e02e864f6337fd52b2e0debcb8792a903b26da613f2a4ad79dff902fd'
+          blockNo: 9977921
+          onchainStatus: 2
+          confirmStatus: 1
+      properties:
+        seqNo:
+          type: integer
+          x-go-type: int64
+        networkCode:
+          type: string
+        symbol:
+          type: string
+        amount:
+          type: string
+        tag:
+          type: string
+        txHash:
+          type: string
+        blockHash:
+          type: string
+        blockNo:
+          type: integer
+          x-go-type: int64
+        onchainStatus:
+          type: integer
+          x-go-type: int
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+        confirmStatus:
+          type: integer
+          x-go-type: int
+          enum:
+            - 0
+            - 1
+            - 2
+      required:
+        - seqNo
+        - networkCode
+        - symbol
+        - amount
+        - tag
+        - txHash
+        - blockHash
+        - blockNo
+        - onchainStatus
+        - confirmStatus
+    MerchantQueryReply:
+      type: object
+      x-examples:
+        Example:
+          data:
+            - seqNo: 1001
+              networkCode: Rinkeby_dev
+              symbol: USDT
+              amount: '1000000000'
+              tag: '0x39EB6463871040f75C89C67ec1dFCB141C3da1cf'
+              txHash: '0xc379c6210333245736b531337c0c978a45b6a70fc62fa9809ad8b169dcbc3736'
+              blockHash: '0x89aa3e3e02e864f6337fd52b2e0debcb8792a903b26da613f2a4ad79dff902fd'
+              blockNo: 9977921
+              onchainStatus: 2
+              confirmStatus: 1
+            - seqNo: 1002
+              networkCode: Rinkeby_dev
+              symbol: USDT
+              amount: '5000000000'
+              tag: '0xC0C0A43D2819eFca5a2774F9Efcb1F60Ff9873D9'
+              txHash: '0x8a6a517e0a2e6ea393f9879e6cde9753a7c8a78f4a8998305d252a55b2c28df0'
+              blockHash: '0x93d2c3aba2bb6b9f128f06a724f96e1077b227403710c3a05462a37ec704aa2c'
+              blockNo: 9977933
+              onchainStatus: 2
+              confirmStatus: 1
+          meta:
+            nextSeqNo: 1003
+            hasNext: true
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MerchantTransaction'
+        meta:
+          type: object
+          required:
+            - hasNext
+          properties:
+            nextSeqNo:
+              type: integer
+              x-go-type: int64
+              nullable: true
+            hasNext:
+              type: boolean
+      required:
+        - data
+        - meta
+  securitySchemes:
+    merchantAPIKey:
+      name: X-API-Key
+      type: apiKey
+      in: header
+      description: ''
+  responses: {}
+  examples: {}
+  requestBodies: {}

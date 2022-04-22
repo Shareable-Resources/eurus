@@ -1,0 +1,35 @@
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 10000000 (0x989680)
+> Gas Price: NaN (0xNaN)
+
+
+1_initial_migration.js
+======================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'EurusMigrations'
+   ---------------------------
+   > transaction hash:    0x23245f5108c3c688269ba4d2a6355b7229d617601940c787da3654bba5bfb4c7
+   > Blocks: 12           Seconds: 169
+   > contract address:    0x7D2781dF2C740a257Cc8f1C5217cE7D6f5909312
+   > block number:        8002465
+   > block timestamp:     1612265240
+   > account:             0xa5bD66B90c9F4175F3baf3dD25155Fd31543eF81
+   > balance:             47.487804657
+   > gas used:            153706 (0x2586a)
+   > gas price:           1 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000153706 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 8002466)
+   > confirmation number: 2 (block: 8002467)
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.000153706 ETH
+
+

@@ -1,0 +1,862 @@
+{
+  "ACKNOWLEDGEMENT_DIALOG": {
+    "DEPOSIT_STATEMENT": "您了解并同意，以太坊收取矿工费以处理和完成此交易。\n\n请确保您有足够的资产来执行交易。",
+    "DONT_ASK_AGAIN": "不再显示这个信息",
+    "I_AGREE": "同意",
+    "SUFFICIENT_ASSETS_REMINDER": "请确保您有足够的资产来执行交易。",
+    "WITHDRAW_STATEMENT": "您理解并同意Eurus将收取不可退还的执行费以处理和完成此交易。\n\n请确保您有足够的资产来执行交易。\n\n执行费仅由交易资产结算, 矿工费由EUN 结算。"
+  },
+  "ADD_TOKEN_PAGE": {
+    "ADDRESS_PREFIX": "地址：{}",
+    "ERROR": {
+      "INVALID_ADDRESS": "无效地址",
+      "TOKEN_NOT_FOUND": {
+        "DESC": "无法找到该币种",
+        "TITLE": "未找到币种"
+      }
+    },
+    "MAIN_TITLE": "添加币种",
+    "SEARCHING": "搜索中…",
+    "SEARCHING_ADDRESS": "搜索地址 {}",
+    "SEARCH_BOX": {
+      "LABEL": "币种名称 / 地址",
+      "PLACEHOLDER": "输入币种名称 / 地址"
+    },
+    "SEARCH_TOKEN_BTN": "搜索币种"
+  },
+  "ADMIN_FEE": {
+    "DESC": "从Eurus到Ethereum的任何交易都将收取执行费。执行费仅由交易资产结算。",
+    "NAME": "执行费"
+  },
+  "ASSET_ALLOCATION_PAGE": {
+    "DEPOSIT_TITLE": "从Ethereum分配",
+    "TITLE": "资产分配",
+    "WITHDRAWAL": "提取",
+    "WITHDRAWAL_TITLE": "从Eurus分配"
+  },
+  "ASSET_TX_HISTORY": {
+    "REWARD": "奖励",
+    "DEPOSIT": "存款",
+    "WITHDRAWAL": "提取",
+    "ALLOCATE_TO": "{} 分配至 {}",
+    "AMOUNT": "总数",
+    "NO_TX_RECORD": "没有交易纪录",
+    "RECENT_TX": "最近交易",
+    "TX_ID": "交易号"
+  },
+  "BACKUP_MPHRASE": {
+    "RECEIVE_ALERT_DIALOG": {
+      "CONTENT": "去中心化账户的用户需要先备份助记词才能收取资产"
+    }
+  },
+  "BACKUP_SEEDPHRASE_PAGE": {
+    "CAUTION_DIALOG": {
+      "BACKUP_LATER": "稍后备份",
+      "CONTENT": "请确保您周围的环境是安全的，以显示助记词。"
+    },
+    "SCREENSHOT_DIALOG": {
+      "TITLE": "截屏风险",
+      "CONTENT": "截屏方式记录警语存在网络安全风险 , 不建议使用\n建议使笔录方式记存并放于安全地方",
+      "BUTTON_TEXT": "了解"
+    },
+    "CONFIRM_SEEDPHRASE": {
+      "CONTENT": "请按顺序点击下方的文字气泡以确认助记词。",
+      "TITLE": "确认助记词"
+    },
+    "DISPLAY_SEEDPHRASE": {
+      "CONTENT": "请按顺序抄写或记下这12个词。假如您丢失手机或忘记钱包密码等等，可使用助记词重新导入钱包。",
+      "TITLE": "请抄写您的助记词"
+    },
+    "MAIN_TITLE": "备份助记词"
+  },
+  "BIOMETRICS_PAGE": {
+    "BIO_NOT_SUPPORTED": "对不起！您的设备不支持此功能。",
+    "DESC": "设置生物验证",
+    "LOGIN": "登录",
+    "TITLE": "生物验证",
+    "TRANSACTION": "交易"
+  },
+  "CEN_LOGIN": {
+    "FORGOT_PW": "忘记密码了？",
+    "INPUT": {
+      "EMAIL_DESC": "输入电子邮件",
+      "EMAIL_TITLE": "电子邮件",
+      "PW_DESC": "输入密码",
+      "PW_TITLE": "密码"
+    },
+    "LOGIN_BTN": "登录",
+    "REG_BTN": "注册",
+    "REG_TEXT": "没有帐户？",
+    "TITLE": "登录"
+  },
+  "CHANGE_LOCKER_PW": {
+    "CHANGE_SUCCESS": "更改成功",
+    "CHANGE_SUCCESS_DESC": "您已成功更改钱包密码。请使用新钱包密码重新登入。",
+    "CHANGE_SUCCESS_PW": "您已成功更改密码",
+    "CONFIRM_PW": {
+      "LABEL": "确认密码",
+      "PLACEHOLDER": "输入新密码"
+    },
+    "CURRENT_PW": {
+      "LABEL": "原密码",
+      "PLACEHOLDER": "输入原密码"
+    },
+    "ERROR": {
+      "DIFF_NEW_PW": "请输入不相同的新密码",
+      "EMPTY_CONFIRM_PW": "请确认新密码",
+      "EMPTY_CUR_PW": "请输入原密码",
+      "EMPTY_NEW_PW": "请输入新密码",
+      "PW_NOT_DIGIT_OR_CHARACTER": "密码必须包含至少 1 个数字和 1 个字母字符",
+      "PW_NOT_CONTAIN_8_TO_20_CHARACTER": "密码应包含 8 到 20 个字符"
+    },
+    "NEW_PW": {
+      "LABEL": "新密码",
+      "PLACEHOLDER": "输入新密码"
+    },
+    "RELOGIN": "重新登入",
+    "TITLE": "修改钱包密码"
+  },
+  "COMMON": {
+    "ADD_TOKEN": "添加币种",
+    "ALLOW": "允许",
+    "BACKUP_NOW": "立即备份",
+    "CANCEL": "取消",
+    "CAUTION": "注意",
+    "CLOSE": "关闭",
+    "COLON": "：",
+    "CONFIRM": "确认",
+    "CONTINUE": "继续",
+    "COPIED": "复制到剪贴板",
+    "DATE": "日期",
+    "DONT_ALLOW": "不允许",
+    "FINISH": "完成",
+    "LOADING_W_DOT": "加载中⋯",
+    "NEXT_STEP": "下一步",
+    "OK": "确认",
+    "OR": "或",
+    "PENDING": "处理中",
+    "SUBMIT": "提交",
+    "SUCCESS": "成功",
+    "FAILURE": "失败",
+    "BACK": "返回",
+    "NOT_NETWORK_CONNECTION": "无网络连接",
+    "ALREADY_ROOT_DEVICE": "Eurus钱包暂不支援越狱(iOS) / Root(Android) 设备。",
+    "WARNING": "警告",
+    "PASSWORD_HINT": "输入密码",
+    "REMIND": "提示",
+    "COUNTRY_NOT_AVAILABLE": "此服务不能在 中国境内 运行",
+    "COMING_SOON": "即将推出",
+    "MESSAGE": "信息",
+    "REJECT": "拒绝",
+    "ESTIMATED_GAS_FEE": "预估矿工费",
+    "TOTAL": "总计"
+  },
+  "COMMON_ERROR": {
+    "AUTH_FAIL": "验证失败",
+    "INCORRECT_PW": "密码不正确",
+    "PW_INCONSISTENT": "密码不一致",
+    "USER_NOT_FOUND": "请输入正确的邮箱和密码",
+    "INVALID_CODE": "无效验证码",
+    "REQUEST_TOO_FREQUENT": "请求过于频繁，请等待 5 分钟",
+    "REQUEST_TOO_FREQUENT_1_MIN": "请求过于频繁，请等待 1 分钟",
+    "CODE_EXPIRED": "代码已过期",
+    "USER_NOT_FOUND2": "找不到用户",
+    "USER_EMAIL_NOT_FOUND": "请输入正确的邮箱",
+    "EUN_WITHDRAW_ERROR": "不能提取EUN",
+    "PW_IS_INCORRECT": "原密码不正确",
+    "SERVER_MAINTENANCE": "服务器维护"
+  },
+  "CREATE_LOCKER_PAGE": {
+    "CONFIRM_PW": {
+      "LABEL": "确认密码",
+      "PLACEHOLDER": "再次输入密码"
+    },
+    "ENABLE_BIO_AUTH": "启用生物验证",
+    "ERROR": {
+      "EMPTY_CONFIRM_PW": "请确认钱包密码"
+    },
+    "MAIN_TITLE": "设置钱包密码",
+    "NEW_PW": {
+      "LABEL": "新密码",
+      "PLACEHOLDER": "输入密码"
+    }
+  },
+  "CREATE_WALLET_PAGE": {
+    "CEN": {
+      "DESC": "推荐新手用户",
+      "INFO_DIALOG": {
+        "DESC": "与中心化钱包不同。 Eurus 只保存了“SALT”而不是整个私钥。",
+        "TITLE": "提示"
+      },
+      "TITLE": "托管"
+    },
+    "CEN_BTN": {
+      "DESC": "推荐新手用户",
+      "TITLE": "中心化"
+    },
+    "CREATE_WALLET": "创建钱包",
+    "DECEN": {
+      "DESC": "推荐有经验用户",
+      "INFO_DIALOG": {
+        "DESC": "Eurus去中心化钱包，不会保存用户任何个人信息，用户需要妥善保管个人登录信息及助记词，以找回钱包。",
+        "TITLE": "提示"
+      },
+      "TITLE": "去中心化"
+    },
+    "DECEN_BTN": {
+      "DESC": "推荐有经验用户",
+      "TITLE": "去中心化"
+    },
+    "SELECT_TYPE": "选择钱包类型"
+  },
+  "DOWNLOAD_STATEMENT": {
+    "CURRENT_MONTH": "Current Month",
+    "EXPORT_PDF": "Export PDF",
+    "OPEN_PDF": "Open PDF",
+    "PREVIOUS_MONTH": "Previous Month",
+    "SUMMARY": {
+      "TITLE": "Download Summary"
+    },
+    "TX_DETAIL": {
+      "TITLE": "Download asset Tx Details"
+    }
+  },
+  "EDIT_ASSETS_LIST_PAGE": {
+    "MAIN_TITLE": "编辑资产"
+  },
+  "FAUCET_FNC": {
+    "DESC": "5分钟后，您可以在的账户中看到相应的测试币。",
+    "DESC2": "您的测试币请求正在处理中，请稍候。",
+    "DESC3": "您今日的测试币额度已用完，请明天再试。",
+    "FAUCET": "测试币"
+  },
+  "FORCE_UPDATE": {
+    "TITLE": "版本已更新",
+    "DESC_ANDROID": "已有新版本可下载！请通过最新的APK安装包完成更新。",
+    "DESC_IOS": "已有更新版本可下载！请到Apple Store完成更新。",
+    "BTN_TITLE": "更新"
+  },
+  "FORGOT_PW": {
+    "FORGOT_PW_BTN": "忘记密码"
+  },
+  "GAS_FEE": {
+    "DESC": "支付给矿工处理网络交易的{}费用，它的波动很大。",
+    "NAME": "矿工费"
+  },
+  "HOME": {
+    "DOWNLOAD_SUMMARY": "下载摘要",
+    "EDIT_LIST": "编辑列表",
+    "HEADER": {
+      "SEED_PHRASE_NOT_BACKUP": "未备份助记词"
+    }
+  },
+  "IMPORT_WALLET_PAGE": {
+    "TITLE": "导入钱包",
+    "IMPORT_BTN": "导入",
+    "MPHRASE": {
+      "NAME": "助记词",
+      "TITLE": "输入助记词",
+      "INPUT_HINT": "按顺序输入您的助记词，并以空格分隔各单词",
+      "INVALID_INPUT": "助记词无效"
+    },
+    "PRIVATE_KEY": {
+      "NAME": "私钥",
+      "TITLE": "输入私钥",
+      "INPUT_HINT": "输入您的私钥",
+      "INVALID_INPUT": "私钥无效"
+    }
+  },
+  "LANGUAGE_PAGE": {
+    "TITLE": "语言"
+  },
+  "LAUNCH_PAGE": {
+    "CREATE_ACCOUNT_BTN": "创建钱包",
+    "CUSTOMER_SERVICE": "客服中心",
+    "IMPORT_WALLET_BTN": "导入钱包",
+    "LOGIN_BTN": "登录钱包"
+  },
+  "FORGOT_PAYMENT_PWD_DIALOG": {
+    "CONTENT": "忘记支付密码后，所有矿工费将会失去。你确认继续吗？"
+  },
+  "LOGOUT_DIALOG": {
+    "CONTENT": "您确定要登出吗？",
+    "TITLE": "登出钱包"
+  },
+  "MAIN_FNC": {
+    "ASSET_ALLOCATION": "资产分配",
+    "RECEIVE": "收款",
+    "SCAN": "扫码",
+    "SEND": "转账"
+  },
+  "MAIN_NAVBAR": {
+    "WALLET": "钱包",
+    "SWAP": "兑换",
+    "BROWSER": "浏览器",
+    "MARKETS": "市场",
+    "SETTING": "设置"
+  },
+  "RECEIVE_PAGE": {
+    "DISCLAIMER": "免责声明",
+    "DISCLAIMER_DECEN": "以上地址仅支持在Ethereum网络的ETH和ERC20 资产。在收取资产前，请先确认Eurus钱包能够支持该资产，请勿向以上地址转入任何本钱包不能支持的资产，否则资产将无法找回。",
+    "MAIN_TITLE": "收款",
+    "MY_WALLET_ADDRESS": "我的钱包地址",
+    "SHARE_TEXT": "这是我的{}钱包地址：\n{}",
+    "SELECT_NETWORK": "请选择网络",
+    "SELECT_NETWORK_STATEMENT": "请选择您要收取资产的网络，并确保您收取与发送资产的网络一致，否则资产将无法找回。",
+    "SELECT_NETWORK_REMINDER": "以上地址仅支持在Eurus网络的资产。在收取资产前，请先确认发送人的钱包能够支持Eurus 网络，切勿向以上地址转入其他网络发出的资产，否则资产将无法找回。"
+  },
+  "REGISTER": {
+    "INPUT": {
+      "CONFIRM_LOGIN_PW_DESC": "输入登录密码",
+      "CONFIRM_LOGIN_PW_TITLE": "确认登录密码",
+      "EMAIL_DESC": "输入电子邮件",
+      "EMAIL_TITLE": "电子邮件",
+      "LOGIN_PW_DESC": "确认登录密码",
+      "LOGIN_PW_TITLE": "登录密码",
+      "PAYMENT_PW_TITLE": "支付密码",
+      "PAYMENT_PW_DESC": "确认支付密码"
+    },
+    "LOGIN_PW_SECTION_TITLE": "登录密码",
+    "MAIN_TITLE": "注册",
+    "PAYMENT_PW_SECTION_TITLE": "支付密码",
+    "AGREE_T&C": "创建账户即表示您同意我们的",
+    "T&C": "条款和条件",
+    "MUST_AGREE_T&C": "你必须同意团队和条件",
+    "GET_CODE_FROM_EMAIL": "通过上面的电子邮件获取验证码",
+    "CONTAIN_8_TO_20": "{} 应包含 8 到 20 个字符",
+    "DIGIT_AND_CHARACTER": "{} 必须至少包含 1 个数字和 1 个字母字符",
+    "LOGIN_PW_CONFIRM": "登录密码必须等于确认登录密码",
+    "PAYMENT_PW_CONFIRM": "支付密码必须等于确认支付密码",
+    "LOGIN_PW_NOT_EQUAL_PAYMENT_PW": "登录密码不能等于确认支付密码",
+    "VALIDATE_EMAIL": "请输入有效邮箱地址",
+    "CREATE_SUCCESS": "建立成功",
+    "CREATE_WALLET_SUCCESS": "您已成功建立钱包",
+    "WELCOME_TO_EURUS": "欢迎来到EURUS"
+  },
+  "SCANNER_PAGE": {
+    "CAMERA_DISABLED_POPUP": {
+      "DESC": "请在手机系统设置中，允许我们使用您的相机",
+      "TITLE": "相机权限被限制"
+    },
+    "CAMERA_PERM_POPUP": {
+      "DESC": "允许我们使用您的相机",
+      "SCAN_FROM_IMG": "扫描相册内二维码",
+      "TITLE": "相机",
+      "USE_QRCODE_IMG": "扫描相册内二维码"
+    },
+    "CAMERA_VIEW": {
+      "LIGHTS_OFF": "轻触照亮",
+      "LIGHTS_ON": "轻触关灯",
+      "SCANNING": "正在扫描",
+      "TITLE": "扫码"
+    },
+    "PHOTO_DISABLED_POPUP": {
+      "DESC": "请在手机系统设置中，允许我们使用您的相册",
+      "TITLE": "相册存取被限制"
+    },
+    "PHOTO_PERM_POPUP": {
+      "DESC": "允许我们使用您的相册",
+      "TITLE": "相册"
+    }
+  },
+  "AFTER_SCAN_PAGE":{
+    "RESCAN": "重新扫描",
+    "SCAN_RESULT": "扫描结果",
+    "TO_EURUS":"到这个Eurus的地址",
+    "TO_ETHEREUM":"到这个以太坊的地址",
+    "EURUS_NETWORK":"Eurus 网络"
+  },
+  "SEND_CONFIRM_PAGE": {
+    "CONFIRM_INFO": "确认信息",
+    "EMAIL": "电子邮件",
+    "MAIN_TITLE": "发送",
+    "PAGE_DESC": "转账前，请确认收款地址和转账资产正确无误。",
+    "WALLET_ADDRESS": "钱包地址"
+  },
+  "VERIFY_CODE_PAGE": {
+    "VERIFY_CODE": "验证代码",
+    "VERIFY_CODE_TO_EMAIL": "验证码将发送到 {}",
+    "RESENT_SECONDS": "可以在 {} 秒后发送",
+    "RESENT": "重发送",
+    "SENT": "已发送"
+  },
+  "SEND_PAGE": {
+    "ASSET_PREFIX": "资产：",
+    "ENTER_INFO": "输入信息",
+    "ERROR": {
+      "CANNOT_SEND_TO_SELF": "不能转账至自己地址",
+      "EMPTY": {
+        "ASSET_TYPE": "请选择资产"
+      },
+      "EMPTY_RECEIVE_ADDRESS": "请输入收款地址",
+      "INPUT_NOT_VALID": "请输入有效的以太坊地址或电子邮件",
+      "ADDRESS_NOT_VALID": "请输入有效的以太坊地址"
+    },
+    "MAIN_TITLE": "转账",
+    "PAGE_DESC": "转账前，请确认收款地址和转账资产正确无误。",
+    "RECEIVING_ADDRESS": {
+      "CENLABEL": "收款地址 / 电子邮件",
+      "LABEL": "收款地址",
+      "PLACEHOLDER": "请输入收款地址"
+    },
+    "SELECT_ASSET_PLACEHOLDER": "请选择",
+    "SELECT_NETWORK": "请选择网络",
+    "SELECT_NETWORK_STATEMENT": "请选择您要发送资产的网络，并请确保发送与收取资产的网络一致，否则资产将无法找回。"
+  },
+  "SETTING_PAGE": {
+    "GENERAL_CARD": {
+      "LANGUAGE": "语言",
+      "TITLE": "通用"
+    },
+    "HELP_CENTER_CARD": {
+      "CS": "客服中心",
+      "FAQ": "常见问题",
+      "FAQ_LINK": "https://www.eurus.network/tw-support/eurus-wallet/#D-FAQ-TXTime",
+      "TITLE": "帮助中心",
+      "TNC": {
+        "LINK": "https://www.eurus.network/tw-support/terms-of-use/",
+        "TITLE": "用户协议"
+      },
+      "WALLET_VERSION": "钱包版本"
+    },
+    "MAIN_TITLE": "设置",
+    "SECURITY_CARD": {
+      "ASSET_PRIVACY": {
+        "DESC": "开启隐私模式后钱包的资产和金额将会隐藏",
+        "TITLE": "隐藏余额"
+      },
+      "BACKUP_MPHRASE": {
+        "BACKUP_NOW": "立即备份",
+        "COMPLETED": "已备份",
+        "INCOMPLETED": "未备份",
+        "STATUS": "备份助记词状态"
+      },
+      "BIOMETRICS": "生物验证",
+      "CHANGE_LOGINPW_BTN": "更改登录密码",
+      "CHANGE_PAYMENTPW_BTN": "修改支付密码",
+      "FORGET_PAYMENTPW_BTN": "忘记支付密码",
+      "LOGOUT": "登出",
+      "MAIN_TITLE": "安全",
+      "WALLET_LOCKER_BTN": "修改钱包密码",
+      "KYC_STATUS": "了解您的客户等级",
+      "LEVEL": "等级"
+    }
+  },
+  "SWITCH_AC": {
+    "ADD_OTHER_AC": "添加其他帐户",
+    "CEN_AC": "中心化帐户",
+    "DECEN_AC": "去中心化帐户",
+    "TITLE": "选择帐户",
+    "REMOVE_DESCRIPTION": "确定删除？"
+  },
+  "TX_PAGE": {
+    "ALLOCATE_AMOUNT": "分配数额",
+    "ALLOCATE_CONFIRMATION_TITLE": "确认交易",
+    "ALLOCATE_NOW": "立即分配",
+    "ALLOCATE_SUCCESS_DESC": "您已成功分配资产。",
+    "ALLOCATE_TO": "分配至",
+    "ASSET_BALANCE": "余额：",
+    "ERROR": {
+      "EMPTY_ALLOCATE_AMOUNT": "请输入分配数额",
+      "EMPTY_GAS_PRICE": "请输入燃料价格",
+      "EMPTY_TRANSFER_AMOUNT": "请输入转账数额",
+      "GAS_MUST_GREATER_100": "燃料价格需大于100",
+      "INSUFFICIENT_ASSET": "余额不足",
+      "INSUFFICIENT_GAS_FEE": "矿工费不足",
+      "NOT_GET_BALANCE": "请等待直到获得余额"
+    },
+    "E_GAS_PRICE": "矿工费",
+    "FROM": "从",
+    "GAS_FEE": "矿工费",
+    "GAS_FEE_SPEED": {
+      "MEDIUM": "中等",
+      "RAPID": "快",
+      "SLOW": "慢"
+    },
+    "GAS_PRICE": "燃料价格",
+    "GAS_PRICE_DESC": "燃料价格随着时间的推移，高峰时期，在高新时期自然会越来越高，而在网络未充分利用的时期则下降。",
+    "MAX_AMOUNT": "全部",
+    "MY_WALLET": "我的{}钱包",
+    "OFFICIAL_WALLET": "Eurus官方钱包",
+    "SEND_NOW": "立即转账",
+    "TRANSFER_AMOUNT": "转账数额",
+    "TRANSFER_CONFIRMATION_TITLE": "确认转账",
+    "TRANSFER_SUCCESS_DESC": "您已成功转账。",
+    "TRANSFER_PROCESSING_DESC": "您已要求转账,请等10-30分钟完成。",
+    "TRANSFER_TO": "转账至",
+    "WAITING_CONFIRM": "正在等待确认"
+  },
+  "VERSION_PAGE": {
+    "VERSION": "钱包版本"
+  },
+  "WALLET_LOCKER_DIALOG": {
+    "TITLE": "输入钱包密码",
+    "CEN_TITLE": "输入支付密码"
+  },
+  "WELCOME_DIALOG": {
+    "LOGIN_BTN": "登录",
+    "MAIN_TITLE": "欢迎回来！",
+    "PASSWORD_HINT": "输入密码",
+    "FORGOT_PW_BTN": "忘记密码",
+    "SWITCH_ACCOUNT": "切换帐户"
+  },
+  "DISCLAIMER": {
+    "DISCLAIMER_TITLE": "温馨提示",
+    "DISCLAIMER_DESC": "请不要向EURUS的测试链上转入任何真实的数字货币资产，避免造成不必要的财产损失。"
+  },
+  "BIOMETRIC_ERROR": {
+    "TIPS": "温馨提示",
+    "BIOMETRIC_ENABLE_TIPS": "请先开启设备的生物识别功能，以便在EURUS使用相应功能的权限。"
+  },
+  "REPORT_AC": {
+    "CASE_ID": "案件号码",
+    "REPORT_ACCOUNT": "报失帐户",
+    "FORGOT_SECURITY_QUESTIONS": "忘记安全问题",
+    "WARNING_REPORT_AC": "如果您决定继续，您的帐户将被冻结",
+    "FORGOT_SECURITY_QUESTIONS_REMIND": "由于您未能成功回答安全问题，该帐户无法立即停用，请继续“报失帐户”程序的其余部分",
+    "SUCCESS_DEACTIVATED_AC": "账户已被成功停用，请继续“报失账户”程序的其余部分",
+    "SELFIE_INSTRUCTION": "请用一张纸写上面显示的数字然后自拍",
+    "UPLOAD_IMAGE_SUCCESS": "您已成功提交报失申请，请联系客服中心团队并继续其余程序。"
+  },
+  "KYC": {
+    "VERIFY_IDENTITY_TITLE": "验证您的身份",
+    "SELECT_TYPE": "选择您要上传的文件类型",
+    "PASSPORT": "护照",
+    "ID_CARD": "身份证",
+    "FACE_PHOTO_PAGE": "人脸照片页面",
+    "FRONT_AND_BACK": "正面和背面",
+    "SUBMIT_DOCUMENT": "提交照片",
+    "TAKE_PHOTO_TITLE": "用手机自拍",
+    "UPLOAD_PHOTO": "上传自拍",
+    "NO_SCAN_OR_COPIES": "无需扫描或影印",
+    "TAKE_SELFIE": "自拍一张",
+    "SCAN_PHOTO_PAGE": "扫描护照",
+    "SELFIE": "自拍",
+    "ID_CARD_FRONT": "身份证 - 正面",
+    "ID_CARD_BACK": "身份证 - 背面",
+    "CONTINUE_ON_PHONE": "继续",
+    "UPLOAD_SUCCESS_DIALOG": "上传成功",
+    "UPLOAD_SUCCESS_DIALOG_CONTENT": "您已成功提交照片。",
+    "RETAKE_PHOTO": "重拍",
+    "SELECT_COUNTRY": "选择国家/地区",
+    "CONTACT_CS": "上传的文件被拒绝，如想重新上传请联系客服。",
+    "SECURITY_QUESTION": "安全问题",
+    "WAITING_APPROVAL": "审核中，您会在24小时收到审核结果",
+    "SELFIE_REMIND_DIALOG_DESC": "1.  请手持证件进行自拍照。\n2. 手指请勿遮挡证件文字。"
+  },
+  "COUNTRY": {
+    "AF": "阿富汗",
+    "AX": "奥兰群岛",
+    "AL": "阿尔巴尼亚",
+    "DZ": "阿尔及利亚",
+    "AS": "美属萨摩亚",
+    "AD": "安道尔",
+    "AO": "安哥拉",
+    "AI": "安圭拉",
+    "AQ": "南极洲",
+    "AG": "安提瓜和巴布达",
+    "AR": "阿根廷",
+    "AM": "亚美尼亚",
+    "AW": "阿鲁巴",
+    "AU": "澳大利亚",
+    "AT": "奥地利",
+    "AZ": "阿塞拜疆",
+    "BS": "巴哈马",
+    "BH": "巴林",
+    "BD": "孟加拉国",
+    "BB": "巴巴多斯",
+    "BY": "白俄罗斯",
+    "BE": "比利时",
+    "BZ": "伯利兹",
+    "BJ": "贝宁",
+    "BM": "百慕大",
+    "BT": "不丹",
+    "BO": "玻利维亚",
+    "BQ": "加勒比尼德兰",
+    "BA": "波黑",
+    "BW": "博茨瓦纳",
+    "BV": "布韦岛",
+    "BR": "巴西",
+    "IO": "英属印度洋领地",
+    "VG": "英属维尔京群岛",
+    "BN": "文莱",
+    "BG": "保加利亚",
+    "BF": "布基纳法索",
+    "BI": "布隆迪",
+    "KH": "柬埔寨",
+    "CM": "喀麦隆",
+    "CA": "加拿大",
+    "CV": "佛得角",
+    "KY": "开曼群岛",
+    "CF": "中非",
+    "TD": "乍得",
+    "CL": "智利",
+    "CN": "中国",
+    "CX": "圣诞岛",
+    "CC": "科科斯（基林）群岛",
+    "CO": "哥伦比亚",
+    "KM": "科摩罗",
+    "CD": "刚果民主共和国",
+    "CG": "刚果共和国",
+    "CK": "库克群岛",
+    "CR": "哥斯达黎加",
+    "CI": "科特迪瓦",
+    "HR": "克罗地亚",
+    "CU": "古巴",
+    "CW": "库拉索",
+    "CY": "塞浦路斯",
+    "CZ": "捷克",
+    "DK": "丹麦",
+    "DJ": "吉布提",
+    "DM": "多米尼克",
+    "DO": "多米尼加",
+    "EC": "厄瓜多尔",
+    "EG": "埃及",
+    "SV": "萨尔瓦多",
+    "GQ": "赤道几内亚",
+    "ER": "厄立特里亚",
+    "EE": "爱沙尼亚",
+    "ET": "埃塞俄比亚",
+    "FO": "法罗群岛",
+    "FK": "福克兰群岛",
+    "FJ": "斐济",
+    "FI": "芬兰",
+    "FR": "法国",
+    "GF": "法属圭亚那",
+    "PF": "法属波利尼西亚",
+    "TF": "法属南部和南极领地",
+    "GA": "加蓬",
+    "GM": "冈比亚",
+    "GE": "格鲁吉亚",
+    "DE": "德国",
+    "GH": "加纳",
+    "GI": "直布罗陀",
+    "GR": "希腊",
+    "GL": "格陵兰",
+    "GD": "格林纳达",
+    "GP": "瓜德罗普",
+    "GU": "关岛",
+    "GT": "危地马拉",
+    "GG": "根西",
+    "GN": "几内亚",
+    "GW": "几内亚比绍",
+    "GY": "圭亚那",
+    "HT": "海地",
+    "HM": "赫德岛和麦克唐纳群岛",
+    "VA": "梵蒂冈",
+    "HN": "洪都拉斯",
+    "HK": "中国香港",
+    "HU": "匈牙利",
+    "IS": "冰岛",
+    "IN": "印度",
+    "ID": "印尼",
+    "IR": "伊朗",
+    "IQ": "伊拉克",
+    "IE": "爱尔兰",
+    "IM": "马恩岛",
+    "IL": "以色列",
+    "IT": "意大利",
+    "JM": "牙买加",
+    "JP": "日本",
+    "JE": "泽西",
+    "JO": "约旦",
+    "KZ": "哈萨克斯坦",
+    "KE": "肯尼亚",
+    "KI": "基里巴斯",
+    "KP": "朝鲜",
+    "KR": "韩国",
+    "KW": "科威特",
+    "KG": "吉尔吉斯斯坦",
+    "LA": "老挝",
+    "LV": "拉脱维亚",
+    "LB": "黎巴嫩",
+    "LS": "莱索托",
+    "LR": "利比里亚",
+    "LY": "利比亚",
+    "LI": "列支敦士登",
+    "LT": "立陶宛",
+    "LU": "卢森堡",
+    "MO": "中国澳门",
+    "MG": "马达加斯加",
+    "MW": "马拉维",
+    "MY": "马来西亚",
+    "MV": "马尔代夫",
+    "ML": "马里",
+    "MT": "马耳他",
+    "MH": "马绍尔群岛",
+    "MQ": "马提尼克",
+    "MR": "毛里塔尼亚",
+    "MU": "毛里求斯",
+    "YT": "马约特",
+    "MX": "墨西哥",
+    "FM": "密克罗尼西亚联邦",
+    "MD": "摩尔多瓦",
+    "MC": "摩纳哥",
+    "MN": "蒙古",
+    "ME": "黑山",
+    "MS": "蒙特塞拉特",
+    "MA": "摩洛哥",
+    "MZ": "莫桑比克",
+    "MM": "缅甸",
+    "NA": "纳米比亚",
+    "NR": "瑙鲁",
+    "NP": "尼泊尔",
+    "NL": "荷兰",
+    "NC": "新喀里多尼亚",
+    "NZ": "新西兰",
+    "NI": "尼加拉瓜",
+    "NE": "尼日尔",
+    "NG": "尼日利亚",
+    "NU": "纽埃",
+    "NF": "诺福克岛",
+    "MK": "北马其顿",
+    "MP": "北马里亚纳群岛",
+    "NO": "挪威",
+    "OM": "阿曼",
+    "PK": "巴基斯坦",
+    "PW": "帕劳",
+    "PS": "巴勒斯坦",
+    "PA": "巴拿马",
+    "PG": "巴布亚新几内亚",
+    "PY": "巴拉圭",
+    "PE": "秘鲁",
+    "PH": "菲律宾",
+    "PN": "皮特凯恩群岛",
+    "PL": "波兰",
+    "PT": "葡萄牙",
+    "PR": "波多黎各",
+    "QA": "卡塔尔",
+    "RE": "留尼汪",
+    "RO": "罗马尼亚",
+    "RU": "俄罗斯",
+    "RW": "卢旺达",
+    "BL": "圣巴泰勒米",
+    "SH": "圣赫勒拿、阿森松和特里斯坦-达库尼亚",
+    "KN": "圣基茨和尼维斯",
+    "LC": "圣卢西亚",
+    "MF": "法属圣马丁",
+    "PM": "圣皮埃尔和密克隆",
+    "VC": "圣文森特和格林纳丁斯",
+    "WS": "萨摩亚",
+    "SM": "圣马力诺",
+    "ST": "圣多美和普林西比",
+    "SA": "沙特阿拉伯",
+    "SN": "塞内加尔",
+    "RS": "塞尔维亚",
+    "SC": "塞舌尔",
+    "SL": "塞拉利昂",
+    "SG": "新加坡",
+    "SX": "荷属圣马丁",
+    "SK": "斯洛伐克",
+    "SI": "斯洛文尼亚",
+    "SB": "所罗门群岛",
+    "SO": "索马里",
+    "ZA": "南非",
+    "GS": "南乔治亚和南桑威奇群岛",
+    "SS": "南苏丹",
+    "ES": "西班牙",
+    "LK": "斯里兰卡",
+    "SD": "苏丹",
+    "SR": "苏里南",
+    "SJ": "斯瓦尔巴",
+    "SZ": "斯威士兰",
+    "SE": "瑞典",
+    "CH": "瑞士",
+    "SY": "叙利亚",
+    "TW": "台湾",
+    "TJ": "塔吉克斯坦",
+    "TZ": "坦桑尼亚",
+    "TH": "泰国",
+    "TL": "东帝汶",
+    "TG": "多哥",
+    "TK": "托克劳",
+    "TO": "汤加",
+    "TT": "特立尼达和多巴哥",
+    "TN": "突尼斯",
+    "TR": "土耳其",
+    "TM": "土库曼斯坦",
+    "TC": "特克斯和凯科斯群岛",
+    "TV": "图瓦卢",
+    "UG": "乌干达",
+    "UA": "乌克兰",
+    "AE": "阿联酋",
+    "GB": "英国",
+    "US": "美国",
+    "UM": "美国本土外小岛屿",
+    "VI": "美属维尔京群岛",
+    "UY": "乌拉圭",
+    "UZ": "乌兹别克斯坦",
+    "VU": "瓦努阿图",
+    "VE": "委内瑞拉",
+    "VN": "越南",
+    "WF": "瓦利斯和富图纳",
+    "EH": "西撒哈拉",
+    "YE": "也门",
+    "ZM": "赞比亚",
+    "ZW": "津巴布韦"
+  },
+  "REWARD": {
+    "TITLE": "奖励",
+    "STATUS": "状态：",
+    "ONGOING": "进行中",
+    "COMPLETED": "已完成",
+    "REWARDED_DATE": "奖励日期：",
+    "REWARDED_EUN": "已奖励 EUN：",
+    "REWARDED_TX_ID": "奖励交易编号：",
+    "TRIGGERED_TX_ID": "触发交易编号：",
+    "LEARN_MORE": "了解更多",
+    "LEARN_MORE_LINK": "https://www.eurus.network/tw-support/eun-token/#marketing"
+  },
+  "MARKETS": {
+    "VOLUME": "交易量"
+  },
+  "DAPP_BROWSER": {
+    "RECOMMENDED": "为你推荐",
+    "RAIJIN_SWAP_DESCRIPTION": "去中心化交易所\n简单、快速、经济且安全的数字资产交易。",
+    "MAPPED_SWAP_DESCRIPTION": "去中心化全仓杠杆交易所\n获取 10 倍配资，在最具流动性的去中心化交易所交易",
+    "FAVOURITE": "书签",
+    "SEARCH_HISTORY": "搜寻纪录",
+    "ADDRESS_BAR_PLACEHOLDER": "搜寻或输入网址",
+    "ADDRESS_BAR_REFRESH": "重新载入",
+    "ADD_FAVOURITES": "加入书签",
+    "ADD_FAVOURITES_NAME": "名称",
+    "ADD_FAVOURITES_NAME_PLACEHOLDER": "输入书签名称",
+    "ADD_FAVOURITES_URL": "网址",
+    "ADD_FAVOURITES_URL_PLACEHOLDER": "输入书签网址",
+    "CONNECT_SITE_DIALOG_TITLE": "连接此网站？",
+    "TRANSACTION_RECORD": "交易记录",
+    "ETH_SIGN_WARNING": "签署此讯息可能会产生危险地副作用。 \n只从您完全信任的网站上签署。这种危险的方法，将在未来的版本中被移除。",
+    "VIEW_DATA": "查看数据",
+    "TRANSACTION_TYPE": {
+      "APPROVE": "批准",
+      "TRANSFER": "转移",
+      "REQUEST_SIGNATURE": "签名请求",
+      "CONTRACT_INTERACTION": "智能合约交互",
+      "SWITCH_NETWORK": {
+        "TITLE": "切换网络",
+        "SUBTITLE": "允许此站点切换网络？",
+        "DESCRIPTION": "这将切换浏览器中选定的网络到支持的网络："
+      }
+    },
+    "APPROVED_AMOUNT": "已批准数额",
+    "GRANTED_TO": "授予"
+  },
+  "LOADING_DIALOG": {
+    "PLEASE_WAIT": "请稍侯",
+    "CREATING_WALLET": "正在为你建立EURUS钱包"
+  },
+  "REFUEL": {
+    "TITLE": "充气",
+    "SLIDER": {
+      "SLIDE_TO_REFUEL": "向右滑动以充气",
+      "CURRENT_GAS_VOLUME": "当前气量: {}%"
+    },
+    "REFUEL_GAS_VOLUME": "充气量",
+    "SPEND_EUN": "花费 {} EUN",
+    "TOTAL_GAS_VOLUME": "总气量",
+    "DIALOG": {
+      "WARNING_CONTENT": "你的气量较低",
+      "ERROR_CONTENT": "你的气量低于预估矿工费。请充气。"
+    }
+  }
+}

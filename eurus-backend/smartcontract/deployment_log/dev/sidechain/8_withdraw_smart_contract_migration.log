@@ -1,0 +1,44 @@
+8_withdraw_smart_contract_migration.js
+======================================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'WithdrawSmartContract'
+   ---------------------------------
+   > transaction hash:    0x643386ba878acbe11d76ba5c6684c862bc8c8d69a64a0e6fc13c118ee20b6b54
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xF44268a059F97f4f0BBa6F5867DCb80c6Cfb71B1
+   > block number:        10174
+   > block timestamp:     1612945490
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99971685228336618
+   > gas used:            4037023 (0x3d999f)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000005478240211 ETH
+
+
+   Replacing 'OwnedUpgradeabilityProxy'
+   ------------------------------------
+   > transaction hash:    0x31b01f2edb2fc9dd26f9b7acc695c1db19eb0e5c5020459d6ec7d6e657573dba
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xC1d8824B55607afBa69AD36237eD4EaCD5F6fC49
+   > block number:        10176
+   > block timestamp:     1612945494
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.9997168452136133
+   > gas used:            520984 (0x7f318)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000000706975288 ETH
+
+WithdrawSmartContract 0xF44268a059F97f4f0BBa6F5867DCb80c6Cfb71B1
+OwnedUpgradeabilityProxy<WithdrawSmartContract> 0xC1d8824B55607afBa69AD36237eD4EaCD5F6fC49
+Update InternalSmartContractConfig set WithdrawSmartContract address
+Set ApprovalWallet address as the writer to WithdrawSmartContract
+Init WithdrawSmartContract, set the number of requirement to 2
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00000006185215499 ETH
+

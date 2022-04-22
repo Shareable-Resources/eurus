@@ -1,0 +1,26 @@
+3_eurus_internal_config_migration.js
+====================================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'EurusInternalConfig'
+   -------------------------------
+   > transaction hash:    0xbad1876f8bf5b2741d41eed55a7c968f09c3471c8107acd8d12804e3a4ace115
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xc90C8F1C4BC83bf154DAd7778416cE832B3c71ad
+   > block number:        10145
+   > block timestamp:     1612945432
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99979079571625681
+   > gas used:            2352260 (0x23e484)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0000000319201682 ETH
+
+EurusInternalConfig 0xc90C8F1C4BC83bf154DAd7778416cE832B3c71ad
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.0000000319201682 ETH
+
+

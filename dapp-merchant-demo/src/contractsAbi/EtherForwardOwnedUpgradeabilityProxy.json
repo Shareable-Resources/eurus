@@ -1,0 +1,1291 @@
+{
+  "contractName": "EtherForwardOwnedUpgradeabilityProxy",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "DepositETH",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "ProxyOwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "impl",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxyOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferProxyOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    },
+    {
+      "inputs": [],
+      "name": "getEtherForwardAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ethForwardAddr",
+          "type": "address"
+        }
+      ],
+      "name": "setEtherForwardAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DepositETH\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"ProxyOwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"getEtherForwardAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"impl\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxyOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ethForwardAddr\",\"type\":\"address\"}],\"name\":\"setEtherForwardAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferProxyOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"methods\":{\"implementation()\":{\"details\":\"Tells the address of the current implementation\",\"returns\":{\"impl\":\"address of the current implementation\"}},\"proxyOwner()\":{\"details\":\"Tells the address of the owner\",\"returns\":{\"owner\":\"the address of the owner\"}},\"transferProxyOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}},\"upgradeTo(address)\":{\"details\":\"Allows the proxy owner to upgrade the current version of the proxy.\",\"params\":{\"implementation\":\"representing the address of the new implementation to be set.\"}},\"upgradeToAndCall(address,bytes)\":{\"details\":\"Allows the proxy owner to upgrade the current version of the proxy and call the new implementation to initialize whatever is needed through a low level call.\",\"params\":{\"data\":\"represents the msg.data to bet sent in the low level call. This parameter may include the function signature of the implementation to be called with the needed payload\",\"implementation\":\"representing the address of the new implementation to be set.\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/EtherForwardOwnedUpgradeabilityProxy.sol\":\"EtherForwardOwnedUpgradeabilityProxy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/EtherForwardOwnedUpgradeabilityProxy.sol\":{\"keccak256\":\"0xe3429825742c789067cfedee2eb9381f176bbf56d1e07eb631e5e50009a0ab94\",\"urls\":[\"bzz-raw://e8ceffd445b54a1a9e4a1534653c01183a4f0c8427f6e2db309951ad10fc531d\",\"dweb:/ipfs/QmU6bw7ypHoZZYVaurXTZNfGMD5qoAtU3NUciicUs8yV2g\"]},\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/OwnedUpgradeabilityProxy.sol\":{\"keccak256\":\"0x404981a08a727d9f2658cf26a510e937783befd1840add8252dca4594c82c1ce\",\"urls\":[\"bzz-raw://bb23729478501e9f9e085b368e82cbaf03568a23fa01b9ccaf50843bb912be52\",\"dweb:/ipfs/QmPpBGkpB5QRSwcJG18Tp3bYeamdP7sHVtcWpDvgVqWYJm\"]},\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/Proxy.sol\":{\"keccak256\":\"0xf2a987dfe1d92a8b1a6f5729c83ee2eac618476f387d61093d0882e423530443\",\"urls\":[\"bzz-raw://a50d3cbaad4b9f51fb4e7ea25106e74ed6cab69ebc5ac87c3207bbb61663da07\",\"dweb:/ipfs/QmTk1AqHfVgHUxB9DgJM1FKChEp6gRpu5bQa6TQfoxFcd3\"]},\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/UpgradeabilityProxy.sol\":{\"keccak256\":\"0x9961156c4dc7e39da8c0ad50872d93b32b7cf1275219a1a53451ff91b3d502c0\",\"urls\":[\"bzz-raw://984713001dc63df3d3c347f85663dd25df24cf6702ba19ce8292865d32591dd9\",\"dweb:/ipfs/QmRE8UHtbTacigwqefj7kdjL21WQxg8QqtG8YNysnv5ao6\"]}},\"version\":1}",
+  "bytecode": "0x6080604052610016336001600160e01b0361007416565b60008054600181810183557f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56390910180546001600160a01b03191633908117909155825260208190526040909120805460ff191690911790556100a9565b604080517f6f72672e7a657070656c696e6f732e70726f78792e6f776e65720000000000008152905190819003601a01902055565b610650806100b86000396000f3fe6080604052600436106100745760003560e01c80633a38c2681161004e5780633a38c268146101d05780634f1ef286146101e55780635c60da1b1461029b578063f1739cae146102b0576100b5565b8063025313a2146101375780632436341d146101685780633659cfe61461019d576100b5565b366100b5576002546040516001600160a01b03909116903480156108fc02916000818181858888f193505050501580156100b2573d6000803e3d6000fd5b50005b60006100bf6102e3565b90506001600160a01b038116610112576040805162461bcd60e51b81526020600482015260136024820152720496d706c656d656e746174696f6e206973203606c1b604482015290519081900360640190fd5b60405136600082376000803683855af43d806000843e818015610133578184f35b8184fd5b34801561014357600080fd5b5061014c610306565b604080516001600160a01b039092168252519081900360200190f35b34801561017457600080fd5b5061019b6004803603602081101561018b57600080fd5b50356001600160a01b031661033c565b005b3480156101a957600080fd5b5061019b600480360360208110156101c057600080fd5b50356001600160a01b0316610383565b3480156101dc57600080fd5b5061014c6103b4565b61019b600480360360408110156101fb57600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561022657600080fd5b82018360208201111561023857600080fd5b8035906020019184600183028401116401000000008311171561025a57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506103c3945050505050565b3480156102a757600080fd5b5061014c6102e3565b3480156102bc57600080fd5b5061019b600480360360208110156102d357600080fd5b50356001600160a01b03166104a8565b60008060405180806105f860239139604051908190036023019020549392505050565b604080517f6f72672e7a657070656c696e6f732e70726f78792e6f776e65720000000000008152905190819003601a0190205490565b610344610306565b6001600160a01b0316336001600160a01b03161461036157600080fd5b600280546001600160a01b0319166001600160a01b0392909216919091179055565b61038b610306565b6001600160a01b0316336001600160a01b0316146103a857600080fd5b6103b181610534565b50565b6002546001600160a01b031690565b6103cb610306565b6001600160a01b0316336001600160a01b0316146103e857600080fd5b6103f182610383565b6000306001600160a01b031634836040518082805190602001908083835b6020831061042e5780518252601f19909201916020918201910161040f565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d8060008114610490576040519150601f19603f3d011682016040523d82523d6000602084013e610495565b606091505b50509050806104a357600080fd5b505050565b6104b0610306565b6001600160a01b0316336001600160a01b0316146104cd57600080fd5b6001600160a01b0381166104e057600080fd5b7f5a3e66efaa1e445ebd894728a69d6959842ea1e97bd79b892797106e270efcd9610509610306565b604080516001600160a01b03928316815291841660208301528051918290030190a16103b1816105a0565b600061053e6102e3565b9050816001600160a01b0316816001600160a01b0316141561055f57600080fd5b610568826105d5565b6040516001600160a01b038316907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a25050565b604080517f6f72672e7a657070656c696e6f732e70726f78792e6f776e65720000000000008152905190819003601a01902055565b600060405180806105f86023913960405190819003602301902092909255505056fe6f72672e7a657070656c696e6f732e70726f78792e696d706c656d656e746174696f6ea2646970667358221220a7acea4c8d450cacbe0a9b150b7b99cf3cd182a1dc9e4643c3d30688c8e37d6c64736f6c63430006020033",
+  "deployedBytecode": "0x6080604052600436106100745760003560e01c80633a38c2681161004e5780633a38c268146101d05780634f1ef286146101e55780635c60da1b1461029b578063f1739cae146102b0576100b5565b8063025313a2146101375780632436341d146101685780633659cfe61461019d576100b5565b366100b5576002546040516001600160a01b03909116903480156108fc02916000818181858888f193505050501580156100b2573d6000803e3d6000fd5b50005b60006100bf6102e3565b90506001600160a01b038116610112576040805162461bcd60e51b81526020600482015260136024820152720496d706c656d656e746174696f6e206973203606c1b604482015290519081900360640190fd5b60405136600082376000803683855af43d806000843e818015610133578184f35b8184fd5b34801561014357600080fd5b5061014c610306565b604080516001600160a01b039092168252519081900360200190f35b34801561017457600080fd5b5061019b6004803603602081101561018b57600080fd5b50356001600160a01b031661033c565b005b3480156101a957600080fd5b5061019b600480360360208110156101c057600080fd5b50356001600160a01b0316610383565b3480156101dc57600080fd5b5061014c6103b4565b61019b600480360360408110156101fb57600080fd5b6001600160a01b03823516919081019060408101602082013564010000000081111561022657600080fd5b82018360208201111561023857600080fd5b8035906020019184600183028401116401000000008311171561025a57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506103c3945050505050565b3480156102a757600080fd5b5061014c6102e3565b3480156102bc57600080fd5b5061019b600480360360208110156102d357600080fd5b50356001600160a01b03166104a8565b60008060405180806105f860239139604051908190036023019020549392505050565b604080517f6f72672e7a657070656c696e6f732e70726f78792e6f776e65720000000000008152905190819003601a0190205490565b610344610306565b6001600160a01b0316336001600160a01b03161461036157600080fd5b600280546001600160a01b0319166001600160a01b0392909216919091179055565b61038b610306565b6001600160a01b0316336001600160a01b0316146103a857600080fd5b6103b181610534565b50565b6002546001600160a01b031690565b6103cb610306565b6001600160a01b0316336001600160a01b0316146103e857600080fd5b6103f182610383565b6000306001600160a01b031634836040518082805190602001908083835b6020831061042e5780518252601f19909201916020918201910161040f565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d8060008114610490576040519150601f19603f3d011682016040523d82523d6000602084013e610495565b606091505b50509050806104a357600080fd5b505050565b6104b0610306565b6001600160a01b0316336001600160a01b0316146104cd57600080fd5b6001600160a01b0381166104e057600080fd5b7f5a3e66efaa1e445ebd894728a69d6959842ea1e97bd79b892797106e270efcd9610509610306565b604080516001600160a01b03928316815291841660208301528051918290030190a16103b1816105a0565b600061053e6102e3565b9050816001600160a01b0316816001600160a01b0316141561055f57600080fd5b610568826105d5565b6040516001600160a01b038316907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a25050565b604080517f6f72672e7a657070656c696e6f732e70726f78792e6f776e65720000000000008152905190819003601a01902055565b600060405180806105f86023913960405190819003602301902092909255505056fe6f72672e7a657070656c696e6f732e70726f78792e696d706c656d656e746174696f6ea2646970667358221220a7acea4c8d450cacbe0a9b150b7b99cf3cd182a1dc9e4643c3d30688c8e37d6c64736f6c63430006020033",
+  "sourceMap": "75:457:14:-:0;;;934:34:15;957:10;-1:-1:-1;;;;;934:22:15;:34;:::i;:::-;974:12;27:10:-1;;39:1;23:18;;;45:23;;974:30:15;;;;;;-1:-1:-1;;;;;;974:30:15;993:10;974:30;;;;;;1010:24;;974:30;1010:24;;;;;;;:31;;-1:-1:-1;;1010:31:15;;;;;;75:457:14;;1518:171:15;763:39;;;;;;;;;;;;;;;;1648:31;1640:45::o;75:457:14:-;;;;;;;",
+  "deployedSourceMap": "75:457:14:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;243:19;;:39;;-1:-1:-1;;;;;243:19:14;;;;272:9;243:39;;;;;:19;:39;:19;:39;272:9;243:19;:39;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;243:39:14;75:457;;795:13:16;811:16;:14;:16::i;:::-;795:32;-1:-1:-1;;;;;;841:19:16;;833:51;;;;;-1:-1:-1;;;833:51:16;;;;;;;;;;;;-1:-1:-1;;;833:51:16;;;;;;;;;;;;;;;925:4;919:11;958:14;955:1;950:3;937:36;1045:1;1042;1026:14;1021:3;1014:5;1007;994:53;1066:16;1112:4;1109:1;1104:3;1089:28;1132:6;1145:28;;;;1202:4;1197:3;1190:17;1145:28;1166:4;1161:3;1154:17;1304:158:15;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1304:158:15;;;:::i;:::-;;;;-1:-1:-1;;;;;1304:158:15;;;;;;;;;;;;;;396:134:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;396:134:14;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;396:134:14;-1:-1:-1;;;;;396:134:14;;:::i;:::-;;2245:102:15;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2245:102:15;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2245:102:15;-1:-1:-1;;;;;2245:102:15;;:::i;291:101:14:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;291:101:14;;;:::i;2815:272:15:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;2815:272:15;;;;;;;;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;2815:272:15;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;2815:272:15;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;2815:272:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;2815:272:15;;-1:-1:-1;2815:272:15;;-1:-1:-1;;;;;2815:272:15:i;845:173:17:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;845:173:17;;;:::i;1850:212:15:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1850:212:15;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1850:212:15;-1:-1:-1;;;;;1850:212:15;;:::i;845:173:17:-;901:12;921:16;596:48;;;;;;;;;;;;;;;;;;993:15;;977:37;-1:-1:-1;;;977:37:17:o;1304:158:15:-;763:39;;;;;;;;;;;;;;;;1437:15;;1420:38::o;396:134:14:-;1178:12:15;:10;:12::i;:::-;-1:-1:-1;;;;;1164:26:15;:10;-1:-1:-1;;;;;1164:26:15;;1156:35;;;;;;480:19:14::1;:45:::0;;-1:-1:-1;;;;;;480:45:14::1;-1:-1:-1::0;;;;;480:45:14;;;::::1;::::0;;;::::1;::::0;;396:134::o;2245:102:15:-;1178:12;:10;:12::i;:::-;-1:-1:-1;;;;;1164:26:15;:10;-1:-1:-1;;;;;1164:26:15;;1156:35;;;;;;2316:26:::1;2327:14;2316:10;:26::i;:::-;2245:102:::0;:::o;291:101:14:-;368:19;;-1:-1:-1;;;;;368:19:14;291:101;:::o;2815:272:15:-;1178:12;:10;:12::i;:::-;-1:-1:-1;;;;;1164:26:15;:10;-1:-1:-1;;;;;1164:26:15;;1156:35;;;;;;2920:25:::1;2930:14;2920:9;:25::i;:::-;3001:12;3027:4;-1:-1:-1::0;;;;;3019:18:15::1;3044:9;3055:4;3019:41;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;176:10:::0;;164:23;;-1:-1;;139:12;;;;98:2:::1;89:12:::0;;::::1;::::0;114::::1;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;3019:41:15;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;19;14:27;;;;67:4;61:11;56:16;;134:4;130:9;123:4;105:16;101:27;97:43;94:1;90:51;84:4;77:65;157:16;154:1;147:27;211:16;208:1;201:4;198:1;194:12;179:49;5:228;;14:27;32:4;27:9;;5:228;;3000:60:15;;;3074:7;3066:16;;;::::0;::::1;;1197:1;2815:272:::0;;:::o;1850:212::-;1178:12;:10;:12::i;:::-;-1:-1:-1;;;;;1164:26:15;:10;-1:-1:-1;;;;;1164:26:15;;1156:35;;;;;;-1:-1:-1;;;;;1936:22:15;::::1;1928:31;;;::::0;::::1;;1970:49;1996:12;:10;:12::i;:::-;1970:49;::::0;;-1:-1:-1;;;;;1970:49:15;;::::1;::::0;;;;::::1;;::::0;::::1;::::0;;;;;;;;;::::1;2025:32;2048:8;2025:22;:32::i;1506:252:17:-:0;1568:29;1600:16;:14;:16::i;:::-;1568:48;;1655:17;-1:-1:-1;;;;;1630:42:17;:21;-1:-1:-1;;;;;1630:42:17;;;1622:51;;;;;;1679:36;1697:17;1679;:36::i;:::-;1726:27;;-1:-1:-1;;;;;1726:27:17;;;;;;;;1506:252;;:::o;1518:171:15:-;763:39;;;;;;;;;;;;;;;;1648:31;1640:45::o;1175:178:17:-;1244:16;596:48;;;;;;;;;;;;;;;;;;1308:35;;;;-1:-1:-1;;1300:49:17:o",
+  "source": "pragma solidity >=0.6.0 <0.8.0;\n\nimport './OwnedUpgradeabilityProxy.sol';\n\ncontract EtherForwardOwnedUpgradeabilityProxy is OwnedUpgradeabilityProxy {\n  address payable private etherForwardAddress;\n\n  receive() external override payable {\n    etherForwardAddress.transfer(msg.value);\n  }\n\n  function getEtherForwardAddress() public view returns (address) {\n    return etherForwardAddress;\n  }\n\n  function setEtherForwardAddress(address ethForwardAddr) public onlyProxyOwner {\n    etherForwardAddress = payable(ethForwardAddr);\n  }\n}\n",
+  "sourcePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/EtherForwardOwnedUpgradeabilityProxy.sol",
+  "ast": {
+    "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/EtherForwardOwnedUpgradeabilityProxy.sol",
+    "exportedSymbols": {
+      "EtherForwardOwnedUpgradeabilityProxy": [
+        2940
+      ]
+    },
+    "id": 2941,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2899,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".0",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:14"
+      },
+      {
+        "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/OwnedUpgradeabilityProxy.sol",
+        "file": "./OwnedUpgradeabilityProxy.sol",
+        "id": 2900,
+        "nodeType": "ImportDirective",
+        "scope": 2941,
+        "sourceUnit": 3093,
+        "src": "33:40:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2901,
+              "name": "OwnedUpgradeabilityProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3092,
+              "src": "124:24:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_OwnedUpgradeabilityProxy_$3092",
+                "typeString": "contract OwnedUpgradeabilityProxy"
+              }
+            },
+            "id": 2902,
+            "nodeType": "InheritanceSpecifier",
+            "src": "124:24:14"
+          }
+        ],
+        "contractDependencies": [
+          3092,
+          3143,
+          3210
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2940,
+        "linearizedBaseContracts": [
+          2940,
+          3092,
+          3210,
+          3143
+        ],
+        "name": "EtherForwardOwnedUpgradeabilityProxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2904,
+            "name": "etherForwardAddress",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 2940,
+            "src": "153:43:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 2903,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "153:15:14",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "baseFunctions": [
+              3122
+            ],
+            "body": {
+              "id": 2915,
+              "nodeType": "Block",
+              "src": "237:50:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2911,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "272:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2912,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "value",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "272:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 2908,
+                        "name": "etherForwardAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2904,
+                        "src": "243:19:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "id": 2910,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "243:28:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_transfer_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 2913,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "243:39:14",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2914,
+                  "nodeType": "ExpressionStatement",
+                  "src": "243:39:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2916,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 2906,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "220:8:14"
+            },
+            "parameters": {
+              "id": 2905,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "208:2:14"
+            },
+            "returnParameters": {
+              "id": 2907,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "237:0:14"
+            },
+            "scope": 2940,
+            "src": "201:86:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 2923,
+              "nodeType": "Block",
+              "src": "355:37:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2921,
+                    "name": "etherForwardAddress",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2904,
+                    "src": "368:19:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "functionReturnParameters": 2920,
+                  "id": 2922,
+                  "nodeType": "Return",
+                  "src": "361:26:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "3a38c268",
+            "id": 2924,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getEtherForwardAddress",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 2917,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "322:2:14"
+            },
+            "returnParameters": {
+              "id": 2920,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2919,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2924,
+                  "src": "346:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2918,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "346:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "345:9:14"
+            },
+            "scope": 2940,
+            "src": "291:101:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2938,
+              "nodeType": "Block",
+              "src": "474:56:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2936,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2931,
+                      "name": "etherForwardAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2904,
+                      "src": "480:19:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 2934,
+                          "name": "ethForwardAddr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2926,
+                          "src": "510:14:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 2933,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "502:8:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_payable_$",
+                          "typeString": "type(address payable)"
+                        },
+                        "typeName": {
+                          "id": 2932,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "502:8:14",
+                          "stateMutability": "payable",
+                          "typeDescriptions": {
+                            "typeIdentifier": null,
+                            "typeString": null
+                          }
+                        }
+                      },
+                      "id": 2935,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "502:23:14",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "480:45:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "id": 2937,
+                  "nodeType": "ExpressionStatement",
+                  "src": "480:45:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "2436341d",
+            "id": 2939,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2929,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2928,
+                  "name": "onlyProxyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2998,
+                  "src": "459:14:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "459:14:14"
+              }
+            ],
+            "name": "setEtherForwardAddress",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 2927,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2926,
+                  "name": "ethForwardAddr",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2939,
+                  "src": "428:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2925,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "428:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "427:24:14"
+            },
+            "returnParameters": {
+              "id": 2930,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "474:0:14"
+            },
+            "scope": 2940,
+            "src": "396:134:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2941,
+        "src": "75:457:14"
+      }
+    ],
+    "src": "0:533:14"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/EtherForwardOwnedUpgradeabilityProxy.sol",
+      "exportedSymbols": {
+        "EtherForwardOwnedUpgradeabilityProxy": [
+          2940
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.6",
+            ".0",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 2899,
+        "name": "PragmaDirective",
+        "src": "0:31:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 3093,
+          "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/utils/proxy/OwnedUpgradeabilityProxy.sol",
+          "file": "./OwnedUpgradeabilityProxy.sol",
+          "scope": 2941,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2900,
+        "name": "ImportDirective",
+        "src": "33:40:14"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            3092,
+            3143,
+            3210
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            2940,
+            3092,
+            3210,
+            3143
+          ],
+          "name": "EtherForwardOwnedUpgradeabilityProxy",
+          "scope": 2941
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "OwnedUpgradeabilityProxy",
+                  "referencedDeclaration": 3092,
+                  "type": "contract OwnedUpgradeabilityProxy"
+                },
+                "id": 2901,
+                "name": "UserDefinedTypeName",
+                "src": "124:24:14"
+              }
+            ],
+            "id": 2902,
+            "name": "InheritanceSpecifier",
+            "src": "124:24:14"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "etherForwardAddress",
+              "overrides": null,
+              "scope": 2940,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address payable",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "payable",
+                  "type": "address payable"
+                },
+                "id": 2903,
+                "name": "ElementaryTypeName",
+                "src": "153:15:14"
+              }
+            ],
+            "id": 2904,
+            "name": "VariableDeclaration",
+            "src": "153:43:14"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                3122
+              ],
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "receive",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 2940,
+              "stateMutability": "payable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 2906,
+                "name": "OverrideSpecifier",
+                "src": "220:8:14"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2905,
+                "name": "ParameterList",
+                "src": "208:2:14"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2907,
+                "name": "ParameterList",
+                "src": "237:0:14"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transfer",
+                              "referencedDeclaration": null,
+                              "type": "function (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2904,
+                                  "type": "address payable",
+                                  "value": "etherForwardAddress"
+                                },
+                                "id": 2908,
+                                "name": "Identifier",
+                                "src": "243:19:14"
+                              }
+                            ],
+                            "id": 2910,
+                            "name": "MemberAccess",
+                            "src": "243:28:14"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "value",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -15,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 2911,
+                                "name": "Identifier",
+                                "src": "272:3:14"
+                              }
+                            ],
+                            "id": 2912,
+                            "name": "MemberAccess",
+                            "src": "272:9:14"
+                          }
+                        ],
+                        "id": 2913,
+                        "name": "FunctionCall",
+                        "src": "243:39:14"
+                      }
+                    ],
+                    "id": 2914,
+                    "name": "ExpressionStatement",
+                    "src": "243:39:14"
+                  }
+                ],
+                "id": 2915,
+                "name": "Block",
+                "src": "237:50:14"
+              }
+            ],
+            "id": 2916,
+            "name": "FunctionDefinition",
+            "src": "201:86:14"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "3a38c268",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getEtherForwardAddress",
+              "overrides": null,
+              "scope": 2940,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2917,
+                "name": "ParameterList",
+                "src": "322:2:14"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "overrides": null,
+                      "scope": 2924,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2918,
+                        "name": "ElementaryTypeName",
+                        "src": "346:7:14"
+                      }
+                    ],
+                    "id": 2919,
+                    "name": "VariableDeclaration",
+                    "src": "346:7:14"
+                  }
+                ],
+                "id": 2920,
+                "name": "ParameterList",
+                "src": "345:9:14"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 2920
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 2904,
+                          "type": "address payable",
+                          "value": "etherForwardAddress"
+                        },
+                        "id": 2921,
+                        "name": "Identifier",
+                        "src": "368:19:14"
+                      }
+                    ],
+                    "id": 2922,
+                    "name": "Return",
+                    "src": "361:26:14"
+                  }
+                ],
+                "id": 2923,
+                "name": "Block",
+                "src": "355:37:14"
+              }
+            ],
+            "id": 2924,
+            "name": "FunctionDefinition",
+            "src": "291:101:14"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "2436341d",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "setEtherForwardAddress",
+              "overrides": null,
+              "scope": 2940,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "ethForwardAddr",
+                      "overrides": null,
+                      "scope": 2939,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2925,
+                        "name": "ElementaryTypeName",
+                        "src": "428:7:14"
+                      }
+                    ],
+                    "id": 2926,
+                    "name": "VariableDeclaration",
+                    "src": "428:22:14"
+                  }
+                ],
+                "id": 2927,
+                "name": "ParameterList",
+                "src": "427:24:14"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 2930,
+                "name": "ParameterList",
+                "src": "474:0:14"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 2998,
+                      "type": "modifier ()",
+                      "value": "onlyProxyOwner"
+                    },
+                    "id": 2928,
+                    "name": "Identifier",
+                    "src": "459:14:14"
+                  }
+                ],
+                "id": 2929,
+                "name": "ModifierInvocation",
+                "src": "459:14:14"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address payable"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 2904,
+                              "type": "address payable",
+                              "value": "etherForwardAddress"
+                            },
+                            "id": 2931,
+                            "name": "Identifier",
+                            "src": "480:19:14"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "address payable",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(address payable)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "name": "address",
+                                      "stateMutability": "payable",
+                                      "type": null
+                                    },
+                                    "id": 2932,
+                                    "name": "ElementaryTypeName",
+                                    "src": "502:8:14"
+                                  }
+                                ],
+                                "id": 2933,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "502:8:14"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 2926,
+                                  "type": "address",
+                                  "value": "ethForwardAddr"
+                                },
+                                "id": 2934,
+                                "name": "Identifier",
+                                "src": "510:14:14"
+                              }
+                            ],
+                            "id": 2935,
+                            "name": "FunctionCall",
+                            "src": "502:23:14"
+                          }
+                        ],
+                        "id": 2936,
+                        "name": "Assignment",
+                        "src": "480:45:14"
+                      }
+                    ],
+                    "id": 2937,
+                    "name": "ExpressionStatement",
+                    "src": "480:45:14"
+                  }
+                ],
+                "id": 2938,
+                "name": "Block",
+                "src": "474:56:14"
+              }
+            ],
+            "id": 2939,
+            "name": "FunctionDefinition",
+            "src": "396:134:14"
+          }
+        ],
+        "id": 2940,
+        "name": "ContractDefinition",
+        "src": "75:457:14"
+      }
+    ],
+    "id": 2941,
+    "name": "SourceUnit",
+    "src": "0:533:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-08-10T10:28:02.170Z",
+  "devdoc": {
+    "methods": {
+      "implementation()": {
+        "details": "Tells the address of the current implementation",
+        "returns": {
+          "impl": "address of the current implementation"
+        }
+      },
+      "proxyOwner()": {
+        "details": "Tells the address of the owner",
+        "returns": {
+          "owner": "the address of the owner"
+        }
+      },
+      "transferProxyOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      },
+      "upgradeTo(address)": {
+        "details": "Allows the proxy owner to upgrade the current version of the proxy.",
+        "params": {
+          "implementation": "representing the address of the new implementation to be set."
+        }
+      },
+      "upgradeToAndCall(address,bytes)": {
+        "details": "Allows the proxy owner to upgrade the current version of the proxy and call the new implementation to initialize whatever is needed through a low level call.",
+        "params": {
+          "data": "represents the msg.data to bet sent in the low level call. This parameter may include the function signature of the implementation to be called with the needed payload",
+          "implementation": "representing the address of the new implementation to be set."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

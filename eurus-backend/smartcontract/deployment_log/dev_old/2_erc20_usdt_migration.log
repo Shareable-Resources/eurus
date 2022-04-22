@@ -1,0 +1,65 @@
+Starting migrations...
+======================
+> Network name:    'besuWalletDevelopment_Private'
+> Network id:      2018
+> Block gas limit: 16234336 (0xf7b760)
+
+
+2_erc20_usdt_migration.js
+=========================
+
+   Replacing 'ERC20'
+   -----------------
+   > transaction hash:    0xe84d4f5e4142c3e8b3551b1ee84f1a47d0d169300fa86c7e777752b11a7549d0
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xfE672c155751d431aCA5c90C7E5C43C400eDA474
+   > block number:        908959
+   > block timestamp:     1609316531
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             92.84860286
+   > gas used:            2515200 (0x266100)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.050304 ETH
+
+
+   Replacing 'UpgradeabilityProxy'
+   -------------------------------
+   > transaction hash:    0x3a342ab598bd50374ca01dc7cf74ff085e0b02e4794c65afcff24301d6bcec88
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x0550c40152Aafa1D1Fa427459CDF1CA6a015DFFD
+   > block number:        908960
+   > block timestamp:     1609316533
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             92.84561256
+   > gas used:            149515 (0x2480b)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0029903 ETH
+
+
+   Replacing 'OwnedUpgradeabilityProxy'
+   ------------------------------------
+   > transaction hash:    0x11c842593279e228bf7216e2293543699cf5f843fa3df4294a44bf9eef1328ac
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xD5e7afF56685317e5915a0d3CAAa7F474aa70cf1
+   > block number:        908962
+   > block timestamp:     1609316537
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             92.83430902
+   > gas used:            565177 (0x89fb9)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01130354 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.06459784 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.06459784 ETH

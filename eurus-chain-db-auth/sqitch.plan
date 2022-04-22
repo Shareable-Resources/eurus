@@ -1,0 +1,9 @@
+%syntax-version=1.0.0
+%project=eurus-backend-db-auth
+%uri=https://github.com/eurus-chain/eurus-chain-db-auth.git
+
+user_sessions_schema 2020-12-11T08:54:13Z Duncan To <21eu@18m.com> # Add user_sessions table
+user_sessions_alter_disabled 2020-12-14T03:47:03Z Duncan To <21eu@18m.com> # Alter user_sessions add column disabled
+user_sessions_alter_token 2020-12-16T07:31:52Z Duncan To <21eu@18m.com> # user_sessions token field increase length
+alter_user_sessions_add_type 2021-07-05T10:46:14Z duncan.to <21eu@18m.dev> # Adding type column to user_sessions table
+create_login_request_token_map 2021-04-23T03:50:15Z System Administrator <root@admindeMBP> # create login request token map

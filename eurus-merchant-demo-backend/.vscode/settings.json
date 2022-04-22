@@ -1,0 +1,22 @@
+{
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "editor.formatOnSave": true,
+  "prettier.useEditorConfig": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "prettier.prettierPath": "/Users/vince/.nvm/versions/node/v14.17.3/lib/node_modules/prettier"
+}

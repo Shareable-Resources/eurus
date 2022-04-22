@@ -1,0 +1,19 @@
+%syntax-version=1.0.0
+%project=eurus-backend-db-admin
+%uri=https://github.com/eurus-chain/eurus-chain-db-admin.git
+
+20211006_create_admin_user 2021-10-06T04:30:43Z duncan.to <21eu@18m.dev> # Create admin user table
+
+20211008_create_admin_features 2021-10-08T09:56:19Z duncan.to <21eu@18m.dev> # Create admin features table
+20211008_create_admin_feature_permissions 2021-10-08T09:56:36Z duncan.to <21eu@18m.dev> # Create admin feature permissions table
+20211008_create_admin_feature_permission_relations 2021-10-08T09:56:53Z duncan.to <21eu@18m.dev> # Create admin feature permission relations table
+20211008_insert_feature_permission_data 2021-10-08T10:13:00Z duncan.to <21eu@18m.dev> # Adding feature permission record
+20211008_alter_admin_features_table 2021-10-08T10:30:28Z duncan.to <21eu@18m.dev> # Adding column to admin_features table
+20211008_insert_admin_features_data 2021-10-08T10:22:28Z duncan.to <21eu@18m.dev> # Adding data for admin_features
+
+20211012_insert_admin_feature_permission_relations_data 2021-10-12T03:02:49Z duncan.to <21eu@18m.dev> # Adding admin_feature_permission_relations data
+
+20211019_role_permissions 2021-10-19T08:55:42Z duncan.to <21eu@18m.dev> # adding role permission table
+20211019_admin_roles 2021-10-19T09:01:56Z duncan.to <21eu@18m.dev> # Add admin role table
+20211019_admin_user_role_relations 2021-10-19T09:12:33Z duncan.to <21eu@18m.dev> # create table admin user role relations
+20211019_admin_full_role_data_patch 2021-10-19T09:15:44Z duncan.to <21eu@18m.dev> # Data patch for admin full role

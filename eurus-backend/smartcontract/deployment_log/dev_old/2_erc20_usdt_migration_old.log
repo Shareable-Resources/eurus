@@ -1,0 +1,71 @@
+Starting migrations...
+======================
+> Network name:    'besuWalletDevelopment_Private'
+> Network id:      2018
+> Block gas limit: 16234336 (0xf7b760)
+
+
+2_erc20_usdt_migration.js
+=========================
+
+   Deploying 'UpgradeabilityProxy'
+   -------------------------------
+   > transaction hash:    0x27b2c1aeb1b6175e255e58fe6dacfaacb7b0dbc84ad8f9641bd4bf7bb8078292
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x5Bf3E7F3e4b05Cd20791090a29D20B021589c864
+   > block number:        869027
+   > block timestamp:     1609236569
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             98.17853484
+   > gas used:            149515 (0x2480b)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0029903 ETH
+
+
+   Deploying 'OwnedUpgradeabilityProxy'
+   ------------------------------------
+   > transaction hash:    0x0139dad29a5412002554a3c9447370df8345781db13440240ab407b33ebd0ccd
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x3415B7D5677909742C56dDADd140808Cc31Fe22c
+   > block number:        869029
+   > block timestamp:     1609236573
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             98.1672313
+   > gas used:            565177 (0x89fb9)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01130354 ETH
+
+
+   Deploying 'ERC20'
+   -----------------
+   > transaction hash:    0xeb85821846f8789126e5c381433e896850ad56df2428a0a23419c9367ade86d6
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x605a55D15cbb5518E0863fD741aFbd9b2555D095
+   > block number:        869031
+   > block timestamp:     1609236577
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             98.1169273
+   > gas used:            2515200 (0x266100)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.050304 ETH
+
+
+   ⠇ Saving migration to chain.
+   Replacing 'UpgradeabilityProxy'
+   -------------------------------
+   ⠹ Saving migration to chain.   > transaction hash:    0x1b831ae9c5587dac91b1c819dbb8553dc2c1f2b598b5ab8e60c34cf97c26ac59
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.06459784 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.06459784 ETH
+
+

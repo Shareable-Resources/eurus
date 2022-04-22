@@ -1,0 +1,43 @@
+---
+  version: '3.6'
+  
+  
+  x-besu-rpc:
+    &besu-rpc
+    restart: "on-failure"
+    image: hyperledger/besu:latest
+    env_file:
+      - /data/.env
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        /opt/besu/bin/besu \
+        --config-file=/config/config.toml \
+        --genesis-file=/config/genesis.json \
+        --node-private-key-file=/opt/besu/keys/key \
+        --rpc-http-api=DEBUG,WEB3,ETH,NET \
+        --rpc-ws-api=DEBUG,WEB3,ETH,NET ;
+                  
+  services:
+  
+    rpcnode:
+      << : *besu-rpc
+      user: root
+      environment:
+        - OTEL_RESOURCE_ATTRIBUTES=service.name=rpc,service.version=${BESU_VERSION:-latest}
+      volumes:
+        - public-keys:/opt/besu/public-keys/
+        - /data/configs/config.toml:/config/config.toml
+        - /data/configs/permissions_config.toml:/config/permissions_config.toml
+        - /data/configs/log-config.xml:/config/log-config.xml
+        - /data/logs/:/tmp/besu
+        - /data/configs/${BESU_CONS_ALGO:-ibft2}Genesis.json:/config/genesis.json
+        - /data/keys:/opt/besu/keys
+        - /node_data/rpc:/opt/besu/data
+      network_mode: "host"
+      
+  volumes:
+    public-keys:
+    ethlogger:
+

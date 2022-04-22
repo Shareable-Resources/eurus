@@ -1,0 +1,19 @@
+{
+  "name": "airdrop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "shadowcodex <jsduncan98@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node checkTransactionStatus.js"
+  },
+  "dependencies": {
+    "bignumber.js": "8.1.1",
+    "csv": "5.1.1",
+    "eth-crypto": "2.1.0",
+    "line-reader": "^0.4.0",
+    "web3": "1.7.0",
+    "yargs": "13.2.2"
+  }
+}

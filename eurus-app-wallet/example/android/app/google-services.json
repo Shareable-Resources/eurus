@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1003207995478",
+    "project_id": "eurus-wallet-93861",
+    "storage_bucket": "eurus-wallet-93861.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003207995478:android:eb30b74779390af1b18bf7",
+        "android_client_info": {
+          "package_name": "me.mobi.eurusWallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003207995478-6nvvbvad68m7g2ks4mgjn41i9pvi6gct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDznYWAdLl0DvEapPWyDSBXRZTU9eMeZD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003207995478-6nvvbvad68m7g2ks4mgjn41i9pvi6gct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,97 @@
+%syntax-version=1.0.0
+%project=eurus-backend-db-user
+%uri=https://github.com/eurus-chain/eurus-backend-db-user.git
+
+user_schema 2021-01-04T10:56:39Z duncan.to <21eu@18m.dev> # Create user schema
+users_add_status 2021-01-05T07:17:17Z duncan.to <21eu@18m.dev> # Add status column to users table
+users_alter_id 2021-01-05T08:59:31Z duncan.to <21eu@18m.dev> # Alter ID  to users table
+transaction_index_schema 2021-01-13T10:21:37Z System Administrator <root@admindeMBP> # add transaction index schema
+transaction_index_rename 2021-01-15T09:36:23Z System Administrator <root@admindeMBP> # transaction_index rename to transaction_indices
+transaction_indices_resize_data 2021-01-15T09:42:50Z System Administrator <root@admindeMBP> # resize transaction indices data
+transaction_indices_add_erc20 2021-01-18T01:58:56Z System Administrator <root@admindeMBP> # add erc20 column to transaction indices schema
+transaction_indices_currency_address_to_asset_name 2021-01-18T06:55:13Z System Administrator <root@admindeMBP> # change currency address column to asset name
+transaction_indices_change_primary_key 2021-01-18T08:25:00Z System Administrator <root@admindeMBP> # change primary key from user_id to tx_hash
+transaction_index_change_fields 2021-01-27T01:57:25Z System Administrator <root@admindeMBP> # add status and change primary key
+transaction_indices_add_status 2021-01-27T02:06:00Z System Administrator <root@admindeMBP> # add status column
+pending_prewithdraw 2021-01-27T02:28:20Z Ryan Cheng <ryancheng@Ryan-MBP> # Create table pending_prewithdraw
+transaction_indices_add_error_reasons 2021-01-27T02:22:51Z System Administrator <root@admindeMBP> # add error reasons field
+withdraw_transaction 2021-01-27T06:51:21Z Ryan Cheng <ryancheng@Ryan-MBP> # Create table withdraw_transaction
+withdraw_transaction_alter_burn 2021-01-28T06:12:48Z Ryan Cheng <ryancheng@Ryan-MBP> # Alter table withdraw_transaction add column burn
+withdraw_transaction_rename 2021-01-28T11:15:19Z duncan.to <21eu@18m.dev> # Rename withdraw_transaction to purel form
+transaction_indices_status_constraint 2021-01-29T03:08:33Z System Administrator <root@admindeMBP> # change column of transaction_indices status field to not null
+withdraw_transactions_add_remarks 2021-02-03T02:19:33Z duncan.to <21eu@18m.dev> # withdraw_transactions adds remarks column
+create_deposit_transactions 2021-02-05T11:24:37Z duncan.to <21eu@18m.dev> # Create deposit transactions table
+deposit_transactions_add_collect_trans 2021-02-08T11:46:36Z duncan.to <21eu@18m.dev> # Deposit transaction adds collect trans hash column
+deposit_transactions_drop_innet_trans_hash 2021-02-10T12:24:12Z duncan.to <21eu@18m.dev> # deposit_transactions drops column innet_trans_hash
+deposit_transactions_add_collect_trans_date 2021-02-17T03:45:41Z duncan.to <21eu@18m.dev> # Adding mainnet collect trans date to deposit_transactions table
+transaction_indices_add_assetNameUserIDIndex 2021-02-18T10:18:27Z System Administrator <root@admindeMBP> # add user id and asset name index
+pending_prewithdraws_delete_idx_approval_wallet_address_request_trans_id 2021-03-03T06:09:48Z Ryan Cheng <ryancheng@Ryan-MBP> # Remove index idx_approval_wallet_address_request_trans_id
+pending_prewithdraws_add_idx_request_trans_hash_request_trans_id 2021-03-03T06:21:17Z Ryan Cheng <ryancheng@Ryan-MBP> # Create an index in pending withdraw idx_request_trans_hash_request_trans_id
+users_add_wallet_addr_idx 2021-03-03T11:09:23Z duncan.to <21eu@18m.dev> # Adding wallet address as index to users table
+deposit_transactions_add_gas_fee 2021-03-09T01:51:50Z Ryan Cheng <ryancheng@Ryan-MBP> # Add new column gas_fee
+withdraw_transaction_alter_time 2021-03-09T02:12:01Z Ryan Cheng <ryancheng@Ryan-MBP> # Add 2 new column create_date and last_modified_date
+withdraw_transaction_sidechain_gas_fee 2021-03-09T02:42:12Z Ryan Cheng <ryancheng@Ryan-MBP> # Add new column sidechain_gas_fee
+pending_prewithdraw_sidechain_gas_fee 2021-03-09T02:48:26Z Ryan Cheng <ryancheng@Ryan-MBP> # Add new column sidechain_gas_fee
+deposit_transactions_add_gas_used 2021-03-10T11:55:44Z duncan.to <21eu@18m.dev> # Adding gas used column to deposit_transactions
+pending_prewithdraws_add_gas_used 2021-03-10T12:02:37Z duncan.to <21eu@18m.dev> # Adding gas used column to pending prewithdraws
+withdraw_transactions_add_gas_used 2021-03-10T12:03:03Z duncan.to <21eu@18m.dev> # Adding gas used column to withdraw_transactions
+withdraw_requests 2021-03-12T01:59:29Z System Administrator <root@Ryan-MBP> # Add new table withdraw_requests
+create_assets 2021-03-30T02:38:26Z System Administrator <root@Ryan-MBP> # Create Table Assets
+create_exchange_rates 2021-03-30T02:38:54Z System Administrator <root@Ryan-MBP> # Create Table ExchangeRates
+create_asset_configs 2021-03-30T02:39:47Z System Administrator <root@Ryan-MBP> # Create Table asset_configs
+assets_add_currency_id 2021-03-31T06:46:18Z System Administrator <root@Ryan-MBP> # Assets table add new column currency_id
+create_asset_allocation_cost 2021-04-08T06:46:44Z System Administrator <root@admindeMBP> # add asset_allocation_cost table
+pending_prewithdraws_add_admin_fee 2021-04-09T03:47:39Z System Administrator <root@Ryan-MBP> # Add column admin_fee to pending_prewithdraw
+withdraw_transaction_add_admin_fee 2021-04-09T03:48:17Z System Administrator <root@Ryan-MBP> # Add column admin_fee to withdraw_transaction
+transfer_transactions 2021-04-16T04:25:43Z System Administrator <root@Ryan-MBP> # Create transfer_transactions table
+create_verification_table 2021-04-20T03:01:50Z System Administrator <root@admindeMBP> # Create verification table
+users_add_mnemonic 2021-04-20T06:46:32Z System Administrator <root@admindeMBP> # add mnemonic column in users table
+alter_users_login_address_unique 2021-04-28T09:10:30Z System Administrator <root@admindeMacBook-Pro.local> # alter_users_login_address_unique
+create_user_faucets 2021-05-03T03:50:11Z System Administrator <root@admindeMacBook-Pro.local> # create_user_faucets
+user_add_change_password_count 2021-05-10T02:49:23Z System Administrator <root@admindeMBP> # user_add_change_password_count
+create_user_preference_storage 2021-05-10T09:13:43Z System Administrator <root@Ryan-MBP> # Crate table user_perference_storage
+users_indices_wallet_address 2021-05-14T07:24:15Z System Administrator <root@Ryan-MBP> # Create index itx_wallet_address in user table
+exchange_rate_add_auto 2021-05-17T01:37:54Z System Administrator <root@admindeMBP> # exchange_rate_add_auto
+create_user_audit 2021-05-18T02:12:47Z System Administrator <root@admindeMBP> # create_user_audit
+create_users_trigger 2021-05-18T02:26:09Z System Administrator <root@admindeMBP> # create_users_trigger
+create_user_asset_setting 2021-05-18T09:51:31Z System Administrator <root@admindeMacBook-Pro.local> # create_user_asset_setting
+transfer_transactions_add_status 2021-06-02T10:09:59Z duncan.to <21eu@18m.dev> # Adding status column to transfer_transactions table
+transfer_transactions_add_request_trans_id 2021-06-02T10:36:09Z duncan.to <21eu@18m.dev> # Adding request trans id to transfer transactions table
+transfer_transactions_add_column 2021-06-03T09:19:33Z duncan.to <21eu@18m.dev> # Adding columns to transfer_transactions
+transfer_transactions_remove_wrong_idx 2021-06-04T03:16:11Z duncan.to <21eu@18m.dev> # Remove wrong unique index from transfer_transactions table
+transfer_trans_add_gas_used 2021-06-16T07:20:44Z duncan.to <21eu@18m.dev> # adding gas used columns to transfer_transaction
+transfer_trans_add_gas_price 2021-06-16T07:30:44Z duncan.to <21eu@18m.dev> # adding gas price to transfer_transactions
+transfer_transactions_add_remarks 2021-06-22T03:44:19Z duncan.to <21eu@18m.dev> # adding remarks column to transfer_transactions
+withdraw_add_user_gas_used_column 2021-06-22T07:57:09Z duncan.to <21eu@18m.dev> # Adding user gas used, gas price column to withdraw_transactions and pending_prewithdraws table
+exchange_rates_auto_update_column_move 2021-06-25T10:11:29Z duncan.to <21eu@18m.dev> # Move auto_update column from exchange_rates to assets table
+transfer_transactions_add_to_address 2021-07-06T08:03:28Z duncan.to <21eu@18m.dev> # Adding to_address to transfer_transactions
+transfer_transactions_alter_varchar_len 2021-07-06T08:40:20Z duncan.to <21eu@18m.dev> # change varchar from 50 to 255
+create_user_devices_table 2021-07-08T08:08:45Z louis <louis@KWOKs-MacBook-Air.local> # Adding user device table
+create_pending_sweep_wallets 2021-07-22T04:12:26Z louis <louis@Louiss-MacBook-Air.local> # Add table pending_sweep_wallets
+user_asset_settings_add_sweep_trigger_amount 2021-07-23T03:13:13Z louis <louis@Louiss-MacBook-Air.local> # Add column sweep_trigger_amount in user_asset_settings
+create_kyc_country_codes 2021-07-26T05:50:13Z System Administrator <root@admindeMBP> # Create table kyc_country_codes and insert real data
+create_user_kyc_status 2021-07-26T05:56:07Z System Administrator <root@admindeMBP> # Create table user_kyc_status
+create_user_kyc_images 2021-07-26T05:56:14Z System Administrator <root@admindeMBP> # Create table user_kyc_images
+rename_user_kyc_status_to_user_kyc_statues 2021-07-28T07:07:09Z System Administrator <root@admindeMBP> # Rename [user_kyc_status] to [user_kyc_statuses]
+create_admin_users 2021-07-28T07:13:42Z System Administrator <root@admindeMBP> # Create table[admin_users]
+change_user_column_kyc_status_to_kyc_level 2021-07-30T07:45:22Z System Administrator <root@admindeMBP> # Change table user column[kyc_status] to [kyc_level]
+change_kyc_operator_id_column_to_varchar 2021-07-30T08:23:53Z System Administrator <root@admindeMBP> # Change table [user_kyc_statuses] and [user_kyc_images] operatorId to varchar
+20210804_alter_users_audits_trigger_func 2021-08-04T07:03:04Z duncan.to <21eu@18m.dev> # Change kyc_status to kyc_level on users audits table and related trigger and function
+20210810_create_distributed_tokens 2021-08-10T04:04:58Z duncan.to <21eu@18m.dev> # Adding distributed token schema
+20210810_alter_pending_sweep_wallets 2021-08-10T09:40:49Z louis <louis@Louiss-MacBook-Air.local> # Add columns in pending_sweep_wallets
+20210811_alter_pending_sweep_wallets 2021-08-11T04:23:14Z louis <louis@Louiss-MacBook-Air.local> # Add previous_gas_tip_cap in pending_sweep_wallets
+20210811_create_merchant_refund_request 2021-08-11T06:26:08Z duncan.to <21eu@18m.dev> # Adding merchant refund request table
+20210816_create_purchase_transactions 2021-08-16T03:10:42Z duncan.to <21eu@18m.dev> # Create purchase transactions table
+20210816_change_user_kyc_images_column_type_reject_reason 2021-08-16T10:18:23Z System Administrator <root@admindeMBP> # 20210816_change_user_kyc_images_column_type_reject_reason
+20210823_create_merchant_admin 2021-08-23T04:25:54Z duncan.to <21eu@18m.dev> # Create merchant admin table
+20210903_create_unique_index 2021-09-03T09:16:14Z System Administrator <root@admindeMBP> # Create unique index for multiple tables
+20211006_alter_distributed_token_trigger_type 2021-10-06T10:50:13Z duncan.to <21eu@18m.dev> # Add trigger type to distirbuted_tokens table
+20211102_assets_data_patch 2021-11-02T07:11:53Z duncan.to <21eu@18m.dev> # Adding data patch to assets table
+20211109_distributed_token_add_index 2021-11-09T03:35:26Z duncan.to <21eu@18m.dev> # Add unique index to distributed token
+20211102_topup_transactions 2021-11-18T08:00:26Z duncan.to <21eu@18m.dev> # Add top up transaction table
+20211214_withdraw_transaction_add_idx 2021-12-14T12:29:03Z duncan.to <21eu@18m.dev> # Adding index to withdraw_transaction table for approval wallet and request trans hash
+20220114_alter_user_audits 2022-01-14T04:26:22Z duncan.to <21eu@18m.dev> # add mnemonic column
+20220114_alter_update_user_func 2022-01-14T04:31:11Z duncan.to <21eu@18m.dev> # Adding mnenomic to update_user function
+20220124_alter_distributed_tokens 2022-01-24T07:39:37Z duncan.to <21eu@18m.dev> # add status column to distributed_tokens table
+20220124_distributed_token_errors 2022-01-24T09:21:32Z duncan.to <21eu@18m.dev> # add table distributed_token_errors
+20220209_withdraw_transactions_add_idx 2022-02-09T09:48:38Z duncan,,, <duncan@linux-virtualbox1> # add unique index to withdraw_transactions

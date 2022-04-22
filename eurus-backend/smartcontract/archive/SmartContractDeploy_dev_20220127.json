@@ -1,0 +1,757 @@
+{
+    "4": {
+        "smartContract": {
+            "OwnedUpgradeabilityProxy<EurusPlatformWallet>": {
+                "address": "0xe7BA41F3A013963f7EF56dA358FA61206939Cc87"
+            },
+            "EurusPlatformWallet": {
+                "address": "0xE26B014cF46B26CD62bE83A01B4c21794aEB7D9E"
+            },
+            "EurusInternalConfig": {
+                "address": "0xCebd648E15c1DD675D28a96da37744675c8a8Cce"
+            },
+            "OwnedUpgradeabilityProxy<EurusInternalConfig>": {
+                "address": "0xDc322792e3a5481692a8D582E500F6588962993b"
+            },
+            "EurusUserDeposit": {
+                "address": "0x1E9fe91c976f005F3fb8884808AbA8B8fB1FcB34"
+            },
+            "OwnedUpgradeabilityProxy<EurusUserDeposit>": {
+                "address": "0x7ae2BD935c5F8f34F1f900067016f425918a2Aec"
+            },
+            "USDT": {
+                "address": "0xc04380118B2e1716681D1ACD6fc45117fAA052C7"
+            },
+            "OwnedUpgradeabilityProxy<USDT>": {
+                "address": "0xbD5d797Bd25D0A07578eCAb9Ed5DE2504aE49a40"
+            },
+            "USDC": {
+                "address": "0xD96e660Ef229319F9f10D47D4aF69DFE84E97cBE"
+            },
+            "OwnedUpgradeabilityProxy<USDC>": {
+                "address": "0xe2f09777504F39D2Cee7298C0c898361FC254973"
+            },
+            "LINK": {
+                "address": "0x6dd5011Cb9L07132a73A5dD628d1a7484D641a8e9"
+            },
+            "OwnedUpgradeabilityProxy<LINK>": {
+                "address": "0x696115EeAFAdCE52E30Aa49540E4C24f7EEE5183"
+            },
+            "UNI": {
+                "address": "0xcEE7EF392Ff4a37d4efB52D9101a76E99Bfe12D2"
+            },
+            "OwnedUpgradeabilityProxy<UNI>": {
+                "address": "0xC905eA336f3d97C2bb0487dd55eE0c190dF9991C"
+            },
+            "BNB": {
+                "address": "0x1CAd438Ad557c24782C8F24e001e8d9346411613"
+            },
+            "OwnedUpgradeabilityProxy<BNB>": {
+                "address": "0xB2e1A2908cC6D33446A96Ccf7AA5c7c11DeE5553"
+            },
+            "BUSD": {
+                "address": "0xFCe050c0f623D44378Db33a0150c1Fb6Fe7d6543"
+            },
+            "OwnedUpgradeabilityProxy<BUSD>": {
+                "address": "0x7E4fa4D02E1D2c760ac419cD2Ef3a67C3391CAa7"
+            },
+            "YFI": {
+                "address": "0x5599B3cA23fB931c8BA1c302EBa0D133f4AB58Ec"
+            },
+            "OwnedUpgradeabilityProxy<YFI>": {
+                "address": "0x2590786568581240a8aAcBdeDBfCA19339031B52"
+            },
+            "DAI": {
+                "address": "0xD36fE6d11Df248149c8e0209CF44136f131bF134"
+            },
+            "OwnedUpgradeabilityProxy<DAI>": {
+                "address": "0x47f25e2Caa066333fe07A85C5b96B5C44805D7eD"
+            },
+            "OMG": {
+                "address": "0x32906517A9818b6486E67950030c6a4a4F7E8BB3"
+            },
+            "OwnedUpgradeabilityProxy<OMG>": {
+                "address": "0xED19B7489D907BAB57082f4d3935E45CA94628E8"
+            },
+            "VEN": {
+                "address": "0x4Bb0c33680f24B58458E6d68fee072d0Dc56F94a"
+            },
+            "OwnedUpgradeabilityProxy<VEN>": {
+                "address": "0x7297027F02B9A8aab8c47Bfc5D29b3e919dB2F6A"
+            },
+            "AAVE": {
+                "address": "0x91411377c5a9f7ee106555a97e3aDb9667bF3E28"
+            },
+            "OwnedUpgradeabilityProxy<AAVE>": {
+                "address": "0xBf6f1a1C0D494313d0053BDd97714330b6FdAff3"
+            },
+            "HT": {
+                "address": "0xc936B42E422f7EF32F9B377f9725Bf6Fd6B51E9e"
+            },
+            "OwnedUpgradeabilityProxy<HT>": {
+                "address": "0x73a54e091853f1A4CA841a3445A6D9DE9f21B51f"
+            },
+            "SUSHI": {
+                "address": "0x08FA3ED844AB32C1eDB4D3656E2C68EbeeB2C3f5"
+            },
+            "OwnedUpgradeabilityProxy<SUSHI>": {
+                "address": "0x413BeFBbD6DA7568640a88D11F0A93d1D471A9C2"
+            },
+            "TUSD": {
+                "address": "0x77a7591f6415733a0f439617C69F3c106F5122c8"
+            },
+            "OwnedUpgradeabilityProxy<TUSD>": {
+                "address": "0x57183DFb01F7D045D2C71F13d6b3757f55eC8B93"
+            },
+            "cDAI": {
+                "address": "0x4418f26C8f480a53dc0a700ed4fEd836D3C5fC5C"
+            },
+            "OwnedUpgradeabilityProxy<cDAI>": {
+                "address": "0xd0B6388B6CEFabea5729f63767A94700E04Df104"
+            },
+            "SXP": {
+                "address": "0x2D0A49F0add507776bEd42Ab50ef5e8E03AbB55D"
+            },
+            "OwnedUpgradeabilityProxy<SXP>": {
+                "address": "0xAD660e4cAA7A412f91E246523BA44a4601b82e55"
+            },
+            "BAT": {
+                "address": "0x59ed305f5b165cA00970B14D0306B8224DF1AcB9"
+            },
+            "OwnedUpgradeabilityProxy<BAT>": {
+                "address": "0xdd138d9Fa3003181Ce25ec3Ffa8eb16F7aae8049"
+            },
+            "USDK": {
+                "address": "0x3B4c28BE6056C64cC6E5EE653291CFD8f531193A"
+            },
+            "OwnedUpgradeabilityProxy<USDK>": {
+                "address": "0xa9B052359AC64161B4247e92103956BC0dD33D9e"
+            },
+            "WBTC": {
+                "address": "0x896bd5049577f885Ac886f7e8888579cD5E2f5f9"
+            },
+            "OwnedUpgradeabilityProxy<WBTC>": {
+                "address": "0xe062740B237B5a71Cb4E3aeE97d61D436507f5A1"
+            },
+            "ZIL": {
+                "address": "0xCcc560F74986094467AbBCefA2be17492341Bf1A"
+            },
+            "OwnedUpgradeabilityProxy<ZIL>": {
+                "address": "0x4FbC132f4DC87CB57cC41a7479E7f458f4e135cC"
+            },
+            "SNX": {
+                "address": "0xBE689F574b00736E16a2f288D52fdE57a381AB88"
+            },
+            "OwnedUpgradeabilityProxy<SNX>": {
+                "address": "0x01399Fb522C2a3e21113aC026DA4435017455f28"
+            },
+            "OKB": {
+                "address": "0xd7270E3F6B80B3E70FB8E28315721F30A248E13d"
+            },
+            "OwnedUpgradeabilityProxy<OKB>": {
+                "address": "0x80B37436d0E143bF9c5cd782a9526cB1FC3fbAe7"
+            },
+            "BAND": {
+                "address": "0x02cf97581cCe2A6aC3349Ce42bd44C3eCfFB1c52"
+            },
+            "OwnedUpgradeabilityProxy<BAND>": {
+                "address": "0xC307cd44c66236f63Bd7e5cf1e2F9E3f35aA7110"
+            },
+            "MKR": {
+                "address": "0xc4a3D3B6ce674Da8dF5209C4696F105788951A7A"
+            },
+            "OwnedUpgradeabilityProxy<MKR>": {
+                "address": "0x5488dD7608Dd998c6Ab721234BC61bDBA96ADB42"
+            },
+            "HUSD": {
+                "address": "0x45F7FF89de65ECB691AfA542bb2AbBE29354e3e4"
+            },
+            "OwnedUpgradeabilityProxy<HUSD>": {
+                "address": "0xEcFb523738696098a3c95c11798FB31ee144EB10"
+            },
+            "ZRX": {
+                "address": "0x219b0a4561DfFc5ffEDb3a429ae8e3427225C4A0"
+            },
+            "OwnedUpgradeabilityProxy<ZRX>": {
+                "address": "0xBA2aBa035049599891795a870bf94cF3dA4C5C99"
+            },
+            "PAX": {
+                "address": "0xBDEBE56C94f7B9c6a764943CDC71Ee2886FA78e9"
+            },
+            "OwnedUpgradeabilityProxy<PAX>": {
+                "address": "0x0De80A3e683C1D6c2B8Ea8E5324fEB73766968b8"
+            },
+            "COMP": {
+                "address": "0x2fE86656cE62116f15fb61B4D4435d63615b2469"
+            },
+            "OwnedUpgradeabilityProxy<COMP>": {
+                "address": "0x266D5Fc872B56668549d7dbe63AB28bCF7c494C7"
+            },
+            "RSR": {
+                "address": "0x8337eaBbbF5DFEd7BFFF7A3262C94Adbf1eaE92b"
+            },
+            "OwnedUpgradeabilityProxy<RSR>": {
+                "address": "0x4eD307E7149a53b8e383515cD22c15d9db062f89"
+            },
+            "BAL": {
+                "address": "0xe547fE60cE688f9808edFF879354307BC6f923d1"
+            },
+            "OwnedUpgradeabilityProxy<BAL>": {
+                "address": "0x86d2246aD8272Cb45079C34233800cE9BA4bf28d"
+            },
+            "SignatureVerifier": {
+                "address": "0x137768006eB8Fb4553aDF757eF2153D4499F041f"
+            },            
+            "OwnedUpgradeabilityProxy<USDM>": {
+                "address": "0x7839f8EAC34dBC33313471F9513843c61Ba325A9"
+            },
+            "OwnedUpgradeabilityProxy<MST>": {
+                "address": "0x888Ba15335c49c8c5aFdc57fD2f210a0E8087349"
+            },
+            "OwnedUpgradeabilityProxy<BTCM>": {
+                "address": "0x43f524889C1D87CEC71C6CC63690b73Ab9B93548"
+            },
+            "OwnedUpgradeabilityProxy<ETHM>": {
+                "address": "0xBbe2579d8Fc0212C9a32163Ae70EaFEB71AEb4Ed"
+            },            
+            "GeneralMultiSigWallet": {
+                "address": "0x380b63183A4aABD56Ce40994b58d27df38509d8f"
+            }
+        }
+    },
+    "2021": {
+        "smartContract": {
+            "UnitTest": {
+                "address": "0x1F7cdEa61516265E413379e40Be106D026f24535"
+            },
+            "EurusInternalConfig": {
+                "address": "0x5a1d9779D4405f257eE35465163c9ec734Bb2eF5"
+            },
+            "InternalSmartContractConfig": {
+                "address": "0x7A9D3fBeD3047943905e2f8F2b4F7493a998c448"
+            },
+            "ExternalSmartContractConfig": {
+                "address": "0x2C3e898C9E3Bb35E7B93DA571915555729688423"
+            },
+            "WalletAddressMap": {
+                "address": "0xd19B7260ba209628Efe88190b146b7e031AC7A79"
+            },
+            "USDT": {
+                "address": "0x691D0301f56967a9CdC2D95f8A8BDC8d06F658ed"
+            },
+            "OwnedUpgradeabilityProxy<USDT>": {
+                "address": "0xa54Dee79c3bB34251DEbf86C1BA7D21898FFb7AC"
+            },
+            "ApprovalWallet": {
+                "address": "0x2ff7dEf0F2795410bDC89390fC5AF14e03e230Ba"
+            },
+            "OwnedUpgradeabilityProxy<ApprovalWallet>": {
+                "address": "0x0E4260DE48A4ccC388Ef26C82527d5F7F6F4bF1c"
+            },
+            "ApprovalWalletReader": {
+                "address": "0x10437A65abed9FfFc2704Be08c743fB9735c7944"
+            },
+            "WithdrawSmartContract": {
+                "address": "0xe674169A729df0f6d4fD67972a5A0839c897D558"
+            },
+            "OwnedUpgradeabilityProxy<WithdrawSmartContract>": {
+                "address": "0x17c09ddD7466083D1D7B389Fe22D48a0e21856Ba"
+            },
+            "PlatformWallet": {
+                "address": "0xB3A129BF5503B13F7F36fC62063b90E267A80680"
+            },
+            "OwnedUpgradeabilityProxy<PlatformWallet>": {
+                "address": "0x5b3F229ad5F36461486bd0beAA811AC9a1A80796"
+            },
+            "USDC": {
+                "address": "0xc8Ed18aA86d9aE7f5470b6C6fdBD74001e2d992a"
+            },
+            "OwnedUpgradeabilityProxy<USDC>": {
+                "address": "0xC56743422c75098C2E2EBc2B78351e3702D5EAdd"
+            },
+            "LINK": {
+                "address": "0x2eD1D8e0741d580FC6215Eb355e7F5C177c88db1"
+            },
+            "OwnedUpgradeabilityProxy<LINK>": {
+                "address": "0xFEe7B9D16777bd1aEac1dD029d6fd9D3922b5A7a"
+            },
+            "UNI": {
+                "address": "0xDF2e2B3bc9b3154f76FC56884CD31E679D064985"
+            },
+            "OwnedUpgradeabilityProxy<UNI>": {
+                "address": "0xbbD99C1f59d9B7110907f598786abdc8F24beA4d"
+            },
+            "BNB": {
+                "address": "0xdAA437c23EaFdcE8C17d899807F2b8947ECb731F"
+            },
+            "OwnedUpgradeabilityProxy<BNB>": {
+                "address": "0x6da2e8a5bE5b84CAc3CcbD5E59140AC45A169Cd0"
+            },
+            "ETH": {
+                "address": "0xB906851Af91cf556A6855AC882Ec0694AaA18CD5"
+            },
+            "OwnedUpgradeabilityProxy<ETH>": {
+                "address": "0x166F79582d5127F878426a1876c8ae98FD25fD61"
+            },
+            "BUSD": {
+                "address": "0x09785C428c26a8075428c6cf68558909991b713f"
+            },
+            "OwnedUpgradeabilityProxy<BUSD>": {
+                "address": "0xC2912B8a79f57db35Db1EE55fEE83207e71925E8"
+            },
+            "YFI": {
+                "address": "0x5dCc2Aa9232Ff94F64eE63b0c5496aD3c788eECE"
+            },
+            "OwnedUpgradeabilityProxy<YFI>": {
+                "address": "0xD01845f81b214530F58d9A50Df1A9e43897a09A0"
+            },
+            "DAI": {
+                "address": "0x270B93Ff52e21DC3f44F52cEC96796375Bb9e38D"
+            },
+            "OwnedUpgradeabilityProxy<DAI>": {
+                "address": "0x84479A80707D746953Ef24dc24cF8820116c3e8c"
+            },
+            "OMG": {
+                "address": "0xDa53c0aDC0C6C09F5a0c1624C7A95ADEdD87eab9"
+            },
+            "OwnedUpgradeabilityProxy<OMG>": {
+                "address": "0x4D4384ea909D126e41381D764b11eF09804d91f5"
+            },
+            "VEN": {
+                "address": "0x8D532BcF935CaF711B9477546FCd0CBca32ec58C"
+            },
+            "OwnedUpgradeabilityProxy<VEN>": {
+                "address": "0x1569B5d4ffE62663F28074B55834701Aa2e94aF2"
+            },
+            "AAVE": {
+                "address": "0x186C7F2c66a76aFDB9e6D3856EAbE646F74F8a8d"
+            },
+            "OwnedUpgradeabilityProxy<AAVE>": {
+                "address": "0x9bA1B04869EDb854B2ECB20A45F71F0252D50c42"
+            },
+            "HT": {
+                "address": "0xff103dA9dc3556732A64D74F25C10A99e3F4ecC5"
+            },
+            "OwnedUpgradeabilityProxy<HT>": {
+                "address": "0x98100cd0266fcC4ac5E64087651B723982f0DB18"
+            },
+            "SUSHI": {
+                "address": "0x0FFb00E97d8FfC39e322c632b3414eb2752Fd276"
+            },
+            "OwnedUpgradeabilityProxy<SUSHI>": {
+                "address": "0x3BC8289005dd6D5EAb9B049fedcfA9cAc3dEf5CB"
+            },
+            "TUSD": {
+                "address": "0x09c68ae1D70E5B5C70Ad6f29a4b6d5f45e91bbE2"
+            },
+            "OwnedUpgradeabilityProxy<TUSD>": {
+                "address": "0x9c91e2bb42093f5d4c5d7d448E88A13c414416B7"
+            },
+            "cDAI": {
+                "address": "0xe0459B1eA952ae589C5DA92158C70681aaCa23bA"
+            },
+            "OwnedUpgradeabilityProxy<cDAI>": {
+                "address": "0xE9C5aEb38a7e8762116CBE4a281a20ac12F89977"
+            },
+            "SXP": {
+                "address": "0xA5A57024778Fb9E73F1D8737648591f07AfcF84d"
+            },
+            "OwnedUpgradeabilityProxy<SXP>": {
+                "address": "0x1887cf0C22A4d23a3503f85E01344e1223D60244"
+            },
+            "BAT": {
+                "address": "0x0A0740872BB899336e41AbCadCf1ECEf7906416D"
+            },
+            "OwnedUpgradeabilityProxy<BAT>": {
+                "address": "0x087D78CF6138c68FB660dEb5E0FB498f31fC5Cf8"
+            },
+            "USDK": {
+                "address": "0x7952Ec015DfF41A84610Fb8ef604A41906701997"
+            },
+            "OwnedUpgradeabilityProxy<USDK>": {
+                "address": "0x6591dFdfB2F1308D2f2EC17032d676f8B641D95D"
+            },
+            "WBTC": {
+                "address": "0x4Ce3e08e5d9b690afa1256CD6369F36336b4B4Fa"
+            },
+            "OwnedUpgradeabilityProxy<WBTC>": {
+                "address": "0x823414ae9060e26f15Ff2547c82c4824066f0CB4"
+            },
+            "ZIL": {
+                "address": "0xb554a29d6aE2527A839026fEd3aa7DE4E0ef94f6"
+            },
+            "OwnedUpgradeabilityProxy<ZIL>": {
+                "address": "0x4E5196431B7032297D68720F069bcdcDC1297dea"
+            },
+            "SNX": {
+                "address": "0xc6116bEBF9592C360fFEe5fDc805aa0Fa2B13DD1"
+            },
+            "OwnedUpgradeabilityProxy<SNX>": {
+                "address": "0xA6Fb11CE9Dd88DECf9fc907C48CB1c092F1dD640"
+            },
+            "OKB": {
+                "address": "0xCcB27DDbF2c4585680596319A76A238ed29AF303"
+            },
+            "OwnedUpgradeabilityProxy<OKB>": {
+                "address": "0x83eb0c91Aebe16D4A2E0f289C4f2152B88e9CC72"
+            },
+            "BAND": {
+                "address": "0x092d5467b46B9a1A056EF6E7BE52a80a66125720"
+            },
+            "OwnedUpgradeabilityProxy<BAND>": {
+                "address": "0xFBb3b237556D9300339d635F3d3F252c605245Eb"
+            },
+            "MKR": {
+                "address": "0x6f7bf020Fa403200466F0583E650500B43BacF7b"
+            },
+            "OwnedUpgradeabilityProxy<MKR>": {
+                "address": "0x0A314F415F8EB4e58cCF962F1b559EB5562c058c"
+            },
+            "HUSD": {
+                "address": "0x71b8b115f05C11927Da83B21553cB506363a9F95"
+            },
+            "OwnedUpgradeabilityProxy<HUSD>": {
+                "address": "0xd3a4635394f573F2320cba04333536411FF0194D"
+            },
+            "ZRX": {
+                "address": "0xEcaCF0d12Ce0b180f19B8998B5D3a7f916E36420"
+            },
+            "OwnedUpgradeabilityProxy<ZRX>": {
+                "address": "0xD6cb94aa17e589F7f8E035A866e80C627C57cC50"
+            },
+            "PAX": {
+                "address": "0x2eCB7c1fAcdD551EFfe2e3F3a256fa961aaC16D9"
+            },
+            "OwnedUpgradeabilityProxy<PAX>": {
+                "address": "0xBbDA5cff54938c2f1882C75b3058250c83daaD4a"
+            },
+            "COMP": {
+                "address": "0x5B4D0BB63060370976b188b5caA5a9Ffe5953e60"
+            },
+            "OwnedUpgradeabilityProxy<COMP>": {
+                "address": "0x80028767e4925e4e20183dc76aB070a62985Facb"
+            },
+            "RSR": {
+                "address": "0x9278628Ed0D4833E7a4c4335a2fDBEF18F982235"
+            },
+            "OwnedUpgradeabilityProxy<RSR>": {
+                "address": "0xc7d7406f65D27c09BE825DC6ffF03DeD0D0ee1Bc"
+            },
+            "BAL": {
+                "address": "0x3A97adb04204feC9053654cB0967a930Fce5910F"
+            },
+            "OwnedUpgradeabilityProxy<BAL>": {
+                "address": "0x6E31D029203498c84C93F32baCdF1fd2eB1950b8"
+            },
+            "AdminFeeWallet": {
+                "address": "0x1E33527eec1801Ae6BC59eE30bFce21fF88B466F"
+            },
+            "OwnedUpgradeabilityProxy<AdminFeeWallet>": {
+                "address": "0xC5894B797f59752041D15BF1a95580FcFd546114"
+            },
+            "OwnedUpgradeabilityProxy2<UserWallet>": {
+                "address": "0xa05bf7cEF46b5b72F4B1470379Ef113c45FE2998"
+            },
+            "OwnedUpgradeabilityProxy<InternalSmartContractConfig>": {
+                "address": "0xcb03710cd7F732feA812E96b0CCA43BbA49925c0"
+            },
+            "OwnedUpgradeabilityProxy<ExternalSmartContractConfig>": {
+                "address": "0x3122726412a63c88Fb7dA0a59C1e0b90777b648d"
+            },
+            "EurusERC20": {
+                "address": "0x333B938C746e18bb600273D6828307414C7587dc"
+            },
+            "OwnedUpgradeabilityProxy<WalletAddressMap>": {
+                "address": "0x3B594B2a56095cEfFD5b224D33873793991A34f0"
+            },
+            "Old_UserWallet": {
+                "address": "0x25a80eA6098449D61E82CE790883c9dC681BDFDF"
+            },
+            "DAppSampleToken": {
+                "address": "0xd9F5Ab82105341D2BB2961Ef36a2EBcc81DFc24c"
+            },
+            "OwnedUpgradeabilityProxy<DAppSampleToken>": {
+                "address": "0xcdeE76833e5991289f87a1123fBAa3F0F56E2409"
+            },
+            "DAppStockSample": {
+                "address": "0x1fFe5AC63Dd10bfb5d6E62110621B05414c600D5"
+            },
+            "OwnedUpgradeabilityProxy<DAppStockSample>": {
+                "address": "0xBa571455DCEE4fed5C43669af9DeBfDC63a52508"
+            },
+            "WrappedEUN": {
+                "address": "0xF8c48C0421b8586B683cdBf35829b4a5B1AeF838"
+            },
+            "OwnedUpgradeabilityProxy<WEUN>": {
+                "address": "0xE39A0EA2F9a7C296F581c0C2e7Cf8d52F96B4De0"
+            },
+            "MarketingRegWallet": {
+                "address": "0xb437649484bc49D0f55586dDB9991a763259d972"
+            },
+            "OwnedUpgradeabilityProxy<MarketingRegWallet>": {
+                "address": "0x76354d82D3D088662A8F1c1E03E5f4f09eE9bf12"
+            },
+            "OwnedUpgradeabilityProxy<CentralizedUserDappTest>": {
+                "address": "0x1815F0C6Ce4453663cBED42637A054CC2392d90c"
+            },
+            "OwnedUpgradeabilityProxy<MST>": {
+                "address": "0x89Ec85D913Aa1bF4B04Be93cc6A327D704fbE269"
+            },
+            "Multicall2": {
+                "address": "0xC745bDBd8A34c6F502aa4c193cA99F6aE80635CE"
+            },
+            "Old_UserWalletProxy": {
+                "address": "0x79B1A3dA0BaCA8bc2baD13AB0E6AB027740A4Aa9"
+            },
+            "UserWallet": {
+                "address": "0x57EFC7154A0775A7746f7868de77B1F47daE4E24"
+            },
+            "UserWalletProxy": {
+                "address": "0x1DD125562C21D4D0A6C2cE89C613830a173Da84D"
+            },
+            "GeneralMultiSigWallet": {
+                "address": "0x038df4C44750fA91FEA776E3A811E6fFcE8A1372"
+            }
+        }
+    },
+    "5777": {
+        "smartContract": {
+            "EurusInternalConfig": {
+                "address": "0xD8d19b5D20063Cf7a10407fBfbBb2D16ae3322Ce"
+            },
+            "Internal SmartContractConfig": {
+                "address": "0xbf46b1BFa64Ce6eb6695275f95DdB2d0105196fF"
+            },
+            "ExternalSmartContractConfig": {
+                "address": "0x3CA63364BD58e56c261f9aC3FB43883C6A9c02B8"
+            },
+            "WalletAddressMap": {
+                "address": "0x9c8Cfc873F4A96539aD1A0Cb2BE296c938C033fd"
+            },
+            "USDT": {
+                "address": "0x5E7c2e052dF884972b440Adb9944A57046a1Cfd4"
+            },
+            "OwnedUpgradeabilityProxy<USDT>": {
+                "address": "0xAf81E1D393F977d65085BBDB920d31442D2c084c"
+            },
+            "ApprovalWallet": {
+                "address": "0x3CEAc183C12578794A7f012D2C9a144bA53B328a"
+            },
+            "OwnedUpgradeabilityProxy<ApprovalWallet>": {
+                "address": "0xE433195826594C5860FE4353F8Ef6C4b5F89f0C7"
+            },
+            "ApprovalWalletReader": {
+                "address": "0x30442402912C6373881151a96F16155d5EC10144"
+            },
+            "WithdrawSmartContract": {
+                "address": "0x0374c6e62F923C6931056e4011296C2AB868a8c6"
+            },
+            "OwnedUpgradeabilityProxy<WithdrawSmartContract>": {
+                "address": "0xf26bc64e18bCf757eBA1F73780B41AD1E51425c8"
+            },
+            "EurusPlatformWallet": {
+                "address": "0x9e77a672BcD1168897818EF45c2dB780cE746370"
+            },
+            "OwnedUpgradeabilityProxy<EurusPlatformWallet>": {
+                "address": "0xD1e22a20C445d782dc947353774cfF06f84a1835"
+            },
+            "PlatformWallet": {
+                "address": "0xc92E0B9A9E9bb3bb1Bb83a8e028D67A85e4BcEd5"
+            },
+            "OwnedUpgradeabilityProxy<PlatformWallet>": {
+                "address": "0x8147D7c1F4639401b86f7C03dB60995b3faf9C55"
+            },
+            "USDC": {
+                "address": "0xAf81E1D393F977d65085BBDB920d31442D2c084c"
+            },
+            "OwnedUpgradeabilityProxy<USDC>": {
+                "address": "0xc349893bA792e4B609176BB188aEa30b498A4E2d"
+            },
+            "LINK": {
+                "address": "0xf432cC310177D5b639886A922201a0969f60f226"
+            },
+            "OwnedUpgradeabilityProxy<LINK>": {
+                "address": "0x5D0E2B91f0b34D8ec151EE548106F356B3881083"
+            },
+            "UNI": {
+                "address": "0x916699f7e1CEcd8F43e211D0d3982a87C8654aaD"
+            },
+            "OwnedUpgradeabilityProxy<UNI>": {
+                "address": "0x72aC6f301f067f4E08743092e9b36D5848Db9926"
+            },
+            "BNB": {
+                "address": "0xCf93d252AF054Dc37c47D42aa5c5a9d69C63879b"
+            },
+            "OwnedUpgradeabilityProxy<BNB>": {
+                "address": "0x200b340b148Cdb7b690c8c341044E7d8fd2c4ef2"
+            },
+            "ETH": {
+                "address": "0xFf5021c2BA5EfcCa2E531eA779130c10FDe63eaa"
+            },
+            "OwnedUpgradeabilityProxy<ETH>": {
+                "address": "0x37d5D3ff94d5e7D194268920F7f26Ae68609b3f6"
+            },
+            "BUSD": {
+                "address": "0xc5b151baeD2b3006Ca84364A44be40A014d66e87"
+            },
+            "OwnedUpgradeabilityProxy<BUSD>": {
+                "address": "0xEfDFb6920955D321820027B0918a50A227298339"
+            },
+            "YFI": {
+                "address": "0x624d37f46e3299A54EC80Eb616EcDf2e801F7E2e"
+            },
+            "OwnedUpgradeabilityProxy<YFI>": {
+                "address": "0xE1188690a42e331025f3b9BAeEC87Ad08C143AbB"
+            },
+            "DAI": {
+                "address": "0x569ab3FB7F7D28F55e08Fe8b45a76F64184290dd"
+            },
+            "OwnedUpgradeabilityProxy<DAI>": {
+                "address": "0x5188Cb5A7eC14274f219d49821B71dE088a5D589"
+            },
+            "OMG": {
+                "address": "0x032b764E38383D23fAba357b497e1D4B99Ce7Ec2"
+            },
+            "OwnedUpgradeabilityProxy<OMG>": {
+                "address": "0x6e973469Dc52dB20b113B650aaC72F6E9C346f85"
+            },
+            "VEN": {
+                "address": "0x590F01c596bA95ed34113Cfd1393e853743b8310"
+            },
+            "OwnedUpgradeabilityProxy<VEN>": {
+                "address": "0x1555Bc1d9bC5a94BB1133ec46045AcFD56148dA6"
+            },
+            "AAVE": {
+                "address": "0x9edC032D7D1408F7406485E426B49698f515DCcC"
+            },
+            "OwnedUpgradeabilityProxy<AAVE>": {
+                "address": "0xeaED897632cf55454003Ad2dE067FCFbE444d285"
+            },
+            "HT": {
+                "address": "0xb220d15146Dc2e052048687174c588EaA8251d44"
+            },
+            "OwnedUpgradeabilityProxy<HT>": {
+                "address": "0xE813feA399922a5ba73023bB2DB06d87952490Df"
+            },
+            "SUSHI": {
+                "address": "0x0Fa85b7676cAA2aE0ABf3839dA6ab51DF0756C11"
+            },
+            "OwnedUpgradeabilityProxy<SUSHI>": {
+                "address": "0xA9E6319620BE94530e8539ba941F85eC269491d6"
+            },
+            "TUSD": {
+                "address": "0x3977E20B9D68266E894cC1CeF081F5E434cBC5d3"
+            },
+            "OwnedUpgradeabilityProxy<TUSD>": {
+                "address": "0xcf72Ed07dC135E656068fCcDA11291dbB23Dd934"
+            },
+            "cDAI": {
+                "address": "0xeB8aBFAF877C13388361d61e78e1E27348C87D6b"
+            },
+            "OwnedUpgradeabilityProxy<cDAI>": {
+                "address": "0xD1BaBbb347c44Bf2B33BC2b1Bda9586C08F549f6"
+            },
+            "SXP": {
+                "address": "0x18CE2bacB4628AA0001600d8674c12CAfE34c445"
+            },
+            "OwnedUpgradeabilityProxy<SXP>": {
+                "address": "0xf65DbE70A37468cE0cC8C328e9ecCA701649327E"
+            },
+            "BAT": {
+                "address": "0xf9A0e42792Ce7aBc35C088CBF26Ad4deB53633b7"
+            },
+            "OwnedUpgradeabilityProxy<BAT>": {
+                "address": "0x80BF26d3E135D897F6DF346D694E2b18af1aA501"
+            },
+            "USDK": {
+                "address": "0xE870eCE641755a491cBb693116D97e19458b75F6"
+            },
+            "OwnedUpgradeabilityProxy<USDK>": {
+                "address": "0x1B1f4b535FbF97BE0540C64Cc7712829c87d720a"
+            },
+            "WBTC": {
+                "address": "0x5B7660Fb719a2AA2B1708e0C27FdCE138f6933d8"
+            },
+            "OwnedUpgradeabilityProxy<WBTC>": {
+                "address": "0x1CE31342180a094961749Eb9C27672E16A7b47c4"
+            },
+            "ZIL": {
+                "address": "0x250c7F6422B272F04f7e4e913eA9e894d95bFB8C"
+            },
+            "OwnedUpgradeabilityProxy<ZIL>": {
+                "address": "0xf73136B8530A005b841FbC08c568938A621A188C"
+            },
+            "SNX": {
+                "address": "0x77D14fA49Cb21374c5d8A46754Ff750431388b98"
+            },
+            "OwnedUpgradeabilityProxy<SNX>": {
+                "address": "0x9d21af09d912Ee9d9b15f43BC6844722eE90Ea93"
+            },
+            "OKB": {
+                "address": "0x323bf7206d009346Bf700a6152012b601E8678cb"
+            },
+            "OwnedUpgradeabilityProxy<OKB>": {
+                "address": "0x5bEac7ba105C4D79F98382Ca81B17A71690F2F7C"
+            },
+            "BAND": {
+                "address": "0x9571A8c02A738144B3A3fd870cd7CEc6Dd005Ec9"
+            },
+            "OwnedUpgradeabilityProxy<BAND>": {
+                "address": "0x209Be05bC5F523360319336C05eF7a435Db4eDfF"
+            },
+            "MKR": {
+                "address": "0xA87AeB417d81B979BfEa0C9f80b095581F60BA04"
+            },
+            "OwnedUpgradeabilityProxy<MKR>": {
+                "address": "0x058ae75025F260A85a7F21b2fb947b3cCA0bA2fD"
+            },
+            "HUSD": {
+                "address": "0x4dCb90b22339334Eb2A03354cB0f34d3e0BC1dBF"
+            },
+            "OwnedUpgradeabilityProxy<HUSD>": {
+                "address": "0x27045d99aC2Ac3CF914A4d9065651fc303839644"
+            },
+            "ZRX": {
+                "address": "0x2eAf7DC3f4d8b8c373B8a7F856736e8c5B4ced4c"
+            },
+            "OwnedUpgradeabilityProxy<ZRX>": {
+                "address": "0x726B6A8F953dce9607281CaEae8dABf2a4BDF334"
+            },
+            "PAX": {
+                "address": "0x65D569a64D19C2cd697A3ADc68bFa136a2F1495d"
+            },
+            "OwnedUpgradeabilityProxy<PAX>": {
+                "address": "0xc76eb766765251F5E9E98317e57F3a5CF734121a"
+            },
+            "COMP": {
+                "address": "0x5A93E6cbFA12CBcF7aC936061C0b8758bA7F7d9C"
+            },
+            "OwnedUpgradeabilityProxy<COMP>": {
+                "address": "0xA6bE3551fb2E3eC07Bfc000713a828db367d12c6"
+            },
+            "RSR": {
+                "address": "0x3321f67Cfaf9faec90B495e691a49D1197c44638"
+            },
+            "OwnedUpgradeabilityProxy<RSR>": {
+                "address": "0xBB1d981ca40e3Ca6aa022eb59cc2835EFBed10A3"
+            },
+            "BAL": {
+                "address": "0x7Adf93f7CDbA96Cf1cd4B1F67A314B8F72879744"
+            },
+            "OwnedUpgradeabilityProxy<BAL>": {
+                "address": "0x06b6032747aB46CF7aA1Effe55Ed3Be387855b60"
+            },
+            "DummyPlatformWallet": {
+                "address": "0x94baF6D79541B9D5C79dbEE7A1F0eE477f8b30cD"
+            },
+            "OwnedUpgradeabilityProxy<DummyPlatformWallet>": {
+                "address": "0x0a93B8FB7Bf8B0aA02c921Ae93eC6d5A5245385f"
+            },
+            "DummyInternalSmartContractConfig": {
+                "address": "0x6242026b7657b0e3b8782218e04525709aaA7865"
+            }
+        }
+    },
+    "lastUpdateTime": "2021-01-27T09:20:31.697Z",
+    "tag": "dev"
+}

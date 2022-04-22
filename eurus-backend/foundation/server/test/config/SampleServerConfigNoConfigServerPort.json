@@ -1,0 +1,14 @@
+{
+    "configServerIP":"add what u want",
+    "configServerPort":"",
+    "dbServerIP":"18.166.178.116",
+    "dbServerPort":5432,
+    "dbUserName": "admin",
+    "dbPassword":"50t3+/z9zgh8GptML0+qiyUUYJuHqgi64a51W1l2y8o=",
+    "dbDatabaseName":"postgres",
+    "dbSchemaName":"helloWorld",
+    "dbIdleConns": 10,
+    "dbMaxOpenConns":100,
+    "aesKey": "C639A572E14D5075C526FDDD43E4ECF6B095EA17783D32EF3D2710AF9F359DD4",
+    "PrivateKey":"123"
+}

@@ -1,0 +1,33 @@
+{
+    "logFilePath": "logs/dapp-payment-api.log",
+    "listenPort": 3000,
+    "refreshCacheSeconds": 60,
+    "database": {
+        "host": "staging-rds.c4ryivjbggn7.ap-east-1.rds.amazonaws.com",
+        "port": 5432,
+        "user": "api",
+        "password": "ceshvj3vv2eU6kNS",
+        "name": "devpayment"
+    },
+    "cors": {
+        "allowedOrigins": [
+            "http://localhost",
+            "http://localhost:*",
+            "http://127.0.0.1",
+            "http://127.0.0.1:*",
+            "http://devpaymentgateway.mobicdn.cn",
+            "http://16.163.66.209"
+        ],
+        "allowedMethods": [
+            "GET",
+            "POST",
+            "OPTIONS"
+        ],
+        "allowedHeaders": [
+            "Content-Type",
+            "X-API-Key"
+        ],
+        "allowCredentials": true,
+        "maxAge": 86400
+    }
+}

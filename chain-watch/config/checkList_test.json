@@ -1,0 +1,46 @@
+{
+    "eurus_dev": [
+        {
+            "name": "swap_admin",
+            "token": "EUN",
+            "address": "0x8F9092CE573e41d72378Cf8c9d3335584e6843F1"
+        },
+        {
+            "name": "swap_admin",
+            "token": "USDM",
+            "address": "0x8F9092CE573e41d72378Cf8c9d3335584e6843F1"
+        },
+        {
+            "name": "swap_admin",
+            "token": "BTCM",
+            "address": "0x8F9092CE573e41d72378Cf8c9d3335584e6843F1"
+        },
+        {
+            "name": "swap_admin",
+            "token": "ETHM",
+            "address": "0x8F9092CE573e41d72378Cf8c9d3335584e6843F1"
+        }
+    ],
+    "eurus_testnet": [
+        {
+            "name": "wilson",
+            "token": "EUN",
+            "address": "0xd1abc154B43368b8B0B960fA9Ab84545cA1cf816"
+        },
+        {
+            "name": "wilson",
+            "token": "USDM",
+            "address": "0xd1abc154B43368b8B0B960fA9Ab84545cA1cf816"
+        },
+        {
+            "name": "wilson",
+            "token": "BTCM",
+            "address": "0xd1abc154B43368b8B0B960fA9Ab84545cA1cf816"
+        },
+        {
+            "name": "wilson",
+            "token": "ETHM",
+            "address": "0xd1abc154B43368b8B0B960fA9Ab84545cA1cf816"
+        }
+    ]
+}

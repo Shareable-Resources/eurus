@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "../../../dist/tsc/helloWorld"
+  },
+  "include": [
+    "../../foundation/*.ts",
+    "../helloWorldService/*.ts",
+    "./webpack.config.js"
+  ],
+  "exclude": ["node_modules"],
+  "extends": "../../../tsconfig.json"
+}

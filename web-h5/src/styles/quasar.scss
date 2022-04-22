@@ -1,0 +1,64 @@
+@import './quasar.variables.scss';
+@import '~quasar-styl';
+// @import '~quasar-addon-styl'
+
+html {
+    overflow: hidden;
+}
+html,body, #app {
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+#app {
+    overflow-y: auto;
+}
+body.login {
+    display: none;
+}
+.q-layout {
+    min-height: unset !important;
+    height: 100%;
+}
+
+body {
+    &.centralized {
+        & .app-main {
+            background: #0097DD; 
+            & section:not(.titleHeader) {
+                background: white;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+            }
+        }
+
+        
+ 
+           
+    }
+}
+.app-main {
+    height: 100%;
+    position: relative;
+}
+.container {
+    padding: 0 30px;
+}
+section {
+    $headerHeight : 100px;
+    &.titleHeader {
+        height: $headerHeight;
+        & .row {
+            height: 100%;
+        }
+    }
+    & + .main {
+        height: calc(100% - #{$headerHeight});
+    } 
+
+
+}
+

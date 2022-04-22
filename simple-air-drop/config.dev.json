@@ -1,0 +1,7 @@
+{
+  "rpcUrl": "https://rpc.eurus.dev",
+  "srcAccount": "0xd1abc154B43368b8B0B960fA9Ab84545cA1cf816",
+  "srcPrivateKey": "a7a4adf39e174b1449aa25abe48a233f460569d8e21adc85faeeae33aea1ecd2",
+  "gasLimit": "21000",
+  "gasEstimatedInEth": "0.0000504"
+}

@@ -1,0 +1,10 @@
+-r requirements.txt
+-r requirements-test.txt
+flake8
+ipdb
+ipython
+isort
+mypy
+pre-commit
+sphinx
+sphinx-rtd-theme

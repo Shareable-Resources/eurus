@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "../../../dist/tsc/publicDataServer"
+
+    
+  },
+  "include": [
+    "../../foundation/*.ts",
+    "../publicDataServer/*.ts",
+  ],
+  "exclude": ["node_modules"],
+  "extends": "../../../tsconfig.json"
+}

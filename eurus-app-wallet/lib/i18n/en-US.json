@@ -1,0 +1,607 @@
+{
+  "ACKNOWLEDGEMENT_DIALOG": {
+    "DEPOSIT_STATEMENT": "You understand and agreed that Ethereum will be charged the gas fee.\n\nPlease make sure you have sufficient assets to execute the transaction.",
+    "DONT_ASK_AGAIN": "Dont' ask me again",
+    "I_AGREE": "I agree",
+    "WITHDRAW_STATEMENT": "You understand and agreed that any transaction from Eurus to Ethereum will be charged a non-refundable Admin fee and Gas fee. \n\nPlease make sure you have sufficient assets to execute the transaction."
+  },
+  "ADD_TOKEN_PAGE": {
+    "ADDRESS_PREFIX": "Address: {}",
+    "ERROR": {
+      "INVALID_ADDRESS": "Invalid address",
+      "TOKEN_NOT_FOUND": {
+        "DESC": "Unable to find Token with given address",
+        "TITLE": "Token not found"
+      }
+    },
+    "MAIN_TITLE": "Add Token",
+    "SEARCHING": "Searching…",
+    "SEARCHING_ADDRESS": "Searching address {}",
+    "SEARCH_BOX": {
+      "LABEL": "Token name / address",
+      "PLACEHOLDER": "Enter token name / address"
+    },
+    "SEARCH_TOKEN_BTN": "Search Token"
+  },
+  "ADMIN_FEE": {
+    "DESC": "Any transaction from Eurus to Ethereum will be charged Admin fee. The admin fee only settled by the transaction asset.",
+    "NAME": "Admin Fee"
+  },
+  "ASSET_ALLOCATION_PAGE": {
+    "DEPOSIT_TITLE": "Allocate From Ethereum",
+    "TITLE": "Asset Allocation",
+    "WITHDRAWAL": "Withdraw",
+    "WITHDRAWAL_TITLE": "Allocate From Eurus"
+  },
+  "ASSET_TX_HISTORY": {
+    "REWARD": "Reward",
+    "DEPOSIT": "Deposit",
+    "WITHDRAWAL": "withdrawal",
+    "ALLOCATE_TO": "{} to {}",
+    "AMOUNT": "Amount",
+    "NO_TX_RECORD": "No transaction record",
+    "RECENT_TX": "Recent transactions",
+    "TX_ID": "Tx ID"
+  },
+  "BACKUP_MPHRASE": {
+    "RECEIVE_ALERT_DIALOG": {
+      "CONTENT": "Users of decentralized account is required to back up the seed phrase before receiving assets."
+    }
+  },
+  "BACKUP_SEEDPHRASE_PAGE": {
+    "CAUTION_DIALOG": {
+      "BACKUP_LATER": "Backup Later",
+      "CONTENT": "Please ensure your surrounding is secure to reveal seed phrase."
+    },
+    "SCREENSHOT_DIALOG": {
+      "TITLE": "Screenshot risk",
+      "CONTENT": "It is highly recommended to not screenshot your seed phrase and rather that you keep it in a safe place.",
+      "BUTTON_TEXT": "Got it"
+    },
+    "CONFIRM_SEEDPHRASE": {
+      "CONTENT": "Please confirm the seed phrase with correct order by tapping the word bubbles.",
+      "TITLE": "Confirm seed phrase"
+    },
+    "DISPLAY_SEEDPHRASE": {
+      "CONTENT": "Please write down or memorize these 12 words with correct order. You could import the wallet with the seed phrase once you lost the phone or forgot Wallet Locker Password.",
+      "TITLE": "Write down your seed phrase"
+    },
+    "MAIN_TITLE": "Backup Seed Phrase"
+  },
+  "BIOMETRICS_PAGE": {
+    "BIO_NOT_SUPPORTED": "Oops! This function is not supported by the device.",
+    "DESC": "Setup biometrics",
+    "LOGIN": "Login",
+    "TITLE": "Biometrics",
+    "TRANSACTION": "Transaction"
+  },
+  "CEN_LOGIN": {
+    "FORGOT_PW": "Forgot Password?",
+    "INPUT": {
+      "EMAIL_DESC": "Enter email",
+      "EMAIL_TITLE": "Email",
+      "PW_DESC": "Enter password",
+      "PW_TITLE": "Password"
+    },
+    "LOGIN_BTN": "Login",
+    "REG_BTN": "Register",
+    "REG_TEXT": "Don't have an account?",
+    "TITLE": "Login"
+  },
+  "CHANGE_LOCKER_PW": {
+    "CHANGE_SUCCESS": "Changed Successfully",
+    "CHANGE_SUCCESS_DESC": "You've successfully changed Wallet Locker Password. Please login again with your new Wallet Locker Password.",
+    "CHANGE_SUCCESS_PW": "You have successfully changed your password",
+    "CONFIRM_PW": {
+      "LABEL": "Confirm Password",
+      "PLACEHOLDER": "Enter new password"
+    },
+    "CURRENT_PW": {
+      "LABEL": "Current Password",
+      "PLACEHOLDER": "Enter current password"
+    },
+    "ERROR": {
+      "DIFF_NEW_PW": "Please enter a different New Password",
+      "EMPTY_CONFIRM_PW": "Please confirm new password",
+      "EMPTY_CUR_PW": "Please enter Current Password",
+      "EMPTY_NEW_PW": "Please enter New Password",
+      "PW_NOT_DIGIT_OR_CHARACTER": "Password must contain at least 1 number digit and 1 alphabetic character",
+      "PW_NOT_CONTAIN_8_TO_20_CHARACTER": "Password should contain 8 to 20 characters"
+    },
+    "NEW_PW": {
+      "LABEL": "New Password",
+      "PLACEHOLDER": "Enter new password"
+    },
+    "RELOGIN": "Login Again",
+    "TITLE": "Change Wallet Locker Password"
+  },
+  "COMMON": {
+    "ADD_TOKEN": "Add Token",
+    "ALLOW": "OK",
+    "BACKUP_NOW": "Backup Now",
+    "CANCEL": "Cancel",
+    "CAUTION": "CAUTION",
+    "CLOSE": "Close",
+    "COLON": ":",
+    "CONFIRM": "Confirm",
+    "CONTINUE": "Continue",
+    "COPIED": "Copied to Clipboard",
+    "DATE": "Date",
+    "DONT_ALLOW": "Don’t allow",
+    "FINISH": "Complete",
+    "LOADING_W_DOT": "Loading...",
+    "NEXT_STEP": "NEXT",
+    "OK": "OK",
+    "OR": "OR",
+    "PENDING": "Pending",
+    "SUBMIT": "Submit",
+    "SUCCESS": "Success",
+    "FAILURE": "Failure",
+    "BACK": "Back",
+    "NOT_NETWORK_CONNECTION": "No Network Connection",
+    "ALREADY_ROOT_DEVICE": "Eurus Wallet is not supported on Jailbroken (iOS) and Rooted (Android) devices.",
+    "WARNING": "WARNING",
+    "PASSWORD_HINT": "Enter Password",
+    "REMIND": "Reminder",
+    "COUNTRY_NOT_AVAILABLE": "Our service is not available in your area",
+    "COMING_SOON": "Coming soon",
+    "MESSAGE": "Message",
+    "REJECT": "Reject",
+    "ESTIMATED_GAS_FEE": "Estimated Gas Fee",
+    "TOTAL": "Total"
+  },
+  "COMMON_ERROR": {
+    "AUTH_FAIL": "Authentication Failure",
+    "INCORRECT_PW": "Incorrect Password",
+    "PW_INCONSISTENT": "Inconsistent Password",
+    "USER_NOT_FOUND": "Please enter correct email and password",
+    "INVALID_CODE": "invalid verification code",
+    "REQUEST_TOO_FREQUENT": "Request too frequent, wait for 5 minute",
+    "REQUEST_TOO_FREQUENT_1_MIN": "Request too frequent, wait for 1 minute",
+    "CODE_EXPIRED": "Code expired",
+    "USER_NOT_FOUND2": "User not found",
+    "USER_EMAIL_NOT_FOUND": "Please enter correct email",
+    "EUN_WITHDRAW_ERROR": "Can't Withdraw EUN",
+    "PW_IS_INCORRECT": "The original password is incorrect",
+    "SERVER_MAINTENANCE": "Server Maintenance"
+  },
+  "CREATE_LOCKER_PAGE": {
+    "CONFIRM_PW": {
+      "LABEL": "Confirm Password",
+      "PLACEHOLDER": "Enter password again"
+    },
+    "ENABLE_BIO_AUTH": "Enable Biometrics",
+    "ERROR": {
+      "EMPTY_CONFIRM_PW": "Please confirm Wallet Locker Password"
+    },
+    "MAIN_TITLE": "Create Wallet Locker Password",
+    "NEW_PW": {
+      "LABEL": "New Password",
+      "PLACEHOLDER": "Enter password"
+    }
+  },
+  "CREATE_WALLET_PAGE": {
+    "CEN": {
+      "DESC": "Recommend novice users",
+      "INFO_DIALOG": {
+        "DESC": "Different with another centralized / custodial Wallet. Eurus only saved the “SALT” instead of whole private key.",
+        "TITLE": "Tips"
+      },
+      "TITLE": "Custodial"
+    },
+    "CEN_BTN": {
+      "DESC": "Recommend novice users",
+      "TITLE": "Centralization"
+    },
+    "CREATE_WALLET": "Create Wallet",
+    "DECEN": {
+      "DESC": "Experienced users recommended",
+      "INFO_DIALOG": {
+        "DESC": "Eurus decentralized wallet does not store any user personal information, users need to take care of personal login information and seed phrases to retrieve wallets.",
+        "TITLE": "Tips"
+      },
+      "TITLE": "Decentralized"
+    },
+    "DECEN_BTN": {
+      "DESC": "Experienced users recommended",
+      "TITLE": "Decentralized"
+    },
+    "SELECT_TYPE": "Select Type"
+  },
+  "DOWNLOAD_STATEMENT": {
+    "CURRENT_MONTH": "Current Month",
+    "EXPORT_PDF": "Export PDF",
+    "OPEN_PDF": "Open PDF",
+    "PREVIOUS_MONTH": "Previous Month",
+    "SUMMARY": {
+      "TITLE": "Download Summary"
+    },
+    "TX_DETAIL": {
+      "TITLE": "Download asset Tx Details"
+    }
+  },
+  "EDIT_ASSETS_LIST_PAGE": {
+    "MAIN_TITLE": "Edit Assets List"
+  },
+  "FAUCET_FNC": {
+    "DESC": "After 5 mins, you will see the cryptocurrency in your account.",
+    "DESC2": "Your cryptocurrency request is processing. Please wait for a little while.",
+    "DESC3": "Today, your FAUCET request quota is full. Please try again tomorrow.",
+    "FAUCET": "Faucet"
+  },
+  "FORCE_UPDATE": {
+    "TITLE": "New Version Available",
+    "DESC_ANDROID": "There is a newer version available for download! Please update the app by downloading the latest apk",
+    "DESC_IOS": "There is a newer version available for download! Please update the app by visiting the Apple Store",
+    "BTN_TITLE": "Update"
+  },
+  "FORGOT_PW": {
+    "FORGOT_PW_BTN": "Forgot Password?"
+  },
+  "GAS_FEE": {
+    "DESC": "The amount of {} that paid to miners for processing transactions on the network. It fluctuate considerably over time.",
+    "NAME": "Gas Fee"
+  },
+  "HOME": {
+    "DOWNLOAD_SUMMARY": "Download Summary",
+    "EDIT_LIST": "Edit List",
+    "HEADER": {
+      "SEED_PHRASE_NOT_BACKUP": "Seed Phrase Not Backup Yet"
+    }
+  },
+  "IMPORT_WALLET_PAGE": {
+    "TITLE": "Import Wallet",
+    "IMPORT_BTN": "Import",
+    "MPHRASE": {
+      "NAME": "Seed Phrase",
+      "TITLE": "Enter Seed Phrase",
+      "INPUT_HINT": "Enter your seed phrase in correct order and separate each word with space",
+      "INVALID_INPUT": "Invalid Seed Phrase"
+    },
+    "PRIVATE_KEY": {
+      "NAME": "Private Key",
+      "TITLE": "Enter Private Key",
+      "INPUT_HINT": "Enter your private key",
+      "INVALID_INPUT": "Invalid Private Key"
+    }
+  },
+  "LANGUAGE_PAGE": {
+    "TITLE": "Language"
+  },
+  "LAUNCH_PAGE": {
+    "CREATE_ACCOUNT_BTN": "Create an account",
+    "CUSTOMER_SERVICE": "Customer Service",
+    "IMPORT_WALLET_BTN": "Import wallet",
+    "LOGIN_BTN": "Login"
+  },
+  "FORGOT_PAYMENT_PWD_DIALOG": {
+    "CONTENT": "After resetting your payment password, all existing gas fuel will be lost. Are you sure to continue?"
+  },
+  "LOGOUT_DIALOG": {
+    "CONTENT": "Are you sure to log out?",
+    "TITLE": "Logout wallet"
+  },
+  "MAIN_FNC": {
+    "ASSET_ALLOCATION": "Asset\nallocation",
+    "RECEIVE": "Receive",
+    "SCAN": "Scan",
+    "SEND": "Send"
+  },
+  "MAIN_NAVBAR": {
+    "WALLET": "Wallet",
+    "SWAP": "Swap",
+    "BROWSER": "Browser",
+    "MARKETS": "Markets",
+    "SETTING": "Setting"
+  },
+  "RECEIVE_PAGE": {
+    "DISCLAIMER": "Disclaimer",
+    "DISCLAIMER_DECEN": "The above address only support ERC20 and ETH in Ethereum blockchain. Before receiving any assets, please ensure Eurus wallet can support that asset. Please do not send any unsupported assets to the above address, otherwise, the assets will not be recovered.",
+    "MAIN_TITLE": "Receive",
+    "MY_WALLET_ADDRESS": "My wallet address",
+    "SHARE_TEXT": "This is my {} wallet address:\n{}",
+    "SELECT_NETWORK": "Select Network",
+    "SELECT_NETWORK_STATEMENT": "Please choose your deposit blockchain and ensure the send and receive assets blockchain is consistent, otherwise, the assets will not be recovered.",
+    "SELECT_NETWORK_REMINDER": "The above address only support assets in Eurus blockchain. Before receiving any assets, please ensure the sender’s wallet can support Eurus blockchain. Please do not send any assets from other blockchain to the above address, otherwise, the assets will not be recovered."
+  },
+  "REGISTER": {
+    "INPUT": {
+      "CONFIRM_LOGIN_PW_DESC": "Enter login password",
+      "CONFIRM_LOGIN_PW_TITLE": "Confirm login password",
+      "EMAIL_DESC": "Enter email address",
+      "EMAIL_TITLE": "Email address",
+      "LOGIN_PW_DESC": "Confirm login password",
+      "LOGIN_PW_TITLE": "Login password",
+      "PAYMENT_PW_TITLE": "Payment password",
+      "PAYMENT_PW_DESC": "Confirm payment password"
+    },
+    "LOGIN_PW_SECTION_TITLE": "Login Password",
+    "MAIN_TITLE": "Register",
+    "PAYMENT_PW_SECTION_TITLE": "Payment password",
+    "AGREE_T&C": "By creating an account, you agree to our",
+    "T&C": "Term and Conditions",
+    "MUST_AGREE_T&C": "You must agree Team and Conditions",
+    "GET_CODE_FROM_EMAIL": "Get the verify code by above Email",
+    "CONTAIN_8_TO_20": "{} should contain 8 to 20 characters",
+    "DIGIT_AND_CHARACTER": "{} must contain at least 1 number digit & 1 alphabetical character",
+    "LOGIN_PW_CONFIRM": "Login Password must be equal to Confirm Login Password",
+    "PAYMENT_PW_CONFIRM": "payment password must be equal to confirm payment password",
+    "LOGIN_PW_NOT_EQUAL_PAYMENT_PW": "login password must not be equal to confirm payment password",
+    "VALIDATE_EMAIL": "Please enter validate email address",
+    "CREATE_SUCCESS": "Created Successfully",
+    "CREATE_WALLET_SUCCESS": "You’ve successfully created a wallet",
+    "WELCOME_TO_EURUS": "Welcome to EURUS"
+  },
+  "SCANNER_PAGE": {
+    "CAMERA_DISABLED_POPUP": {
+      "DESC": "Please allow us to access your Camera in your System Setting",
+      "TITLE": "Camera is Disabled"
+    },
+    "CAMERA_PERM_POPUP": {
+      "DESC": "Get started by allowing us to use your camera",
+      "SCAN_FROM_IMG": "Scan QRCode from Image",
+      "TITLE": "Camera",
+      "USE_QRCODE_IMG": "Scan QRCode from Image"
+    },
+    "CAMERA_VIEW": {
+      "LIGHTS_OFF": "Lights Off",
+      "LIGHTS_ON": "Lights On",
+      "SCANNING": "Scanning",
+      "TITLE": "Scan"
+    },
+    "PHOTO_DISABLED_POPUP": {
+      "DESC": "Please allow us to access your Photo Library in your System Setting",
+      "TITLE": "Photo Library is Disabled"
+    },
+    "PHOTO_PERM_POPUP": {
+      "DESC": "Get Started by allowing us to access your Photo Library",
+      "TITLE": "Photo Library"
+    }
+  },
+  "AFTER_SCAN_PAGE":{
+    "RESCAN": "Rescan",
+    "SCAN_RESULT": "Scan Result",
+    "TO_EURUS":"To This Address in Eurus",
+    "TO_ETHEREUM":"To This Address in Ethereum",
+    "EURUS_NETWORK":"Eurus Network"
+  },
+  "SEND_CONFIRM_PAGE": {
+    "CONFIRM_INFO": "Confirm information",
+    "EMAIL": "Email",
+    "MAIN_TITLE": "Send",
+    "PAGE_DESC": "Please confirm the receiving address and asset are correct before sending assets.",
+    "WALLET_ADDRESS": "Wallet address"
+  },
+  "VERIFY_CODE_PAGE": {
+    "VERIFY_CODE": "Verify code",
+    "VERIFY_CODE_TO_EMAIL": "Verify code will send to {}",
+    "RESENT_SECONDS": "Can be re-sent after {} seconds",
+    "RESENT": "Resend",
+    "SENT": "Sent"
+  },
+  "SEND_PAGE": {
+    "ASSET_PREFIX": "Assets:",
+    "ENTER_INFO": "Enter information",
+    "ERROR": {
+      "CANNOT_SEND_TO_SELF": "Cannot send to own address",
+      "EMPTY": {
+        "ASSET_TYPE": "Please select assets"
+      },
+      "EMPTY_RECEIVE_ADDRESS": "Please enter receiving address",
+      "INPUT_NOT_VALID": "Please enter valid ethereum address or email",
+      "ADDRESS_NOT_VALID": "Please enter valid ethereum address"
+    },
+    "MAIN_TITLE": "Send",
+    "PAGE_DESC": "Please confirm the receiving address and asset are correct before sending assets.",
+    "RECEIVING_ADDRESS": {
+      "CENLABEL": "Receiving Address / Email",
+      "LABEL": "Receiving Address",
+      "PLACEHOLDER": "Please enter receiving address"
+    },
+    "SELECT_ASSET_PLACEHOLDER": "Please select",
+    "SELECT_NETWORK": "Select Network",
+    "SELECT_NETWORK_STATEMENT": "Please choose your sending blockchain and ensure the send and receive blockchain is consistent, otherwise, the assets will not be recovered."
+  },
+  "SETTING_PAGE": {
+    "GENERAL_CARD": {
+      "LANGUAGE": "Language",
+      "TITLE": "General"
+    },
+    "HELP_CENTER_CARD": {
+      "CS": "Customer Services",
+      "FAQ": "FAQ",
+      "FAQ_LINK": "https://www.eurus.network/support/eurus-wallet",
+      "TITLE": "Help Center",
+      "TNC": {
+        "LINK": "https://www.eurus.network/support/terms-of-use/",
+        "TITLE": "Terms & Conditions"
+      },
+      "WALLET_VERSION": "Wallet Version"
+    },
+    "MAIN_TITLE": "Setting",
+    "SECURITY_CARD": {
+      "ASSET_PRIVACY": {
+        "DESC": "Activation of Privacy Mode will hide asset balances",
+        "TITLE": "Hide Balance"
+      },
+      "BACKUP_MPHRASE": {
+        "BACKUP_NOW": "Backup Now",
+        "COMPLETED": "Completed",
+        "INCOMPLETED": "Incompleted",
+        "STATUS": "Backup Seed Phrase Status"
+      },
+      "BIOMETRICS": "Biometircs",
+      "CHANGE_LOGINPW_BTN": "Change Login Password",
+      "CHANGE_PAYMENTPW_BTN": "Change payment password",
+      "FORGET_PAYMENTPW_BTN": "Forget payment password",
+      "LOGOUT": "Logout",
+      "MAIN_TITLE": "Security",
+      "WALLET_LOCKER_BTN": "Change Wallet Locker Password",
+      "KYC_STATUS": "KYC Status",
+      "LEVEL": "Level"
+    }
+  },
+  "SWITCH_AC": {
+    "ADD_OTHER_AC": "Add other account",
+    "CEN_AC": "Centralize Account",
+    "DECEN_AC": "Decentralize Account",
+    "TITLE": "Choose Account",
+    "REMOVE_DESCRIPTION": "Are you sure to remove?"
+  },
+  "TX_PAGE": {
+    "ALLOCATE_AMOUNT": "Amount",
+    "ALLOCATE_CONFIRMATION_TITLE": "Confirmation",
+    "ALLOCATE_NOW": "Allocate now",
+    "ALLOCATE_SUCCESS_DESC": "You’ve successfully allocated asset.",
+    "ALLOCATE_TO": "To",
+    "ASSET_BALANCE": "Balance: ",
+    "ERROR": {
+      "EMPTY_ALLOCATE_AMOUNT": "Please enter amount",
+      "EMPTY_GAS_PRICE": "Please enter gas price",
+      "EMPTY_TRANSFER_AMOUNT": "Please enter amount",
+      "GAS_MUST_GREATER_100": "Gas price must be greater than 100",
+      "INSUFFICIENT_ASSET": "Insufficient asset",
+      "INSUFFICIENT_GAS_FEE": "Insufficient gas",
+      "NOT_GET_BALANCE": "Please wait until get balance"
+    },
+    "E_GAS_PRICE": "Estimate Gas Fee",
+    "FROM": "From",
+    "GAS_FEE": "Gas Fee",
+    "GAS_FEE_SPEED": {
+      "MEDIUM": "Medium",
+      "RAPID": "Rapid",
+      "SLOW": "Slow"
+    },
+    "GAS_PRICE": "Gas Price",
+    "GAS_PRICE_DESC": "Gas prices fluctuate considerably over time and are naturally higher during high activity periods and decrease during periods when the network is under utilized.",
+    "MAX_AMOUNT": "Max",
+    "MY_WALLET": "My {} Wallet",
+    "OFFICIAL_WALLET": "Eurus official Wallet",
+    "SEND_NOW": "Send now",
+    "TRANSFER_AMOUNT": "Amount",
+    "TRANSFER_CONFIRMATION_TITLE": "Confirmation",
+    "TRANSFER_SUCCESS_DESC": "You’ve successfully transferred.",
+    "TRANSFER_TO": "To",
+    "WAITING_CONFIRM": "Waiting for confirmation"
+  },
+  "VERSION_PAGE": {
+    "VERSION": "Version"
+  },
+  "WALLET_LOCKER_DIALOG": {
+    "TITLE": "Enter Wallet Locker Password",
+    "CEN_TITLE": "Enter Payment Password"
+  },
+  "WELCOME_DIALOG": {
+    "LOGIN_BTN": "Login",
+    "MAIN_TITLE": "Welcome Back !",
+    "PASSWORD_HINT": "Enter Password",
+    "FORGOT_PW_BTN": "Forgot Password?",
+    "SWITCH_ACCOUNT": "Switch Account"
+  },
+  "DISCLAIMER": {
+    "DISCLAIMER_TITLE": "Disclaimer",
+    "DISCLAIMER_DESC": "Please DO NOT transfer any authentic cryptocurrency to EURUS testnet in case of any  irreversible losses."
+  },
+  "BIOMETRIC_ERROR": {
+    "TIPS": "TIPS",
+    "BIOMETRIC_ENABLE_TIPS": "Please enable device biometric function first, so that you can use biometric function on Eurus."
+  },
+  "REPORT_AC": {
+    "CASE_ID": "Case ID",
+    "REPORT_ACCOUNT": "Report Account",
+    "FORGOT_SECURITY_QUESTIONS": "Forgot Security questions",
+    "WARNING_REPORT_AC": "If you decide to continue, your account will be frozen",
+    "FORGOT_SECURITY_QUESTIONS_REMIND": "As you have failed to successfully answer the security questions, The account could not be deactivated immediately, please continue with the remainder of the ‘Report Account’ procedures",
+    "SUCCESS_DEACTIVATED_AC": "The account has been successfully deactivated,please continue with the remainder of the‘Report Account’ procedures",
+    "SELFIE_INSTRUCTION": "Please take a selfie with a piece of paperof the numbers show above",
+    "UPLOAD_IMAGE_SUCCESS": "You have successfully submitted a loss report application, please contact Customer Services team and continue the rest of the procedure."
+  },
+  "KYC": {
+    "VERIFY_IDENTITY_TITLE": "Verify your identity",
+    "SELECT_TYPE": "Select the type of document you would like to upload",
+    "PASSPORT": "Passport",
+    "ID_CARD": "Identity Card",
+    "FACE_PHOTO_PAGE": "Face photo page",
+    "FRONT_AND_BACK": "Front and back",
+    "SUBMIT_DOCUMENT": "Submit photo",
+    "TAKE_PHOTO_TITLE": "Take a selfie with your phone",
+    "UPLOAD_PHOTO": "Upload Photo",
+    "NO_SCAN_OR_COPIES": "No scans or photocopies",
+    "TAKE_SELFIE": "Take a selfie",
+    "SCAN_PHOTO_PAGE": "Scan the passport",
+    "SELFIE": "Selfie",
+    "ID_CARD_FRONT": "Identity Card - Front",
+    "ID_CARD_BACK": "Identity Card - Back",
+    "CONTINUE_ON_PHONE": "Continue on phone",
+    "UPLOAD_SUCCESS_DIALOG": "Upload Successfully",
+    "UPLOAD_SUCCESS_DIALOG_CONTENT": "You've successfully submit the photo.",
+    "RETAKE_PHOTO": "Retake",
+    "SELECT_COUNTRY": "Select Country/Region",
+    "CONTACT_CS": "Document is rejected. Please contact customer services for resubmit.",
+    "SECURITY_QUESTION": "Security question",
+    "WAITING_APPROVAL": "Under review, you will receive the result within 24 hours"
+  },
+  "REWARD": {
+    "TITLE": "Reward",
+    "STATUS": "Status:",
+    "ONGOING": "Ongoing",
+    "COMPLETED": "Completed",
+    "REWARDED_DATE": "Rewarded Date:",
+    "REWARDED_EUN": "Rewarded EUN:",
+    "REWARDED_TX_ID": "Rewarded Tx ID:",
+    "TRIGGERED_TX_ID": "Trigger Tx ID",
+    "LEARN_MORE": "Learn More",
+    "LEARN_MORE_LINK": "https://www.eurus.network/support/eun-token/#marketing"
+  },
+  "MARKETS": {
+    "VOLUME": "Volume"
+  },
+  "DAPP_BROWSER": {
+    "RECOMMENDED": "Recommended",
+    "RAIJIN_SWAP_DESCRIPTION": "Decentralised Exchange\nSimple, fast, affordable, and secure digital asset exchanges.",
+    "MAPPED_SWAP_DESCRIPTION": "Decentralised, on-chain cross-margin trading swap exchange.\nGet 10x finding and trade on the most funded dex.",
+    "FAVOURITE": "Favourite",
+    "SEARCH_HISTORY": "Search history",
+    "ADDRESS_BAR_PLACEHOLDER": "Search or Type URL",
+    "ADDRESS_BAR_REFRESH": "Refresh",
+    "ADD_FAVOURITES": "Add Favourites",
+    "ADD_FAVOURITES_NAME": "Name",
+    "ADD_FAVOURITES_NAME_PLACEHOLDER": "Enter website name",
+    "ADD_FAVOURITES_URL": "URL",
+    "ADD_FAVOURITES_URL_PLACEHOLDER": "Enter website url",
+    "CONNECT_SITE_DIALOG_TITLE": "Connect to this site?",
+    "ETH_SIGN_WARNING": "Signing this message can be dangerous. This signature could potentially perform any operation on your account's behalf, including granting complete control of your account and all of its assets to the requesting site. Only sign this message if you know what you're doing or completely trust the requesting site.",
+    "VIEW_DATA": "View Data",
+    "TRANSACTION_TYPE": {
+      "APPROVE": "Approve",
+      "TRANSFER": "Transfer",
+      "REQUEST_SIGNATURE": "Request Signature",
+      "CONTRACT_INTERACTION": "Contract Interaction",
+      "SWITCH_NETWORK": {
+        "TITLE": "Switch Network",
+        "SUBTITLE": "This site would like to switch the network",
+        "DESCRIPTION": "This will switch the selected network within browser to a supported network:"
+      }
+    },
+    "APPROVED_AMOUNT": "Approved Amount",
+    "GRANTED_TO": "Granted To"
+  },
+  "LOADING_DIALOG": {
+    "PLEASE_WAIT": "Please wait",
+    "CREATING_WALLET": "Creating EURUS wallet for you now"
+  },
+  "REFUEL": {
+    "TITLE": "Refuel",
+    "SLIDER": {
+      "SLIDE_TO_REFUEL": "Slide right to refuel",
+      "CURRENT_GAS_VOLUME": "Current Gas Volume: {}%"
+    },
+    "REFUEL_GAS_VOLUME": "Refuel Volume",
+    "SPEND_EUN": "Spend {} EUN",
+    "TOTAL_GAS_VOLUME": "Total Gas Volume",
+    "DIALOG": {
+      "WARNING_CONTENT": "Your gas volume is low",
+      "ERROR_CONTENT": "Your gas volume is lower than the estimated gas fee. Please refuel."
+    }
+  }
+}

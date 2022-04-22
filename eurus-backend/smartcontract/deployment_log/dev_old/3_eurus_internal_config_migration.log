@@ -1,0 +1,23 @@
+
+3_eurus_internal_config_migration.js
+====================================
+
+   Replacing 'EurusInternalConfig'
+   -------------------------------
+   > transaction hash:    0x57e7e67f0e793310e71e29b39489c0c9ffa1513e6c02d4c7b8c2e7e9c7998126
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x613c246F80b58Ffdd19E37e9021a7cEAA0583d3e
+   > block number:        941785
+   > block timestamp:     1609382183
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             92.738818
+   > gas used:            1400617 (0x155f29)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.02801234 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.02801234 ETH

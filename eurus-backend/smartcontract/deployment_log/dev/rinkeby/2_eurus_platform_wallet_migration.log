@@ -1,0 +1,41 @@
+2_eurus_platform_wallet_migration.js
+====================================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'EurusPlatformWallet'
+   -------------------------------
+   > transaction hash:    0x870fd9fa8c496c88e82e62a09de60349495a204e4d1c2279a7f74aeace73b63f
+   > Blocks: 8            Seconds: 113
+   > contract address:    0xF59cAF04852b3BC73Ab2c81a924b4a97ddE2B2e7
+   > block number:        8002475
+   > block timestamp:     1612265390
+   > account:             0xa5bD66B90c9F4175F3baf3dD25155Fd31543eF81
+   > balance:             47.485861336
+   > gas used:            1943321 (0x1da719)
+   > gas price:           1 gwei
+   > value sent:          0 ETH
+   > total cost:          0.001943321 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 8002476)
+   > confirmation number: 2 (block: 8002477)
+
+   Replacing 'OwnedUpgradeabilityProxy'
+   ------------------------------------
+   > transaction hash:    0x75f95dd170fd0b3275bb215a580f3ddca5710e9d0bb844fa6bc800b9011b7380
+   > Blocks: 3            Seconds: 41
+   > contract address:    0xF36ced577Eaec1C2406DD7b619A3DE6b85bA80d6
+   > block number:        8002480
+   > block timestamp:     1612265465
+   > account:             0xa5bD66B90c9F4175F3baf3dD25155Fd31543eF81
+   > balance:             47.485303534
+   > gas used:            557802 (0x882ea)
+   > gas price:           1 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000557802 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 8002481)
+   > confirmation number: 2 (block: 8002482)

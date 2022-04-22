@@ -1,0 +1,45 @@
+%syntax-version=1.0.0
+%project=eurus-backend-db-report
+%uri=https://github.com/eurus-chain/eurus-backend-db-report.git
+
+create_table_wallet_balances 2021-08-11T06:11:05Z System Administrator <root@admindeMBP> # Create table [wallet_balances]
+alter_table_wallet_balances 2021-08-11T07:36:03Z System Administrator <root@admindeMBP> # Alter table wallet_address to add chainId and as primary key
+
+
+2021_08_17_create_report_audit_table 2021-08-17T08:51:01Z System Administrator <root@admindeMBP> # Create report_audit table
+2021_08_18_report_audit_insert_asset 2021-08-18T06:03:04Z System Administrator <root@admindeMBP> # Create function report_audit_insert_asset
+2021_08_18_report_audit_cal_bal_change_select 2021-08-18T06:16:58Z System Administrator <root@admindeMBP> # Create function report_audit_cal_bal_change_select
+2021_08_18_report_audit_cal_bal_change_upsert 2021-08-18T06:17:18Z System Administrator <root@admindeMBP> # Create function report_audit_cal_bal_change_upsert
+2021_08_18_report_audit_cal_deposit_transactions_upsert 2021-08-18T10:12:19Z System Administrator <root@admindeMBP> # Create function report_audit_cal_deposit_transactions_upsert
+2021_08_18_report_audit_cal_withdraw_transactions_upsert 2021-08-18T10:18:24Z System Administrator <root@admindeMBP> # Create function report_audit_cal_withdraw_transactions_upsert
+2021_08_19_report_audit_cal_transfer_transactions_upsert 2021-08-19T02:59:48Z System Administrator <root@admindeMBP> # Create function report_audit_cal_transfer_transactions_upsert
+2021_08_19_report_audit_generate 2021-08-19T03:04:29Z System Administrator <root@admindeMBP> # Create function report_audit_generate
+2021_08_19_report_daily_distribute 2021-08-19T07:19:47Z System Administrator <root@admindeMBP> # Create function report_daily_distribute
+2021_08_19_report_allocation_cost 2021-08-19T08:06:21Z System Administrator <root@admindeMBP> # Create func report_allocaton_cost
+2021_08_20_alter_wallet_balances_wallet_type 2021-08-20T07:28:42Z System Administrator <root@admindeMBP> # Alter table wallet_balances wallet_type column to varchar15
+2021_08_23_alter_wallet_ballance_PK 2021-08-23T09:17:36Z System Administrator <root@admindeMBP> # Alter auth services alter primary key and created date
+2021-08-30_report_audit_cal_deposit_transactions_upsert_alter_where 2021-08-30T04:22:19Z System Administrator <root@admindeMBP> # Alter db report deposit upsert function to limit status as completed only
+2021-08-30_report_audit_cal_withdraw_transactions_upsert_alter_where 2021-08-30T04:22:44Z System Administrator <root@admindeMBP> # Alter db report withdraw upsert function to limit status as completed only
+2021-08-30_report_audit_cal_transfer_transactions_upsert_alter_where 2021-08-30T04:23:29Z System Administrator <root@admindeMBP> # Alter db report transfer upsert function to limit status as completed only
+2021-08-30_report_audit_cal_bal_change_select_alter_where 2021-08-30T06:45:52Z System Administrator <root@admindeMBP> # Alter report_audit_cal_bal_change_select change yesterday to selected date
+20210902_report_audit_daily_server_usage 2021-09-02T03:35:37Z duncan.to <21eu@18m.dev> # Add function report audio daily server usage
+20211101_report_audit_generate_change_output_decimal 2021-11-01T09:38:43Z duncan.to <21eu@18m.dev> # Change the currency balance with decimal point
+20211101_report_audit_daily_server_usage_change_decimal 2021-11-01T09:56:04Z duncan.to <21eu@18m.dev> # Change the display decimal point at report audit daily server usage
+20211101_create_distribute_token_type 2021-11-01T10:01:22Z duncan.to <21eu@18m.dev> # adding table distribute token type
+20211101_report_daily_distribute_change_decimal 2021-11-01T10:22:22Z duncan.to <21eu@18m.dev> # Change decimal point on report daily distribute
+20211201_alter_report_audit_cal_deposit 2021-12-01T04:30:25Z duncan.to <21eu@18m.dev> # Change the query date for deposit trans audit report
+20211201_alter_report_audit_cal_withdraw 2021-12-01T06:20:18Z duncan.to <21eu@18m.dev> # Change the query date for withdraw trans audit report
+20211201_alter_report_audit_table 2021-12-01T06:42:17Z duncan.to <21eu@18m.dev> # Add column to report audit table
+20211201_update_report_audit_cal_bal_change_upsert 2021-12-01T06:50:17Z duncan.to <21eu@18m.dev> # Add insert column to function
+
+20211201_update_report_audit_generate 2021-12-01T09:23:24Z duncan.to <21eu@18m.dev> # Return current and previous wallet balance
+20211201_create_block_timestamp_indices 2021-12-02T03:26:41Z christopher.to <28eu@18m.dev> # 20211201_create_block_timestamp_indices.sql
+20211202_create_total_supply_table 2021-12-02T10:52:15Z duncan.to <21eu@18m.dev> # Create total supply table
+20211203_alter_wallet_balances_created_date 2021-12-03T09:44:19Z duncan.to <21eu@18m.dev> # Change wallet balance created date data type, add selected date column
+20211203_alter_report_audit_cal_bal_change_select 2021-12-03T10:43:19Z duncan.to <21eu@18m.dev> # Adding mark date to the function
+20211203_alter_report_audit_generate 2021-12-03T10:46:48Z duncan.to <21eu@18m.dev> # Adding total supply to the report
+20211207_report_audit_cal_bal_change_select_use_outer_join 2021-12-07T02:41:00Z duncan.to <21eu@18m.dev> # use outer join to make balance able to display even either yesterday or today balance is null
+20211207_alter_wallet_balances_primary_key 2021-12-07T03:30:16Z duncan.to <21eu@18m.dev> # Change primary key on wallet balances table
+20211207_alter_report_audit_daily_server_usage 2021-12-07T04:11:07Z duncan.to <21eu@18m.dev> # Update due to wallet_balances column changed
+20211220_alter_report_audit_generate 2021-12-20T11:09:34Z duncan.to <21eu@18m.dev> # report_audit_generate update to show previous total supply and total supply changes
+20220214_add_wallet_balance_configs 2022-02-14T09:44:05Z duncan,,, <duncan@linux-virtualbox1> # add wallet_balance_configs table

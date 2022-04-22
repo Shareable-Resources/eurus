@@ -1,0 +1,43 @@
+6_eurus_erc20_usdt_migration.js
+===============================
+Using command.bundled.js defaultTXValues gasPrice: 135700000
+
+   Replacing 'EurusERC20'
+   ----------------------
+   > transaction hash:    0xe957ee8affeccbae66b855ea8346bfbebabcd4d3393c145d01360f91d525369e
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x0664A465DF1a3ec7D6D16Bf849a48d614358465b
+   > block number:        10155
+   > block timestamp:     1612945452
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99979068471354825
+   > gas used:            2802061 (0x2ac18d)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000003802396777 ETH
+
+
+   Replacing 'OwnedUpgradeabilityProxy'
+   ------------------------------------
+   > transaction hash:    0x13b6edbee5a696d79c10e9c213d6000596bb58a2b031541908693f38c316a38a
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x41093DA97012352Ac1b48B82fAa6630A399c5ad7
+   > block number:        10157
+   > block timestamp:     1612945456
+   > account:             0x01a6d1dD2171A45E6A3D3dc52952B40BE413fA93
+   > balance:             199.99979067764379537
+   > gas used:            520984 (0x7f318)
+   > gas price:           0.00001357 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00000000706975288 ETH
+
+USDT 0x0664A465DF1a3ec7D6D16Bf849a48d614358465b
+OwnedUpgradeabilityProxy<USDT> 0x41093DA97012352Ac1b48B82fAa6630A399c5ad7
+init function tx receipt: {"blockHash":"0x51e3efd02eb27b350d719bdf1f5caafad69514d4f3ed6423449a62cae29df2e7","blockNumber":10159,"contractAddress":null,"cumulativeGasUsed":114755,"from":"0x01a6d1dd2171a45e6a3d3dc52952b40be413fa93","gasUsed":114755,"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":true,"to":"0x41093da97012352ac1b48b82faa6630a399c5ad7","transactionHash":"0xd6ca9e0e9008bc86832f65e50c2ae4194b84363db2f2a6a1cfbaa4b706ce1c04","transactionIndex":0,"events":{}}
+Register USDT to ExternalSmartContractConfig
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00000004509372065 ETH
+

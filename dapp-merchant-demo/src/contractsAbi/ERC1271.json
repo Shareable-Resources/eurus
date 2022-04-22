@@ -1,0 +1,475 @@
+{
+  "contractName": "ERC1271",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_hash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_signature",
+          "type": "bytes"
+        }
+      ],
+      "name": "isValidSignature",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "magicValue",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_signature\",\"type\":\"bytes\"}],\"name\":\"isValidSignature\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"magicValue\",\"type\":\"bytes4\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isValidSignature(bytes32,bytes)\":{\"details\":\"Should return whether the signature provided is valid for the provided hash\",\"params\":{\"_hash\":\"Hash of the data to be signed\",\"_signature\":\"Signature byte array associated with _hash   * MUST return the bytes4 magic value 0x1626ba7e when function passes. MUST NOT modify state (using STATICCALL for solc < 0.5, view modifier for solc > 0.5) MUST allow external calls\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/erc1271/ERC1271.sol\":\"ERC1271\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/erc1271/ERC1271.sol\":{\"keccak256\":\"0x8542867ff48ee4816e5779c6876207b37110f3e0bc24c09f5c7d17ae9cb788e6\",\"urls\":[\"bzz-raw://18e4def4948c35cdeaa76f6ff132213ee30e1a425e91a87d567e79223799eaef\",\"dweb:/ipfs/QmbsWTYvyJ9DEqUfTTQkhZg3pcpPPGG61txq6vkjUU2swx\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.6.0 <0.8.0;\n\nabstract contract ERC1271 {\n\n  // bytes4(keccak256(\"isValidSignature(bytes32,bytes)\")\n  bytes4 constant internal MAGICVALUE = 0x1626ba7e;\n\n  /**\n   * @dev Should return whether the signature provided is valid for the provided hash\n   * @param _hash      Hash of the data to be signed\n   * @param _signature Signature byte array associated with _hash\n   *\n   * MUST return the bytes4 magic value 0x1626ba7e when function passes.\n   * MUST NOT modify state (using STATICCALL for solc < 0.5, view modifier for solc > 0.5)\n   * MUST allow external calls\n   */ \n  function isValidSignature(\n    bytes32 _hash, \n    bytes memory _signature)\n    public\n    virtual\n    view \n    returns (bytes4 magicValue);\n}",
+  "sourcePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/erc1271/ERC1271.sol",
+  "ast": {
+    "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/erc1271/ERC1271.sol",
+    "exportedSymbols": {
+      "ERC1271": [
+        1560
+      ]
+    },
+    "id": 1561,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1547,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".0",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:9"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1560,
+        "linearizedBaseContracts": [
+          1560
+        ],
+        "name": "ERC1271",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 1550,
+            "name": "MAGICVALUE",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 1560,
+            "src": "121:48:9",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes4",
+              "typeString": "bytes4"
+            },
+            "typeName": {
+              "id": 1548,
+              "name": "bytes4",
+              "nodeType": "ElementaryTypeName",
+              "src": "121:6:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes4",
+                "typeString": "bytes4"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30783136323662613765",
+              "id": 1549,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "159:10:9",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_371636862_by_1",
+                "typeString": "int_const 371636862"
+              },
+              "value": "0x1626ba7e"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Should return whether the signature provided is valid for the provided hash\n@param _hash      Hash of the data to be signed\n@param _signature Signature byte array associated with _hash\n   * MUST return the bytes4 magic value 0x1626ba7e when function passes.\nMUST NOT modify state (using STATICCALL for solc < 0.5, view modifier for solc > 0.5)\nMUST allow external calls",
+            "functionSelector": "1626ba7e",
+            "id": 1559,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isValidSignature",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1555,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1552,
+                  "name": "_hash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1559,
+                  "src": "623:13:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1551,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "623:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1554,
+                  "name": "_signature",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1559,
+                  "src": "643:23:9",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1553,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "643:5:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "617:50:9"
+            },
+            "returnParameters": {
+              "id": 1558,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1557,
+                  "name": "magicValue",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1559,
+                  "src": "714:17:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 1556,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "714:6:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "713:19:9"
+            },
+            "scope": 1560,
+            "src": "592:141:9",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1561,
+        "src": "33:702:9"
+      }
+    ],
+    "src": "0:735:9"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/duncanto/Documents/WorkingSet2/src/eurus-backend/smartcontract/contracts/erc1271/ERC1271.sol",
+      "exportedSymbols": {
+        "ERC1271": [
+          1560
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.6",
+            ".0",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 1547,
+        "name": "PragmaDirective",
+        "src": "0:31:9"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            1560
+          ],
+          "name": "ERC1271",
+          "scope": 1561
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "name": "MAGICVALUE",
+              "overrides": null,
+              "scope": 1560,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes4",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes4",
+                  "type": "bytes4"
+                },
+                "id": 1548,
+                "name": "ElementaryTypeName",
+                "src": "121:6:9"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "30783136323662613765",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 371636862",
+                  "value": "0x1626ba7e"
+                },
+                "id": 1549,
+                "name": "Literal",
+                "src": "159:10:9"
+              }
+            ],
+            "id": 1550,
+            "name": "VariableDeclaration",
+            "src": "121:48:9"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "@dev Should return whether the signature provided is valid for the provided hash\n@param _hash      Hash of the data to be signed\n@param _signature Signature byte array associated with _hash\n   * MUST return the bytes4 magic value 0x1626ba7e when function passes.\nMUST NOT modify state (using STATICCALL for solc < 0.5, view modifier for solc > 0.5)\nMUST allow external calls",
+              "functionSelector": "1626ba7e",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isValidSignature",
+              "overrides": null,
+              "scope": 1560,
+              "stateMutability": "view",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_hash",
+                      "overrides": null,
+                      "scope": 1559,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 1551,
+                        "name": "ElementaryTypeName",
+                        "src": "623:7:9"
+                      }
+                    ],
+                    "id": 1552,
+                    "name": "VariableDeclaration",
+                    "src": "623:13:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_signature",
+                      "overrides": null,
+                      "scope": 1559,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 1553,
+                        "name": "ElementaryTypeName",
+                        "src": "643:5:9"
+                      }
+                    ],
+                    "id": 1554,
+                    "name": "VariableDeclaration",
+                    "src": "643:23:9"
+                  }
+                ],
+                "id": 1555,
+                "name": "ParameterList",
+                "src": "617:50:9"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "magicValue",
+                      "overrides": null,
+                      "scope": 1559,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes4",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes4",
+                          "type": "bytes4"
+                        },
+                        "id": 1556,
+                        "name": "ElementaryTypeName",
+                        "src": "714:6:9"
+                      }
+                    ],
+                    "id": 1557,
+                    "name": "VariableDeclaration",
+                    "src": "714:17:9"
+                  }
+                ],
+                "id": 1558,
+                "name": "ParameterList",
+                "src": "713:19:9"
+              }
+            ],
+            "id": 1559,
+            "name": "FunctionDefinition",
+            "src": "592:141:9"
+          }
+        ],
+        "id": 1560,
+        "name": "ContractDefinition",
+        "src": "33:702:9"
+      }
+    ],
+    "id": 1561,
+    "name": "SourceUnit",
+    "src": "0:735:9"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-08-04T10:30:06.154Z",
+  "devdoc": {
+    "methods": {
+      "isValidSignature(bytes32,bytes)": {
+        "details": "Should return whether the signature provided is valid for the provided hash",
+        "params": {
+          "_hash": "Hash of the data to be signed",
+          "_signature": "Signature byte array associated with _hash   * MUST return the bytes4 magic value 0x1626ba7e when function passes. MUST NOT modify state (using STATICCALL for solc < 0.5, view modifier for solc > 0.5) MUST allow external calls"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

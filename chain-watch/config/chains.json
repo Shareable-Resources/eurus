@@ -1,0 +1,178 @@
+{
+    "ethereum": {
+        "rpc": "https://ethnodes.eurus.network",
+        "tokens": {
+            "ETH": {
+                "address": null
+            },
+            "USDM": {
+                "address": "0x9e5182394587C9EDDd8d224A6F5Ed2a62dA7C7e8"
+            },
+            "BTCM": {
+                "address": "0x123bD0d52FF0d86FA75bB2c0b7cd968009Bd22cE"
+            },
+            "ETHM": {
+                "address": "0x3986E16E39B95BbE4f6187b9E4c4D5D3cC1D362E"
+            },
+            "MST": {
+                "address": "0x748305422A85e961E9A76D530A595bCd29f7C75A"
+            },
+            "USDT": {
+                "address": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+            },
+            "USDC": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+            },
+            "LINK": {
+                "address": "0x514910771af9ca656af840dff83e8264ecf986ca"
+            },
+            "UNI": {
+                "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
+            },
+            "BNB": {
+                "address": "0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
+            },
+            "BUSD": {
+                "address": "0x09bdcce2593f0bef0991188c25fb744897b6572d"
+            },
+            "YFI": {
+                "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e"
+            },
+            "DAI": {
+                "address": "0x6b175474e89094c44da98b954eedeac495271d0f"
+            },
+            "OMG": {
+                "address": "0xd26114cd6EE289AccF82350c8d8487fedB8A0C07"
+            },
+            "VEN": {
+                "address": "0xb802b24e0637c2b87d2e8b7784c055bbe921011a"
+            },
+            "AAVE": {
+                "address": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9"
+            },
+            "HT": {
+                "address": "0x6f259637dcd74c767781e37bc6133cd6a68aa161"
+            },
+            "SUSHI": {
+                "address": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2"
+            },
+            "TUSD": {
+                "address": "0x0000000000085d4780B73119b644AE5ecd22b376"
+            },
+            "cDAI": {
+                "address": "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"
+            }
+        }
+    },
+    "eurus_dev": {
+        "rpc": "https://rpc.eurus.dev",
+        "tokens": {
+            "EUN": {
+                "address": null
+            },
+            "USDM": {
+                "address": "0xD53723143C531f206ea449b4e3881AA42F986B4d"
+            },
+            "BTCM": {
+                "address": "0x126c16cAA26AcfC67FcF0F8A622F3806d6A16B7A"
+            },
+            "ETHM": {
+                "address": "0x8881EA9f5C68cbb6f65b1A1F899E9636cd5d2650"
+            },
+            "MST": {
+                "address": "0x89Ec85D913Aa1bF4B04Be93cc6A327D704fbE269"
+            }
+        }
+    },
+    "eurus_testnet": {
+        "rpc": "https://testnet.eurus.network",
+        "tokens": {
+            "EUN": {
+                "address": null
+            },
+            "USDM": {
+                "address": "0x4a3eAB424DAbf855fC9F9Fe4469Ce2295d1EF043"
+            },
+            "BTCM": {
+                "address": "0x939fDD4423396A9ee083519CCF8a25142f3e97dC"
+            },
+            "ETHM": {
+                "address": "0x2e3266B417Bac1DefD9cEE72E71791201Eb197b9"
+            },
+            "MST": {
+                "address": "0x4baE5e04ce4570b3Caf0FD19b50539AB44545011"
+            }
+        }
+    },
+    "eurus": {
+        "rpc": "https://mainnet.eurus.network",
+        "tokens": {
+            "EUN": {
+                "address": null
+            },
+            "USDM": {
+                "address": "0x10B8D5058268fbd1F7B31F077AC5e29aa57775d0"
+            },
+            "BTCM": {
+                "address": "0xe61568aD50E757b8ac3ce70519bfEAACf8Fab72A"
+            },
+            "ETHM": {
+                "address": "0x494075567fA42a31Ca9e2Dd8fc2aCD75f7BEe657"
+            },
+            "MST": {
+                "address": "0x28ddc58C0E0646731e05B7F06607BD5563D8a818"
+            },
+            "PLA": {
+                "address": "0xc82CB2a6CF54711c432cdF528036aD93eE0Fc609"
+            },
+            "ETH": {
+                "address": "0xB5306bFcdDdA847a9b7AdCa51762b78C7E27Df05"
+            },
+            "USDT": {
+                "address": "0xF66ac37cA1DDfbC429c1E03b94aFa413C2294a1f"
+            },
+            "USDC": {
+                "address": "0x67dacFD99D710ADFc371E2eec193DEDd79802f4C"
+            },
+            "LINK": {
+                "address": "0x435B6A74D9aA36A06E1f1F819D6d3E68D11d6F45"
+            },
+            "UNI": {
+                "address": "0x0f8128d0D3b400087059A0940B5b4C53BA147C42"
+            },
+            "BNB": {
+                "address": "0xa5C1b804b0674fC14B56Eff15cA1db63eA98ab7B"
+            },
+            "BUSD": {
+                "address": "0x6A29D43F3fDe6828dFce7780360D36c898765945"
+            },
+            "YFI": {
+                "address": "0x45E6E9c03665c6cB7C48d809B5BdEffd2b1B9F0a"
+            },
+            "DAI": {
+                "address": "0xD1C89F6291B9C137679c553f6F6094bd9DD5a706"
+            },
+            "OMG": {
+                "address": "0x9a06342d963abA30e4EB4026f7db055447039572"
+            },
+            "VEN": {
+                "address": "0xC7742da33d2eE120Bb84CEC98BFd81Bc445358E8"
+            },
+            "AAVE": {
+                "address": "0x6BabB95F650646Dc9a2B0F130198F106b2f05De2"
+            },
+            "HT": {
+                "address": "0xbE74557d0663Bb6B2263f571CfEFAD66703CF479"
+            },
+            "SUSHI": {
+                "address": "0xc2E7aEEE6dD1A761779EaF4C5BD83986118BcB76"
+            },
+            "TUSD": {
+                "address": "0x3DD66E1cdcd68b3883BD0Dd674b51E77ac73b8bc"
+            },
+            "cDAI": {
+                "address": "0x50819B160Dcd17AE42A57681318451C8f52660BE"
+            }
+        }
+    }
+}

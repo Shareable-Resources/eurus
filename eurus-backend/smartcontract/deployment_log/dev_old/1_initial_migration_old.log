@@ -1,0 +1,71 @@
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'besuWalletDevelopment_Private'
+> Network id:      2018
+> Block gas limit: 16234336 (0xf7b760)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x3e814617b3b0c5f5cb1a4fccba76118192c7c90d2a025d8943dbec5f9a39ee83
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x290b0cFa0AC2d8959acf8009706273ffBB9F2572
+   > block number:        865193
+   > block timestamp:     1609228901
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             98.64473406
+   > gas used:            221823 (0x3627f)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00443646 ETH
+
+
+   Deploying 'InternalSmartContractConfig'
+   ---------------------------------------
+   > transaction hash:    0x383dc2d31b13f38eca03564ac327c45a2f8968cfbb37c35c256aae0d2dae10ae
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x6486A01e45648B1aDCc51D375Af3a7c0a5e9002a
+   > block number:        865195
+   > block timestamp:     1609228905
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             98.61445986
+   > gas used:            1513710 (0x1718ee)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0302742 ETH
+
+
+   Deploying 'PublicSmartContractConfig'
+   -------------------------------------
+   > transaction hash:    0xa9b2983734e070c93fec5568143ad19d90267defeb68e3aa46065ff5721eee4f
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x1EA7432837C5e0e26209aa45aab6aA27913E51c0
+   > block number:        865196
+   > block timestamp:     1609228907
+   > account:             0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73
+   > balance:             98.5873637
+   > gas used:            1354808 (0x14ac38)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.02709616 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.06180682 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.06180682 ETH
